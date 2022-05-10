@@ -1,0 +1,24 @@
+
+public class TestRandom {
+
+	public static void main(String[] args) {
+
+		int score=(int)(Math.random()*80)+1;
+		String grade;	//변수선언(문자열)
+		
+		if (score>=90) {
+			if (score >=95) {
+				grade="A+";
+			} else {
+				grade="A";
+			}
+		} else {
+			if(score>=85) {
+				grade="B+";
+			} else { //;90미만 이면서 85미만
+				grade="B";
+			}
+		}
+	}
+
+}
