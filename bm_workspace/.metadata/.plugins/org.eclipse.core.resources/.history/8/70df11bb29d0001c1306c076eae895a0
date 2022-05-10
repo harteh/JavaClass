@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class MainT01 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int CurrentA = sc.nextInt();	//현재 시각
+		int CurrentB = sc.nextInt();	//현재 분
+
+	}
+
+}

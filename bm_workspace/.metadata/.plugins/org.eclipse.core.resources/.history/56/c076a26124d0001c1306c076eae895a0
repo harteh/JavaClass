@@ -90,7 +90,6 @@ public class TestFor {
 		double height2 = sc.nextDouble();
 		String size;
 		
-		/*
 		if (age >= 20) { 				//20세 이상
 			if(height2 >= 175) { 		//20세 이상이고 키 175 이상
 				size = "L";
@@ -108,28 +107,8 @@ public class TestFor {
 				size = "S";
 			}
 		}
-		*/
-		
-		if (age<20) {	//나이가 20세 미만
-			if (height2<160) {
-				size="S";
-			} else if(height2<170) {
-				size="M";
-			} else {
-				size="L";
-			}
-		} else {	//나이가 20세 이상
-			if (height2<165) {
-				size="S";
-			} else if(height2<175) {
-				size="M";
-			} else {
-				size="L";
-			}			
-		}
 		
 		System.out.printf("나이: %d, 키: %.1f, 사이즈: %s\n", age, height2, size);
-		
 		
 		//5.	1부터 50까지의 정수를 출력해라.(for)
 		for(int i=1; i <=50; i++) {
@@ -180,22 +159,6 @@ public class TestFor {
 		default:
 			System.out.println("잘못입력했습니다.");
 			break;
-		}
-		
-		//0+1+2+3+4+5+6+7+8+9+10=55
-		int sum1 = 0;
-		
-		for (int i = 0; i <= 10; i++) {
-			sum1+=i;
-			System.out.print(i);
-			
-			if (i==10) {
-				System.out.print("=");
-				System.out.print(sum1);
-			} else {
-				System.out.print("+");
-			}
-			
 		}
 
 		
