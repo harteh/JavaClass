@@ -174,25 +174,16 @@ public class TestWhile {
 								
 			} else {	//별 감소, 공백 증가	//행i: 5,6,7,8
 				
-				for (int j=0; j<i-4; j++) {		//공백 1,2,3,4
+				for (int j=0; j < i-4; j++) {		//공백 1,2,3,4
 					System.out.print(" ");
 				}
-				for (int j=0; j<i-j; j++) {		//별 4,3,2,1
+				for (int j=0; j < 9-i; j++) {		//별 4,3,2,1 (1,3,5,7)
 					System.out.print("*");
 				}
 			}
 			System.out.println();
 		}
 		
-		/*
-		 * for (int l=0; l<5; l++) {
-			for (int m=0; m<5-l; m++) {
-				System.out.print("*");
-			}
-			System.out.println();
-		}
-		 */
-
 	}
 
 }
