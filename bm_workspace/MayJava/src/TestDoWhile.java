@@ -88,7 +88,9 @@ public class TestDoWhile {
 		System.out.println("****** 문자 형변환 ******");
 		System.out.println("한글자 문자 입력: ");
 		
-		char c=sc.next().charAt(0);	//A -> 65, a -> 97, c -> 99, d -> 100
+//		char c=sc.next().charAt(0);	//A -> 65, a -> 97, c -> 99, d -> 100
+		char c='d';	//테스트종료용임시값
+		
 		int n = (int)c;		//내가 입력한 문자를 정수로 강제형변환한다.
 		System.out.println(n);
 
@@ -114,6 +116,34 @@ public class TestDoWhile {
 		 * j=99 k=99
 		 * 
 		 */
+		
+		System.out.println("****** 1-10까지 합을 구하는데 합이 30이 되면 탈출 ******");
+		sum = 0;
+		i = 1;
+		while (i<=10) {
+			sum += i;
+			if (sum >= 30) {
+				break;
+			}
+			i++;
+		}
+		System.out.println(sum);
+		
+
+		System.out.println("****** 0~9까지 수 중에서 홀수만 출력(while, if, continue) ******");
+		
+		i = 0;
+		while (i<=9) {
+			System.out.print("i="+i+" ");
+			i++;
+			if (i%2==0) {	//짝수이면 제외
+				continue;
+			}
+			System.out.println(i);
+		}
+		
+
+		
 
 	}
 

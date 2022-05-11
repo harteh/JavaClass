@@ -16,6 +16,17 @@ public class TestBreakContinue {
 			System.out.println();	//단 구별
 		}
 		
+		for (int i = 2; i < 9; i++) {	//2단부터 9단까지
+			for (int j = 1; j < 9; j++) {
+				if (i%2==1) {
+					continue;
+				} else {
+					System.out.printf("%d*%d=%d ", i,j,i*j);
+				}
+			}
+			System.out.println();	//단 구별
+		}
+		
 		System.out.println();
 		System.out.println("****** (continue) ******");
 //		System.out.println("정수 5개 입력: ");
