@@ -1,0 +1,68 @@
+
+public class TestForWhile {
+
+	public static void main(String[] args) {
+		
+		System.out.println("****** 0-9 ******");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(i);
+		}
+		
+		System.out.println();
+		System.out.println("****** 0-100까지의 합 1. ******");
+		int sum = 0;
+		for (int i = 0; i < 101; i++) {
+			sum += i;
+		}
+		System.out.println(sum);
+		
+		System.out.println("****** 0-100까지의 합 2. ******");
+		int total = 0;
+		for (int i = 100; i <=0 ; i--) {
+			sum += i;
+		}
+		System.out.println(sum);
+
+		System.out.println("****** 0~10 중 짝수만 출력 ******");
+		for (int i = 0; i < 11; i++) {
+			if (i%2==0) {
+				System.out.print(i+" ");
+			}
+		}
+		System.out.println();
+
+		//중첩반복문
+		System.out.println("****** 중첩반복문 ******");
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				System.out.print(i+" "+j+" ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("****** 중첩반복문 ******");
+		/*
+		 *     1			//공백 5, 숫자 1
+		 *    123
+		 *   12345
+		 *  1234567
+		 * 123456789
+		 */
+		for (int i = 1; i < 6; i++) {
+			for (int j = 0; j < 6-i+1; j++) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j < i; j++) {
+				System.out.print(j);
+			}
+			System.out.println();
+		}
+		
+		
+
+		
+		
+		
+	}
+
+}
