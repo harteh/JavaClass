@@ -169,26 +169,7 @@ public class TestForWhile {
 			k++;
 		}
 		
-		/*
-		 * continue 
-		 * - 반복문을 빠져나가지 않는다.
-		 * - 반복문 실행 도중 다음 반복을 진행
-		 */
-
-		System.out.println();
-		System.out.println("****** continue ******");
 		
-		sum = 0;
-		for (int j = 1; j <= 100; j++) {
-			if (j%2==0) {
-				continue;	//짝수일때 반복문 반복
-			} else {
-				System.out.print(j+" ");
-				sum +=j;
-			}
-		}
-		System.out.println();
-		System.out.println("홀수의 누적합= "+sum);
 		
 		
 	}

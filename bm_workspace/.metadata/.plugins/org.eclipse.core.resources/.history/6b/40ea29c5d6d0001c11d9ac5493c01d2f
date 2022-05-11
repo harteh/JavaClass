@@ -148,15 +148,15 @@ public class TestForWhile {
 		}
 
 		System.out.println("****** 특정값 입력전까지의 값을 카운팅 ******");
-//		n=0;
-//		while(true) {
-//			if(sc.nextInt() == -1) {
-//				System.out.println("프로그램종료");
-//				break;
-//			}
-//			n++;
-//		}
-//		System.out.println(n);
+		n=0;
+		while(true) {
+			if(sc.nextInt() == -1) {
+				System.out.println("프로그램종료");
+				break;
+			}
+			n++;
+		}
+		System.out.println(n);
 		// -1 입력전까지 입력값의 개수 카운팅
 		
 
@@ -169,26 +169,7 @@ public class TestForWhile {
 			k++;
 		}
 		
-		/*
-		 * continue 
-		 * - 반복문을 빠져나가지 않는다.
-		 * - 반복문 실행 도중 다음 반복을 진행
-		 */
-
-		System.out.println();
-		System.out.println("****** continue ******");
 		
-		sum = 0;
-		for (int j = 1; j <= 100; j++) {
-			if (j%2==0) {
-				continue;	//짝수일때 반복문 반복
-			} else {
-				System.out.print(j+" ");
-				sum +=j;
-			}
-		}
-		System.out.println();
-		System.out.println("홀수의 누적합= "+sum);
 		
 		
 	}

@@ -176,19 +176,15 @@ public class TestForWhile {
 		 */
 
 		System.out.println();
-		System.out.println("****** continue ******");
-		
-		sum = 0;
+		System.out.println("******  ******");
 		for (int j = 1; j <= 100; j++) {
-			if (j%2==0) {
-				continue;	//짝수일때 반복문 반복
+			if (i%2==0) {
+				continue;	//2의 배수이면 계속
 			} else {
-				System.out.print(j+" ");
-				sum +=j;
+				System.out.println(i);
 			}
+			
 		}
-		System.out.println();
-		System.out.println("홀수의 누적합= "+sum);
 		
 		
 	}

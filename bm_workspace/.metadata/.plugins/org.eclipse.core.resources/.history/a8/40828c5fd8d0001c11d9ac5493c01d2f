@@ -187,8 +187,7 @@ public class TestForWhile {
 				sum +=j;
 			}
 		}
-		System.out.println();
-		System.out.println("홀수의 누적합= "+sum);
+		System.out.println(sum);
 		
 		
 	}
