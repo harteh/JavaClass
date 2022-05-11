@@ -1,5 +1,0 @@
-INDEX VERSION 1.131+E:\BM_java\bm_workspace\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-631708414.index
-1602128660.index
-2339497448.index
