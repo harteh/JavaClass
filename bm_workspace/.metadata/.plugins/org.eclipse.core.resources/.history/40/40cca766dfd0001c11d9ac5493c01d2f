@@ -64,23 +64,6 @@ public class TestBreakContinue {
 		int c = sc.nextInt();	//개수
 		int money = 100000;		//총 금액
 		
-		if (s==14 && c<=3) {
-			money *= 0.95;
-		} else if(s==18 && c<=5) {
-			money *= 0.9;
-		} else if(s==20 && c<=10) {
-			money *= 0.8;
-		} else {
-			System.out.println("할인없음");
-		}
-		System.out.println(money);
-		
-
-		System.out.println("****** (3) ******");
-		//중첩 반복문으로 5단부터 9단까지 출력
-		System.out.println("****** (4) ******");
-		//while문을 이용해서 1부터 100까지 정수 중 5의배수의 총합을 출력
-		
 
 	}
 

@@ -76,12 +76,6 @@ public class TestBreakContinue {
 		System.out.println(money);
 		
 
-		System.out.println("****** (3) ******");
-		//중첩 반복문으로 5단부터 9단까지 출력
-		System.out.println("****** (4) ******");
-		//while문을 이용해서 1부터 100까지 정수 중 5의배수의 총합을 출력
-		
-
 	}
 
 }

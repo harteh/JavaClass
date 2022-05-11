@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class TestBreakContinue {
+
+	public static void main(String[] args) {
+		System.out.println("****** 구구단 짝수단만 출력 (continue) ******");
+		for (int i = 2; i < 9; i++) {	//2단부터 9단까지
+			for (int j = 1; j < 9; j++) {
+				if (i%2==0) {
+					System.out.printf("%d*%d=%d ", i,j,i*j);
+				}
+				continue;
+			}
+			System.out.println();	//단 구별
+		}
+		
+
+		System.out.println();
+		System.out.println("****** (continue) ******");
+		Scanner sc = new Scanner(System.in);
+//		System.out.println("정수 5개 입력: ");
+//		
+//		for (int i = 0; i < 5; i++) {	//횟수
+//			int n = sc.nextInt();
+//			if (n<0) {
+//				continue;	//제외(올라가서 반복문 다시 실행
+//			} else {
+//				System.out.print(n+" ");
+//			}
+//		}
+		System.out.println("// 프로그램종료");
+		
+
+		System.out.println("****** (1) ******");
+		/*
+		 * 1. 두 과목 점수를 입력하여 평균 출력하는 프로그램
+		 * (평균은소수점 이하 첫째자리까지 출력)
+			출력 결과) 두 과목의점수 : 70 80
+			평균 : 75.0
+		 */
+		System.out.println("두 과목 점수를 입력: ");
+		int num1 = sc.nextInt();
+		int num2 = sc.nextInt();
+		double avg = (double)(num1 + num2) / 2;
+		System.out.println(avg);
+		
+		System.out.printf("각 과목 점수: %d, %d\n과목평균: %.1f",
+				num1, num2, (double)(num1+num2)/2);
+		
+
+	}
+
+}
