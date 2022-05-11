@@ -1,0 +1,23 @@
+import java.util.Scanner;
+/**
+ * do {
+ * 		작업문 
+ * } while(조건식);
+ * 
+ * - 무조건 최소 한번은 실행됨
+ *
+ */
+public class TestDoWhile {
+
+	public static void main(String[] args) {
+		
+		int i=0;
+		
+		do {
+			System.out.print(i+" ");
+			i++;
+		} while (i<10);
+
+	}
+
+}
