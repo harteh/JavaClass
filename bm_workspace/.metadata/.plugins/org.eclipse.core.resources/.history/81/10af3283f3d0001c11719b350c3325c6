@@ -20,9 +20,9 @@ public class TestForWhile {
 		System.out.println("****** 0-100까지의 합 2. ******");
 		int total = 0;
 		for (int i = 100; i <=0 ; i--) {
-			total += i;
+			sum += i;
 		}
-		System.out.println(total);
+		System.out.println(sum);
 
 		System.out.println("****** 0~10 중 짝수만 출력 ******");
 		for (int i = 0; i < 11; i++) {

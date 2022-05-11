@@ -69,37 +69,20 @@ public class TestDoWhile {
 		
 		while(true) {
 			System.out.println("숫자 입력: ");
-//			int num = sc.nextInt();
-			int num=18;	//테스트종료용임시값
+			int num = sc.nextInt();
 			cnt++;
 			
-			if (num == ans) {
+			if (num ==18) {
 				System.out.println("정답입니다.");
-//				System.out.println("시도한 횟수: "+cnt);
+				System.out.println(cnt);
 				break;
 			} else {
-				System.out.println( num>ans ? num+"보다 작다!" : num+"보다 크다!"  );
+				System.out.println( num>18 ? num+"보다 작다!" : num+"보다 크다!"  );
 			}
+			
+			
 		}
-		System.out.println("시도한 횟수: "+cnt);
 		
-		
-
-		System.out.println("****** 문자 형변환 ******");
-		System.out.println("한글자 문자 입력: ");
-		
-		char c=sc.next().charAt(0);	//A -> 65, a -> 97, c -> 99
-		int n = (int)c;		//내가 입력한 문자를 정수로 강제형변환한다.
-		System.out.println(n);
-
-		System.out.println("****** 문자입력 ******");
-		for (int j = 97; j <= n; j++) {	//c를 입력하면: 97 ~ 99
-			for(int k=j; k<n; k++) {	//a(97)부터 내가 입력한 수(n=99) 바로 전까지
-				char ch = (char)k;
-				System.out.print(ch+" ");	//
-			}
-			System.out.println();
-		}
 		
 
 	}
