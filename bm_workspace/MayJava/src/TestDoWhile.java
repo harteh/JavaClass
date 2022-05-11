@@ -88,19 +88,32 @@ public class TestDoWhile {
 		System.out.println("****** 문자 형변환 ******");
 		System.out.println("한글자 문자 입력: ");
 		
-		char c=sc.next().charAt(0);	//A -> 65, a -> 97, c -> 99
+		char c=sc.next().charAt(0);	//A -> 65, a -> 97, c -> 99, d -> 100
 		int n = (int)c;		//내가 입력한 문자를 정수로 강제형변환한다.
 		System.out.println(n);
 
 		System.out.println("****** 문자입력 ******");
-		for (int j = 97; j <= n; j++) {	//c를 입력하면: 97 ~ 99
-			for(int k=j; k<n; k++) {	//a(97)부터 내가 입력한 수(n=99) 바로 전까지
+		for (int j = 97; j <= n; j++) {	//d를 입력하면: 97 ~ 100
+			for(int k = j; k < n; k++) {	//a(97)부터 내가 입력한 수(n=99) 바로 전까지
 				char ch = (char)k;
-				System.out.print(ch+" ");	//
+				System.out.print(ch);
 			}
 			System.out.println();
 		}
-		
+		/*
+		 * c: 입력받은 문자
+		 * n: 입력받은 문자를 정수로 변환(정수)
+		 * j: 97(a)
+		 * j<=n: 97부터 입력받은 문자의 아스키코드까지의 범위
+		 * j++:  97부터 상기 범위까지 증가
+		 * 
+		 * 'd' 입력받았을 경우(100)
+		 * n=99 
+		 * j=97 k=97, j=97 k=98, j=97 k=99
+		 * j=98 k=98, j=98 k=99
+		 * j=99 k=99
+		 * 
+		 */
 
 	}
 
