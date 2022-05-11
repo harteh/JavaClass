@@ -119,7 +119,7 @@ public class TestWhile {
 		System.out.println("************ ¿ª»ï°¢?? ************");
 		
 		for (int i=0; i<5; i++) {			//i: 0.1.2.3.4
-			for (int j=5; j<=1; j--) {		//j: 5.4.3.2.1
+			for (int j=5; j<0; j--) {		//j: 5.4.3.2.1
 				System.out.print(j);
 			}
 			System.out.println();
