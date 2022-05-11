@@ -134,15 +134,13 @@ public class TestDoWhile {
 		
 		i = 0;
 		while (i<=9) {
-			System.out.print("i="+i+" ");
-			i++;
+			i++;	// 0나누기 0은 짝수이므로 증감식이 if문 다음에 오면 실행이 안됨.
 			if (i%2==0) {	//짝수이면 제외
 				continue;
+			} else {
+				System.out.println(i);
 			}
-			System.out.println(i);
 		}
-		
-
 		
 
 	}
