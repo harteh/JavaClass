@@ -15,10 +15,18 @@ public class MainT01 {
 		int uC = sc.nextInt();		//요리하는데 걸리는 시간 분(0 ≤ C ≤ 1,000)
 		
 		
-		int endA;	//종료 시각
+//		int endA;	//종료 시각
 		int endB;	//종료 분
 		
 		//endB 가 59이상이 되면 endA가 +1 된다
+		
+		endB = cB + uC;
+		
+		if (endB > 59) {
+			cA += 1;
+			endB -= 60;
+		}
+		System.out.printf("종료시간은 %d : %d", cA,endB);
 		
 
 		
