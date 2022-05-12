@@ -22,7 +22,7 @@ public class Main10818 {
 		int ary[] = new int[n];
 		
 		//3. n개의 값을 입력받아 배열에 저장한다.
-		for (int i=0; i<ary.length; i++) {
+		for (int i=0; i<n; i++) {
 			ary[i] = sc.nextInt();
 		}
 		
@@ -39,12 +39,7 @@ public class Main10818 {
 			
 		}
 		
-		System.out.println("max:" + max);
-		System.out.println("min:" + min);
-		
-		for (int i : ary) {
-			System.out.print("저장된배열:"+i+" ");
-		}
+		System.out.printf("%d %d", min, max);
 		
 		
 	}
