@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MainT01 {
+public class Main2525 {
 
 	public static void main(String[] args) {
 		
@@ -16,7 +16,11 @@ public class MainT01 {
 		
 		if (B + C > 59) {
 			A += 1;
-			B -= 60;
+			B = (B+C) - 60;
+		}
+		if (A > 23 && B > 59) {
+			A = 0;
+			B = 0;
 		}
 		System.out.printf("종료시간은 %d : %d", A,B);
 		
