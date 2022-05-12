@@ -22,9 +22,28 @@ public class Main10818 {
 		int ary[] = new int[n];
 		
 		//3. n개의 값을 입력받아 배열에 저장한다.
-		for (int i=0; i<n-1; i++) {
+		for (int i=0; i<ary.length; i++) {
 			ary[i] = sc.nextInt();
-			System.out.println( ary[i] );
+		}
+		
+		//저장된 배열의 값 중 최솟값과 최댓값을 구하라.
+		int min=ary[1], max=0;
+		for(int i=0; i<ary.length;i++) {
+			
+			if(ary[i] > max) {
+				max = ary[i];
+			}
+			if (ary[i] < min) {
+				min = ary[i];
+			}
+			
+		}
+		
+		System.out.println("max:" + max);
+		System.out.println("min:" + min);
+		
+		for (int i : ary) {
+			System.out.print("저장된배열:"+i+" ");
 		}
 		
 		
