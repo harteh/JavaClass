@@ -28,7 +28,7 @@ import java.util.Scanner;
  *
  */
 
-public class TestArray01 {
+public class Array01 {
 
 	public static void main(String[] args) {
 		
