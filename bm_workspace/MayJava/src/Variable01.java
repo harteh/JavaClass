@@ -65,30 +65,59 @@ public class Variable01 {
 //		big(a, b);
 //	}
 	
-	static int big(int arr1[]) {
-		int max = 0;
-		for (int i = 0; i < arr1.length; i++) {
-			if(max < arr1[i]) {
-				max = arr1[i];
-			}
-		}
-		return max;
-	}
-	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int arr[] = new int[7];
-		
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = sc.nextInt();
-		}
-		System.out.println( big(arr) );
+//	static int big(int arr1[]) {
+//		int max = 0;
+//		for (int i = 0; i < arr1.length; i++) {
+//			if(max < arr1[i]) {
+//				max = arr1[i];
+//			}
+//		}
+//		return max;
+//	}
+//	
+//	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+//		int arr[] = new int[7];
+//		
+//		for (int i = 0; i < arr.length; i++) {
+//			arr[i] = sc.nextInt();
+//		}
+//		System.out.println( big(arr) );
 		//함수 호출과 동시에 출력
 		//매개변수가 배열명일때, 
 		//배열을 호출할때 배열명만 적으면 됨.
 		
+	
+	public static void cal(char aa, int bb, int cc) {
+		switch (aa) {
+		case '+':
+			System.out.println(bb + cc);
+			break;
+		case '-':
+			System.out.println(bb - cc);
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		char a=sc.next().charAt(0);
+		int b=sc.nextInt();
+		int c=sc.nextInt();
+		
+		cal(a,b,c);
+		// + 를 입력하면 b+c, - 입력하면 b-c
+		//switch-case
 		
 	}
+		
+		
+		
+		
+		
 	
 
 }
