@@ -6,25 +6,28 @@ public class Main2525 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//오븐시계
-		System.out.println("현재 시간(시각, 분)을 입력하세요 : ");
-		int A = sc.nextInt();	//현재 시각 (0 ≤ A ≤ 23)
-		int B = sc.nextInt();	//현재 분 (0 ≤ B ≤ 59)
-
-		System.out.println("요리하는데 걸리는 시간을 분단위로 입력하세요 : ");
-		int C = sc.nextInt();		//요리하는데 걸리는 시간 분(0 ≤ C ≤ 1,000)
+		//현재 시각(a시 b분)
+		int a=sc.nextInt();
+		int b=sc.nextInt();
 		
-		if (B + C > 59) {
-			A += 1;
-			B = (B+C) - 60;
-		}
-		if (A > 23 && B > 59) {
-			A = 0;
-			B = 0;
-		}
-		System.out.printf("종료시간은 %d : %d", A,B);
+		//요리하는 데 필요한 시간(분 단위)
+		int c=sc.nextInt();
 		
-
+		//요리한 시간을 나눠, 몫=시, 나머지=분 에 저장
+		a += c / 60;
+		b += c % 60;
+		
+		//23시 59분에서 1분이 더 지나면 0시 0분이 된다.
+		if(b > 59) {
+			a+=1;
+			b-=60;
+		}
+		if(a > 23) {
+			a-=24;
+		}
+		
+		
+		System.out.println(a +" "+ b);
 		
 
 	}
