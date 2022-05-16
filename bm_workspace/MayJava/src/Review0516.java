@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Revie0516 {
+public class Review0516 {
 
 	public static void main(String[] args) {
 		
