@@ -159,7 +159,7 @@ public class Revie0516 {
 		}
 		
 
-		System.out.println("********* p.123 Q5-3 *********");
+		System.out.println("********* p.230 Q2 *********");
 		
 		for (int i=0;i<7;i++){
 			for (int j=0; j<7;j++)
@@ -181,8 +181,40 @@ public class Revie0516 {
 						System.out.print(" ");
 				}
 			}
+			System.out.println();
 		}
 		
+		
+		System.out.println();
+		System.out.println("********* p.230 Q2 *********");
+		
+		char[] alphabets = new char[26];
+		char ch = 'A';
+		
+		for(int i=0; i<alphabets.length; i++, ch++) {
+			alphabets[i] = ch;	//아스키값으로 각 요소에 저장
+		}
+		
+		for(int i=0; i<alphabets.length; i++) {
+			alphabets[i] = (char)(alphabets[i]+32);
+		}
+		//alphabets[0]='a'
+		//alphabets[1]='b'
+		
+		for(int i=0; i<alphabets.length; i++, ch++) {
+			System.out.println(alphabets[i] +","+ (int)alphabets[i]);
+		}
+		
+		
+//		for(int i=0; i<alphabets.length; i++) {
+//			System.out.println(alphabets[i] +","+ (int)alphabets[i]);
+//		}
+//		
+//		for(int i=0; i<alphabets.length; i++) {
+//			System.out.println((char)(alphabets[i]+32) +","+ (int)(alphabets[i]+32));
+//		}
+		
+
 		
 	}
 
