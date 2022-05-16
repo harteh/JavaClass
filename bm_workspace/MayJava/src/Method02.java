@@ -196,7 +196,6 @@ public class Method02 {
 	
 	//원의 반지름 정보를 전달하면, 원의 넓이를 계산해서 반환하는 메소드를 만들어라.
 	//4-1. main에서 출력
-	
 //	static double avg(double r) {
 //		return r*r*3.14;
 //	}
@@ -207,15 +206,74 @@ public class Method02 {
 //	}
 	
 	//4-2. 메소드에서 출력
-	static void avg(double r) {
-		double result=r*r*3.14;
-		System.out.println(result);
-	}
+//	static void avg(double r) {
+//		double result=r*r*3.14;
+//		System.out.println(result);
+//	}
+//	
+//	public static void main(String[] args) {
+//		avg(3);
+//	}
 	
+	
+	//배열 연습
 	public static void main(String[] args) {
-		avg(3);
+		
+		//5. 2차원 배열 출력
+//		int arr[][] ={
+//				{1,3,5,7,9},
+//				{11,13,15,17,19}
+//		};
+//		
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[i].length; j++) {
+//				System.out.print(arr[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+		
+		int ary[][]=new int[2][5];
+		int n=1;
+		for (int i = 0; i < ary.length; i++) {
+			for (int j = 0; j < ary[i].length; j++) {
+				ary[i][j]=n;
+				n+=2;
+				System.out.printf("%d\t", ary[i][j]);
+			}
+			System.out.println();
+		}
+		
+		
+		
+		//6. 문자열 a에 “C++”, b에 “, JAVA”를 초기화해라.
+		String a="C++", b=", JAVA";
+		
+		//6-1) 문자열 a의 길이를 출력해라.
+		System.out.println( "문자열a의 길이:"+a.length() );	//3
+		
+		//6-2) a,b의 문자열을 연결해라.
+		String result1= a.concat(b);
+		System.out.println("문자열연결:"+result1);	//C++, Java
+		
+		//6-3) 인덱스 3부터 끝까지 출력해라.
+		String result2 = result1.substring(3);
+		System.out.println("인덱스3부터 끝까지:"+result2);	//, Java
+		
+		//6-4) JAVA를 “C#”으로 변경해라
+		String result3 = result1.replace("JAVA", "C#");
+		System.out.println("문자열변경:"+result3);
+		
+		//6-5) ,를 기준으로 문자열을 분리해라.
+		String arr1[] = result1.split(",");
+		System.out.println("문자열분리 , 앞:"+arr1[0]);
+		System.out.println("문자열분리 , 뒤:"+arr1[1]);
+		
+		
+		
+		
+		
+		
 	}
-	
 	
 
 }
