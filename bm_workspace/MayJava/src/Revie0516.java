@@ -116,62 +116,72 @@ public class Revie0516 {
 		}
 	
 
-		System.out.println("********* p.123 Q5 *********");
+		System.out.println("********* p.123 Q5-1 *********");
 		//7줄 마름모꼴 그리기
 
 		
 		for (int i = 0; i <7; i++) {	//전체 라인
-		    if (i<4) {	//별 증가, 공백 감소 //행i: 0,1,2,3,4
+		    if (i<4) {	//별 증가, 공백 감소 //행i: 1,2,3,4
 
-		        for (int j=0; j<3-i; j++) {//공백 4,3,2,1,0
+		        for (int j=0; j<3-i; j++) {//공백 3,2,1,0
 		            System.out.print(" ");					
 		        }
-		        for (int j=0; j<(i*2)+1; j++) {//별 1,2,3,4,5
+		        for (int j=0; j<(i*2)+1; j++) {//별 1,3,5,7
 		            System.out.print("*");
 		        }
 
-		    } else {	//별 감소, 공백 증가	//행i: 5,6,7,8
+		    } else {	//별 감소, 공백 증가	//행i: 5,6,7
 
-		        for (int j=0; j<i-3; j++) {		//공백 1,2,3,4
+		        for (int j=0; j<i-3; j++) {		//공백 1,2,3
 		            System.out.print(" ");
 		        }
-		        for (int j = (7-i)*2; j >1 ; j--) {		//별 4,3,2,1
+		        for (int j=(7-i)*2; j >1 ; j--) {	//별 5,3,1
 		            System.out.print("*");
 		        }
 		    }
 		    System.out.println();
 		}
 		
+		System.out.println("********* p.123 Q5-2 *********");
+		for (int i = 1; i <= 7; i++) {
+			
+			int k = (i <= 4) ? 4 - i : i - 4;
+			
+			for (int j = 1; j <= k; j++) {
+				System.out.print(' ');
+			}
+			
+			for (int j = 1; j <= 7 - 2 * k; j++) {
+				System.out.print("*");
+			}
+
+			System.out.println();
+		}
 		
+
+		System.out.println("********* p.123 Q5-3 *********");
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		for (int i=0;i<7;i++){
+			for (int j=0; j<7;j++)
+			{
+				if (i<=7/2)
+				{
+					if (i+j<=7/2-1)
+						System.out.print(" ");
+					else if (j-i>=7/2+1) 
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				else if (i>7/2) 
+				{
+					if (i-j>=7/2+1) 
+						System.out.print(" ");
+					else if (i+j>=7/2*3+1)
+						System.out.print(" ");
+				}
+			}
+		}
 		
 		
 	}
