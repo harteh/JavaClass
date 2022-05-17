@@ -38,7 +38,7 @@ public class Main10818 {
 			}
 			
 		}
-		
+		System.out.println(min+" "+max);
 		System.out.printf("%d %d", min, max);
 		
 		
