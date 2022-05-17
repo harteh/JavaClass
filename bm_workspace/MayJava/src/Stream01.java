@@ -1,4 +1,5 @@
-import java.io.FileWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -68,21 +69,45 @@ public class Stream01 {
 		
 		
 		//a.txt 파일 생성
-		char a='S';		//S 가 아스키코드로 변환되어 int 값으로 저장된다.
-		char b='W';
+//		char a='S';		//S 가 아스키코드로 변환되어 int 값으로 저장된다.
+//		char b='W';
+//		
+//		try {
+//			FileWriter out = new FileWriter("a.txt");
+//			//단독으로 파일 생성 가능하다 -> FileWriter는 기반 스트림이기 때문에.
+//			out.write(a);
+//			out.write(b);
+//			out.close();
+//			
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		} 
+		
+		
+		//저장된 SW를 읽어오고 싶다.
+		char arr[]=new char[10];
+		int r;
 		
 		try {
-			FileWriter out = new FileWriter("a.txt");
-			//단독으로 파일 생성 가능하다 -> FileWriter는 기반 스트림이기 때문에.
-			out.write(a);
-			out.write(b);
-			out.close();
+			FileReader in = new FileReader("a.txt");
+			//파일에 저장한 문자를 읽어들여서
+			try {
+				r = in.read(arr, 0, arr.length);
+				//배열의 0부터 길이만큼 읽어와서 r 에 저장한다.
+				
+				for(int i=0; i<r; i++) {
+					System.out.println(arr[i]);
+				}
+				
+			} catch (IOException e) {
+				// 읽어온 데이터가 없을 때
+				e.printStackTrace();
+			}
 			
-		} catch (IOException e) {
+		} catch (FileNotFoundException e) {
+			// 파일이 없을 때 예외처리
 			e.printStackTrace();
-		} 
-		
-		
+		}
 		
 		
 		
