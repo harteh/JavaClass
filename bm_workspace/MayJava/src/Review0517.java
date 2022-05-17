@@ -43,8 +43,8 @@ public class Review0517 {
 		while(i<=100) {
 			if(i%2==0 && i%7==0) {
 				System.out.print(i+ " ");
+				sum+=i;
 			}
-			sum+=i;
 			i++;
 		}
 		System.out.println();
@@ -54,8 +54,9 @@ public class Review0517 {
 		//정수를 입력받아 짝수이면 “짝수”, 홀수이면 “홀수” 라고 출력
 		//정수를 입력하지 않은 경우에는 프로그램을 종료시켜라.(try-catch 사용)
 		
+		System.out.println("정수입력:");
+		
 		try {
-			System.out.println("정수입력:");
 			int num=sc.nextInt();
 			System.out.println(num%2==0 ? "짝수" : "홀수");
 			
@@ -64,6 +65,8 @@ public class Review0517 {
 			System.out.println("오입력");
 			return;
 		}
+		
+		
 		
 		
 		
