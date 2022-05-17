@@ -17,7 +17,20 @@ public class BubbleSort {
 		int ary[] = {3, 2, 1, 6, 5};
 		int temp;	//빈공간
 		
-		//두개값 교환코드
+		int size = ary.length;	//5
+		
+		//두개값 교환코드 1.
+//		for(int i=0; i<size; i++) {			//0,1,2,3,4
+//			for(int j=0; j<size-i-1; j++) {	//0,1,2,3
+//				if( ary[j]>ary[j+1] ) {	// 3>2
+//					temp = ary[j+1];	//temp=3
+//					ary[j+1] = ary[j];	//ary[i]=2
+//					ary[j] = temp;		//ary[j]=3
+//				}
+//			}
+//		}
+		
+		//두개값 교환코드 2.
 		for(int i=0; i<4; i++) {
 			for(int j=i+1; j<5; j++) {
 				if( ary[i]>ary[j] ) {	// 3>2
