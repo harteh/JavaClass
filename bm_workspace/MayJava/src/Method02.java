@@ -257,7 +257,7 @@ public class Method02 {
 		
 		//6-3) 인덱스 3부터 끝까지 출력해라.
 		String result2 = result1.substring(3);
-		System.out.println("인덱스3부터 끝까지:"+result2);	//, Java
+		System.out.println("인덱스3부터 끝까지:"+result2);	//, Javaf
 		
 		//6-4) JAVA를 “C#”으로 변경해라
 		String result3 = result1.replace("JAVA", "C#");
@@ -265,8 +265,11 @@ public class Method02 {
 		
 		//6-5) ,를 기준으로 문자열을 분리해라.
 		String arr1[] = result1.split(",");
-		System.out.println("문자열분리 , 앞:"+arr1[0]);
-		System.out.println("문자열분리 , 뒤:"+arr1[1]);
+//		System.out.println("문자열분리 , 앞:"+arr1[0]);
+//		System.out.println("문자열분리 , 뒤:"+arr1[1]);
+		for(int i=0; i<arr1.length; i++) {
+			System.out.println(arr1[i]);
+		}
 		
 		
 		
