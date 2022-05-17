@@ -27,7 +27,8 @@ public class Main10818 {
 		}
 		
 		//저장된 배열의 값 중 최솟값과 최댓값을 구하라.
-		int min=ary[1], max=0;
+		int min = 1000000;
+		int max = -1000000; 
 		for(int i=0; i<ary.length;i++) {
 			
 			if(ary[i] > max) {
@@ -38,7 +39,7 @@ public class Main10818 {
 			}
 			
 		}
-		System.out.println(min+" "+max);
+
 		System.out.printf("%d %d", min, max);
 		
 		
