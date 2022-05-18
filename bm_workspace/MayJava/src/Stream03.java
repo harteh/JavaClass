@@ -32,37 +32,47 @@ public class Stream03 {
 		/*
 		 * 파일을 읽어온다 -> 파일이 없을때의 예외처리
 		 * 	문자단위로 한꺼번(배열기능)에 읽을 수 있는 BufferedReader 사용 
-		 */
-		
-		/*
+		 * *
 		 * 문서 범위 안에서 
 		 * 줄단위로 데이터를 읽어와서 저장한다. ->데이터가 없을 때의 예외 처리
 		 * 저장한 데이터를 출력한다.
 		 */
 		
+//		try {
+//			BufferedReader in=new BufferedReader(new FileReader("writer.txt"));
+//			
+//			String str;
+//			
+//			while(true) {
+//				try {
+//					str=in.readLine();
+//					if(str == null) {
+//						break;
+//					}
+//					System.out.println(str);
+//					
+//				} catch (IOException e) {
+//					// 읽어올 데이터가 없을때의 예외 처리
+//					e.printStackTrace();
+//				}
+//			}
+//			
+//		} catch (FileNotFoundException e) {
+//			// 파일이 없을 때의 예외 처리
+//			e.printStackTrace();
+//		}//BufferedReader 사용
+		
+		
 		try {
-			BufferedReader in=new BufferedReader(new FileReader("writer.txt"));
-			
-			String str;
-			
-			while(true) {
-				try {
-					str=in.readLine();
-					if(str == null) {
-						break;
-					}
-					System.out.println(str);
-					
-				} catch (IOException e) {
-					// 읽어올 데이터가 없을때의 예외 처리
-					e.printStackTrace();
-				}
+			FileReader fr=new FileReader("writer.txt");
+			int i;
+			while((i=fr.read())!= -1) {
+				System.out.print((char)i);
 			}
 			
-		} catch (FileNotFoundException e) {
-			// 파일이 없을 때의 예외 처리
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}//FileReader 사용
 		
 
 	}
