@@ -48,7 +48,7 @@ public class Exception01 {
 				
 				sc.next();	//입력스트림에 있는 토큰(바로전데이터)을 버린다.
 				i--;		//인덱스가 증가하면 안되므로 감소시킨다.
-				//continue;	//빠져나오지 않고 계속 반복
+				continue;	//빠져나오지 않고 계속 반복
 			}
 			
 			sum +=n;
