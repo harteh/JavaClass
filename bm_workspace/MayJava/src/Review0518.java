@@ -70,19 +70,69 @@ public class Review0518 {
 //		func(a, b);	//a->몫, b-> 나머지
 //	}
 	
+//	static void func(int a, int b) {
+//		System.out.println("양수 입력:");
+//		Scanner sc=new Scanner(System.in);
+//		int n=sc.nextInt();
+//		
+//		a=n/5;
+//		b=n%5;
+//		System.out.println("몫: "+a+", 나머지:"+ b);
+//	}
+//	public static void main(String[] args) {
+//		int a=0, b=0;
+//		func(a, b);
+//	}
 	
-	static void func(int a, int b) {
-		System.out.println("양수 입력:");
-		Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		
-		a=n/5;
-		b=n%5;
-		System.out.println("몫: "+a+", 나머지:"+ b);
-	}
+	
+	//다섯과목 점수가 저장된 배열의 값에 따라 #출력(#은 5점당 하나씩 출력하며 남는 점수는 버림)
+//	static void pr(int[] score, int a) {
+//		for(int i=0; i<score.length; i++) {
+//			int chk=score[i] / a;
+//			for (int j = 0; j < chk; j++) {
+//				System.out.print("#");
+//			}
+//			System.out.println();
+//		}
+//	}
+//	
+//	public static void main(String[] args) {
+//		int score[]=new int[] {58,60,86,90,84};
+//		pr(score, 5);
+//	}
+	
+	
+	//반환형을 String 값으로 주고 출력해라
+//	static String show(String a, int b) {
+//		String result="";
+//		for(int i=0; i<b; i++) {
+//			//result+=a;
+//			result = result.concat(a);	//문자열나열
+//		}
+//		return result;
+//	}
+//	
+//	public static void main(String[] args) {
+//		System.out.println(show("$", 10));	//출력-> $$$$$$$$$$
+//	}
+	
+
+	//"공부는 어렵지만, 재밋네요" 문자열을 str에 저장한 후,
+	//","기준으로 문자열을 구분하여 출력하고,
+	//인덱스 6에 있는 한 글자를 출력, "공부는" 출력
 	public static void main(String[] args) {
-		int a=0, b=0;
-		func(a, b);
+		String str="공부는 어렵지만, 재밋네요";
+		
+		String[] arr=str.split(",");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		String a=str.substring(6,7);
+		String b=str.substring(0,3);
+		
+		System.out.println(a);
+		System.out.println(b);
 	}
 	
 
