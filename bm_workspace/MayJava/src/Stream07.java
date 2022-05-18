@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 
 public class Stream07 {
@@ -38,14 +36,48 @@ public class Stream07 {
 		*/
 		
 		//파일 생성 1.
-		try {
-			FileWriter fw=new FileWriter("sample.txt");
-			fw.write("HI 저는 자바가 재밋습니다.");
-			fw.close();
-		} catch (IOException e) {
-			// 파일 생성이 안되었을 때 예외처리
-			e.printStackTrace();
-		}
+//		try {
+//			FileWriter fw=new FileWriter("sample.txt");
+//			fw.write("HI 저는 자바가 재밋습니다.");
+//			fw.close();
+//		} catch (IOException e) {
+//			// 파일 생성이 안되었을 때 예외처리
+//			e.printStackTrace();
+//		}
+		
+		
+		//파일 생성 2.
+		/*
+		 * 콘솔에 입력한 문자열을 sample.txt 파일에 저장
+		 */
+		
+//		BufferedReader bur=null;	//데이터를 읽어오기 위한 스트림
+//		PrintWriter pr=null;		//화면에 출력하기 위한 스트림
+//		
+//		try {
+//			//콘솔에 데이터를 입력받음
+//			bur = new BufferedReader(new InputStreamReader(System.in));
+//			
+//			//sample.txt 파일을 생성하고,
+//			FileWriter fw = new FileWriter("sample.txt");
+//			//출력할 파일을 출력스트림에 저장한다.
+//			pr = new PrintWriter(fw);
+//			
+//			//
+//			String str=null;
+//			while((str=bur.readLine()) != null) {
+//				pr.println(str);
+//			}
+//			bur.close();
+//			
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		pr.close();
+		
+		
+		
 		
 		
 		//파일 읽어오기 1.
@@ -67,11 +99,19 @@ public class Stream07 {
 					e.printStackTrace();
 				}
 			}
+			try {
+				fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		} catch (FileNotFoundException e) {
 			// 읽어올 파일이 없을 때 예외 처리
 			e.printStackTrace();
 		}
+		
+		
 		
 		
 		
