@@ -16,6 +16,7 @@ public class Review0519D {
 		 * (String[] 배열로 초기화해서 for문으로 읽기) 
 		 */
 		
+/* 내 코드 		
 		String[] arrS = {"저는 자바를 좋아합니다. 수정 끝"};
 		
 		//파일 생성
@@ -37,7 +38,15 @@ public class Review0519D {
 			System.out.println(str);
 		}
 		br.close();
+*/
 		
+		BufferedReader br = new BufferedReader(new FileReader("Sample1.txt"));
+		
+		String b[]=new String[1];
+		for (int i = 0; i < b.length; i++) {
+			b[i]=br.readLine();
+			System.out.println(b[i]);
+		}
 		
 		
 

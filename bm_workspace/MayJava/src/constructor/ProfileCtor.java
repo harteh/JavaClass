@@ -9,7 +9,6 @@ class Profile {
 //		this.a = a;		this.b = b;	
 		//이름이 같을 경우는 this를 사용
 	}
-	
 }
 
 public class ProfileCtor {
