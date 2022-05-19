@@ -1,3 +1,4 @@
+package review;
 import java.util.Scanner;
 
 public class Review0518 {
