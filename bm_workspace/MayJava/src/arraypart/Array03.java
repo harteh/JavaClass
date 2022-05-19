@@ -1,3 +1,4 @@
+package arraypart;
 import java.util.Scanner;
 
 public class Array03 {

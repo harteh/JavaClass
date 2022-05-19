@@ -1,3 +1,4 @@
+package controlflow;
 import java.util.Scanner;
 /**
  * break 는 반복문과 사용해야한다.

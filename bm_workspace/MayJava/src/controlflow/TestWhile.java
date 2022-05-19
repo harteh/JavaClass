@@ -1,3 +1,4 @@
+package controlflow;
 import java.util.Scanner;
 /**
  * ¹Ýº¹¹® : while, do while
