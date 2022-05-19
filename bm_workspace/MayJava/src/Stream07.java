@@ -1,8 +1,24 @@
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * FileReader: 파일 읽기
+ * -- read() : 파일 속 데이터 읽기
+ * -- 파일의 크기가 큰 경우, 한 글자씩 읽어오면 속도가 느려지기 때문에 
+ * 		배열에 담아서 하거나, buffered를 이용해도 된다.
+ * -- close() : 스트림 닫아주기
+ * 
+ * FileWriter : 파일 출력, 파일에 텍스트 저장
+ * -- .writer() : 파일에 데이터 저장하기
+ * -- close() : 스트림 닫기
+ * 
+ * FileOutputStream
+ * 
+ *
+ */
 
 public class Stream07 {
 
