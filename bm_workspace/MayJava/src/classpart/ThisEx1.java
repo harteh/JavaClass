@@ -1,5 +1,14 @@
 package classpart;
 
+/*
+* this()는 반드시 생성자의 첫번째 문장에 위치해야한다.
+* this()는 반드시 같은 클래스의 다른 생성자를 호출할 때 사용된다.
+* this()는 생성자에서만 사용된다.
+
+* 기본생성자가 먼저 실행된다.
+* 생성자는 void가 있을 수 없다
+*/
+
 class Book{
 	String name;
 	int price;
@@ -22,7 +31,6 @@ class Book{
 	}
 }
 
-//생성자는 void가 있을 수 없다.
 
 public class ThisEx1 {
 	public static void main(String[] args) {
