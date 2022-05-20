@@ -26,6 +26,7 @@ class Order {
 		System.out.printf("배송 주소 : %s\n", addr);
 	}
 	
+	
 }
 
 
