@@ -16,9 +16,10 @@ public class Review0523C {
 		
 		int str;
 		while((str=in.read()) != -1) {
-			fw.write(str);
+			fw.write((char)str);
 		}
 		fw.close();
+		in.close();
 	}
 }
 */
