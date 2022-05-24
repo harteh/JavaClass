@@ -48,8 +48,64 @@ public class ThrowsEx1 {
 /*
  * p.509
  */
+
+class PasswordException extends Exception {
+	PasswordException(String message){
+		super("오류입니다.");
+	}
+}
+
 public class ThrowsEx1 {
+	
+	private String userPass;
+	
+	public String getUserPass() {
+		return userPass;
+	}
+	
+	void setUserPass(String userPass) throws PasswordException {
+		if(userPass == null) {
+			throw new PasswordException("비밀번호는 null일 수 없습니다.");
+		}
+		else if(userPass.length() < 5 ) {
+			throw new PasswordException("비밀번호는 5자 이상입니다.");
+		}
+		else if(userPass.matches("[a-zA-Z]+")) {
+			throw new PasswordException("비밀번호는 숫자를 포함해야 합니다.");
+		}
+		
+		this.userPass = userPass;
+		
+	}
+	
+	
 	public static void main(String[] args) {
+		
+		ThrowsEx1 te = new ThrowsEx1();
+
+		String userPass = null;
+		try {
+			te.setUserPass(userPass);
+			System.out.println("오류없음");
+		} catch (PasswordException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		userPass = "abcd";
+		try {
+			te.setUserPass(userPass);
+			System.out.println("오류없음");
+		} catch (PasswordException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		userPass = "abcde";
+		try {
+			te.setUserPass(userPass);
+			System.out.println("오류없음");
+		} catch (PasswordException e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 }
