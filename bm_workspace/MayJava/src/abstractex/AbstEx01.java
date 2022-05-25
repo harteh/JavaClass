@@ -65,7 +65,7 @@ class Cal extends Ca {
 }
 
 
-public class AbstEx1 {
+public class AbstEx01 {
 	public static void main(String[] args) {
 		Cal c= new Cal();
 		System.out.println(c.add(3,7));		//µÎ¼öÇÕ

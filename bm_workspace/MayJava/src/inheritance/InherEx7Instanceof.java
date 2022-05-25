@@ -7,7 +7,7 @@ package inheritance;
 
 /*
  * 1
- */
+ 
 class Person {}
 class Student3 extends Person{}
 class Entertainer extends Person{}
@@ -37,5 +37,36 @@ public class InherEx7Instanceof {
 		//사람 연예인
 		pr(new Singer());		//Person p = new Singer()
 		//사람 연예인 가수
+	}
+}
+*/
+
+/* 2 */
+class Person{}
+class Student1 extends Person{}
+class Worker extends Person{}
+class ITWorker extends Worker{}
+
+public class InherEx7Instanceof {
+	
+	static void show(Person p) {
+		if(p instanceof Person) {
+			System.out.println("사람");
+		}
+		if(p instanceof Student1) {
+			System.out.println("학생");
+		}
+		if(p instanceof Worker) {
+			System.out.println("직장인");
+		}
+		if(p instanceof ITWorker) {
+			System.out.println("IT종사자");
+		}
+	}
+	
+	public static void main(String[] args) {
+		show(new Person());
+		show(new Worker());
+		show(new ITWorker());
 	}
 }
