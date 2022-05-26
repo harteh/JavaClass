@@ -54,7 +54,5 @@ public class ObjEx02boxing {
 					//Integer ≈¨∑°Ω∫∑Œ ∞¥√º»≠Ω√≈¥
 		int n1 = i11+200;	//auto unboxing
 		
-		
-		
 	}
 }
