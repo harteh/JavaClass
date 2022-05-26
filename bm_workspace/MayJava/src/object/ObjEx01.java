@@ -92,7 +92,6 @@ public class ObjEx01 {
 
 /*
  * 4. p.386 Q4
- */
 
 class MyDog{
 	String a, b;
@@ -110,3 +109,21 @@ public class ObjEx01 {
 		System.out.println(dog);
 	}
 }
+*/
+
+public class ObjEx01 {
+	public static void main(String[] args) {
+		String a = "Hello";
+		String b = "Hello";
+		String c = "Java";
+		String d = new String ("Hello");
+		String e = new String ("Java");
+		String f = new String ("Java");
+		
+		System.out.println(f.equals(e));
+		System.out.println(f == c);
+		System.out.println("****************");
+
+	}
+}
+

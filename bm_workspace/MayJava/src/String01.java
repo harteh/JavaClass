@@ -5,6 +5,7 @@ import java.util.Scanner;
  * 
  * split(String regex)
  * - split 메소드는 문자열을 특정 구분자로 분리하는 메소드이다.
+ * - 반환형 배열
  * - Splits this string around matches of the given regular expression.
  * 
  * substring(int beginIndex, int endIndex)
