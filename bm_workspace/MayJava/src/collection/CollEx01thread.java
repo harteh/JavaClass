@@ -6,10 +6,19 @@ class Th extends Thread {	//스레드 클래스 작성: 상속받아 만듬
 		name = n;
 	}
 	public void run() {	
-		//Thread 를 상속하면 run 메서드를 구현해야 한다
-		//스레드 코드 = 스레드 실행 시작 메서드
-		//스레드의 메인 메서드
-		System.out.println(name);
+		/* Thread 를 상속하면 run 메서드를 구현해야 한다
+		 * 스레드 코드 = 스레드 실행 시작 메서드
+		 * 스레드의 메인 메서드 */
+		
+//		System.out.println(name);
+		
+		for(int i=0; i<10; i++) {
+			System.out.println(name);
+			try {
+				sleep(100);
+			} catch (Exception e) {}
+		}
+		
 	}
 }
 
