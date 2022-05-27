@@ -55,6 +55,9 @@ public class Test0527 {
 /*
  * 2. 추상클래스 Calc를 작성해라.
 */
+/*
+ * 1번째 문제풀이
+
 abstract class Calc {
 	double op1, op2;
 	
@@ -121,7 +124,75 @@ public class Test0527 {
 		}
 	}
 }
+*/
 
+/*
+ * 2번째 풀이
+
+
+abstract class Calc {
+	double op1, op2;
+	void set(double op1, double op2) {
+		this.op1 = op1;		this.op2=op2;
+	}
+	abstract double calculate();
+}
+
+class Add extends Calc{
+	double calculate() {
+		return op1 + op2;
+	}
+}
+class Sub extends Calc {
+	double calculate() {
+		return op1 - op2;
+	}
+}
+class Mul extends Calc {
+	double calculate() {
+		return op1 * op2;
+	}
+}
+class Div extends Calc {
+	double calculate() {
+		return op1 / op2;
+	}
+}
+
+public class Test0527 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("두 개의 정수와 연산자를 입력:");
+		int num1 = sc.nextInt();
+		int num2 = sc.nextInt();
+		char chk = sc.next().charAt(0);
+		
+		Calc calc = null;
+		
+		switch(chk) {
+		case '+':
+			calc = new Add();
+			break;
+		case '-':
+			calc = new Sub();
+			break;
+		case '*':
+			calc = new Mul();
+			break;
+		case '/':
+			calc = new Div();
+			break;
+		default:
+			System.out.println("바른 값을 입력하세요.");
+			break;
+		}
+		
+		calc.set(num1, num2);
+		System.out.printf("답: %.2f", calc.calculate());
+		
+	}
+}
+*/
 
 /*
  * 3. 사용자로부터 배열의 크기를 입력받아 int형 배열을 생성한다.
@@ -129,24 +200,18 @@ public class Test0527 {
  *	성적은 0-100점 사이의 값을 갖을 수 있다.
  *	생성된 성적 값을 화면에 출력한다.
  *	구현할 때 .length를 사용해라
-
+ */
 
 public class Test0527 {
 	public static void main(String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("배열 크기:");
 		int size = sc.nextInt();
 		
 		int[] score = new int[size];
 		for(int i=0; i<score.length; i++) {
-			score[i] = (int) (Math.random()*100);
-		}
-		
-		for (int i = 0; i < score.length; i++) {
+			score[i] = (int) (Math.random()*101);
 			System.out.print(score[i] +" ");
 		}
-
 	}
 }
- */
