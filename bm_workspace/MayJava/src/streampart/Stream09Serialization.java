@@ -41,7 +41,7 @@ class Stu implements Serializable{
 	
 }
 
-public class Stram09Serialization {
+public class Stream09Serialization {
 	public static void main(String[] args) throws IOException {
 		
 	/* 颇老 积己 - 历厘 
