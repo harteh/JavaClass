@@ -17,14 +17,14 @@ public class Review0526A {
 	public static void main(String[] args) {
 
 		Point p = new Point(3, 4);
-		System.out.println(p);	//3, 4異쒕젰
+		System.out.println(p);	//3, 4출력
 	}
 }
 */
 
 /*
- * 2 二쇰�쇰쾲�샇 ��841111-1234560�앹쓣 珥덇린�솕�븯�뿬 �뿬�꽦�씤吏� �궓�꽦�씤吏� 異쒕젰
- * (7踰덉㎏ �닽�옄媛� 1�씠硫� �궓�꽦, 2�씠硫댁뿬�꽦 �� switch case�궗�슜)
+ * 2 주민번호 “841111-1234560”을 초기화하여 여성인지 남성인지 출력
+ * (7번째 숫자가 1이면 남성, 2이면여성 – switch case사용)
 
 public class Review0526A {
 	public static void main(String[] args) {
@@ -32,10 +32,10 @@ public class Review0526A {
 
 		switch (num.charAt(7)) {
 		case '1':
-			System.out.println("�궓�꽦");
+			System.out.println("남성");
 			break;
 		case '2':
-			System.out.println("�뿬�꽦");
+			System.out.println("여성");
 
 		default:
 			break;
@@ -71,7 +71,7 @@ public class Review0526A {
 */
 
 /*
- * 3	Tv�겢�옒�뒪��main()瑜� 蹂닿퀬 Tv�겢�옒�뒪瑜� �긽�냽諛쏆� Tv1�겢�옒�뒪瑜쇱옉�꽦
+ * 3	Tv클래스와main()를 보고 Tv클래스를 상속받은 Tv1클래스를작성
  
 class Tv{
 	private int size;
@@ -89,14 +89,14 @@ class Tv1 extends Tv {
 		this.name=name;
 	}
 	void show(){
-		System.out.println(name+" "+ getsize() +"�씤移� Tv");
+			System.out.println(name+" "+ getsize() +"인치 Tv");
 	}
 }
 
 public class Review0526A {
 	public static void main(String[] args) {
-		Tv1 t = new Tv1(20, "�궪�꽦");
-		t.show();		//�궪�꽦 20�씤移� Tv 異쒕젰
+		Tv1 t = new Tv1(20, "삼성");
+		t.show();		//삼성 20인치 Tv 출력
 	}
 }
 */
@@ -145,7 +145,7 @@ public class Review0526A {
 */
 
 /*
- * 5	main(), XY�겢�옒�뒪瑜� 蹂닿퀬 XY瑜� �긽�냽諛쏅뒗 XYZ �겢�옒�뒪瑜� �옉�꽦
+ *  * 5	main(), XY클래스를 보고 XY를 상속받는 XYZ 클래스를 작성
 
 class XY{
 	private int x,y;
@@ -160,7 +160,7 @@ class XY{
 	int gety(){
 		return y;
 	}
-	protected void move(int x, int y){	//珥덇린�솕�븯�뒗 �븿�닔
+	protected void move(int x, int y){	//초기화하는 함수
 		this.x=x;
 		this.y=y;
 	}
@@ -170,23 +170,22 @@ class XYZ extends XY {
 	private String z;
 	
 	XYZ(int a, int b, String z){
-		super(a, b);	//遺�紐� �깮�꽦�옄 �샇異�
-		this.z=z;		//z 珥덇린�솕
+		super(a, b);	//부모 생성자 호출
+		this.z=z;		//z 초기화
 	}
 	
-	void setxy(int a, int b) {	//�꽭�똿�씠�씪�꽌 諛섑솚�삎 遺덊븘�슂
+	void setxy(int a, int b) {	//세팅이라서 반환형 불필요
 		move(a, b);
-		//super.move(a,b);	�룞�씪�븿
+		//super.move(a,b);	동일함
 	}
-	void setcolor(String z) {	//�깋�긽 珥덇린�솕
+	void setcolor(String z) {	//색상 초기화
 		this.z = z;
 	}
 	
-	void show() {	//異쒕젰�븿�닔
-		System.out.println(getx()+", "+ gety()+" "+ z+"�깋!");
+	void show() {	//출력함수
+		System.out.println(getx()+", "+ gety()+" "+ z+"색!");
 	}
 }
-
 public class Review0526A {
 	public static void main(String[] args) {
 		
@@ -194,7 +193,7 @@ public class Review0526A {
 		
 		xyz.setxy(20,30);
 		xyz.setcolor("blue"); 
-		xyz.show();		// 20, 30�씤 blue�깋!
+		xyz.show();		// 20, 30인 blue색!
 	}
 }
 */
@@ -204,29 +203,26 @@ public class Review0526A {
  * (인터페이스명은 Re, 
  * 모든 메소들들을 인터페이스안에서 선언하고 
  * show함수는 default로 설정,area는 abstract로 설정)
-
 interface Re {
 	default void show() {
-		System.out.println("�궗媛곹삎!!");
+		System.out.println("사각형!!");
 	}
 	public int area();
 }
-
 class Rec implements Re {
 	int a, b;
-	Rec(int a, int b){	//�깮�꽦�옄
+	Rec(int a, int b){	//생성자
 		this.a=a;		this.b=b;
 	}
 	public int area() {
 		return a*b;
 	}
 }
-
 public class Review0526A {
 	public static void main(String[] args) {
 		Re r = new Rec(10, 20);
-		r.show();		//"�궗媛곹삎!!" 異쒕젰
-		System.out.println("硫댁쟻:" + r.area());
+		r.show();		//"사각형!!" 출력
+		System.out.println("면적:" + r.area());
 	}
 }
 */
@@ -236,7 +232,7 @@ public class Review0526A {
  */
 class Profile {
 	String name, id;
-	
+
 	Profile(String n, String i){
 		name = n;	id = i;
 	}
@@ -244,23 +240,23 @@ class Profile {
 
 public class Review0526A {
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		Profile pro[] = new Profile[2];
-		
+
 		for(int i=0; i<pro.length; i++) {
-			System.out.println("�씠由�:");
+			System.out.println("이름:");
 			String n = sc.next();
 			System.out.println("ID:");
 			String id = sc.next();
-			
+
 			pro[i] = new Profile(n, id);
 		}
-		
+
 		for (Profile profile : pro) {
 			System.out.println(profile.name+" "+profile.id);
 		}
-		
+
 	}
 }
