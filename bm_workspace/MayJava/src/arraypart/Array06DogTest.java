@@ -1,5 +1,7 @@
 package arraypart;
 
+import java.util.ArrayList;
+
 //p.230 Q4
 class Dog {
 	private String name;
@@ -26,11 +28,12 @@ class Dog {
 	String showDogInfo() {
 		return name +", "+ type;
 	}
-	
 }
+
 public class Array06DogTest {
 	public static void main(String[] args) {
 
+		/*
 		Dog[] dogArray = new Dog[5];
 		
 		dogArray[0] = new Dog("È£µÎ", "¸»Æ¼Áî");
@@ -45,5 +48,22 @@ public class Array06DogTest {
 		for(Dog d : dogArray) {
 			System.out.println(d.showDogInfo());
 		}
+		*/
+		
+		//p.230 Q5
+		ArrayList<Dog> dog = 
+				new ArrayList<Dog>();
+		
+		dog.add(new Dog("È£µÎ", "¸»Æ¼Áî"));
+		dog.add(new Dog("¼ØÀÌ", "Áøµ¾°³"));
+		dog.add(new Dog("Àç·ÕÀÌ", "»ð»ì°³"));
+		dog.add(new Dog("Âý½Ò", "»þ¸ð¿¡µå"));
+		dog.add(new Dog("ÅºÀÌ", "½Ã¹Ù°ß"));
+		
+		for(int i=0; i<dog.size(); i++) {
+			Dog d2 = dog.get(i);
+			System.out.println( d2.showDogInfo() );
+		}
+		
 	}
 }
