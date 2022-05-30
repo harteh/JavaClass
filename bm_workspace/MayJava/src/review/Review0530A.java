@@ -3,6 +3,7 @@ package review;
 /*
  * 1.	Interface를 상속받은 Calcu클래스를 작성해라. 
  * Main()에서 a,b에 대해 적절한 값을 설정해라.
+ *  
 
 interface Cal {
 	int total(int a, int b); 	//a부터 b까지의 합 리턴
@@ -30,7 +31,7 @@ public class Review0530A {
 		ca.big(3, 10);
 	}
 }
-*/
+
 /*
  * 2.	Main()를 보고 “쓰레드1”을 출력하시오
 
@@ -59,11 +60,11 @@ public class Review0530A {
 
 class Timer extends Thread {
 	public void run() {
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<=10; i++) {
+			System.out.println(i);
 			try {
 				sleep(1000);
 			} catch (Exception e) { }
-			System.out.println(i+1);
 		}
 	}
 }
@@ -78,7 +79,7 @@ public class Review0530A {
  * 4.	다음 코드를 보고 AThread클래스를 작성해라. 
  * (1부터 100까지 합 출력)
  * 두 쓰레드가 충돌하지 않게 join()도 활용해라.
-
+ */
 class Total{
 	int sum;
 	Total() {
@@ -91,19 +92,20 @@ class Total{
 		return sum; 
 	}
 }
+
 class AThread extends Thread {
+	Total t;
 	int a, b;
-	int sum;
 	
 	AThread (Total t, int a, int b) {
-		for (int i=a; i < b; i++) {
+		this.t=t;	this.a=a;	this.b=b;
+	}
+		
+	public void run() {
+		for (int i=a; i <= b; i++) {
 			t.total(i);
 		}
-		sum = t.get();
-	}
-	
-	public synchronized void run() {
-		System.out.println(sum);
+		System.out.println( t.get() );
 	}	
 }
 
@@ -111,19 +113,23 @@ public class Review0530A {
 	public static void main(String[] args) {
 
 		Total t=new Total();
-		AThread a=new AThread(t, 1, 50);
-		AThread b=new AThread(t, 51, 100);
-		a.start(); b.start();
+		AThread a=new AThread(t, 1, 50);	//1275
+		AThread b=new AThread(t, 51, 100);	//3775
 
+		a.start();
+		try {
+			a.join();
+		} catch (Exception e) {}
+		b.start();
+		
 	}
 }
-*/
+
 
 /*
  * 5.	main()에 이렇게 주고, Figure인터페이스 만들어 
  * 	circle_area()에는 원면적, 
  * 	rec_area()에는 사각형 면적 출력해라.
- */
 
 interface Figure {
 	public void circle_area();
@@ -169,3 +175,4 @@ public class Review0530A {
 
 	}
 }
+*/
