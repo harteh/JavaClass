@@ -1,3 +1,4 @@
+package beakjoonJava;
 import java.util.Scanner;
 
 /**
