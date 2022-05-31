@@ -56,7 +56,18 @@ package javaReview;
  * - 박싱(Boxing): 기본타입을 객체형으로 바꾸는 것
  * - 언박싱: 객체형을 기본형으로 꺼내는 것 
  * valueOf(), parseInt() : 클래스 메서드의 일종
- * 
+ */
+/*
+ ** 14장
+ * Exception 클래스: 예외 클래스의 최상위 클래스
+ ** 예외처리 미루기
+ *	throws: 예외처리를 메서드가 호출될 때 처리하도록 미룸 
+ */
+/*
+ ** 15장
+ * InputStream : 입력 => 파일을 읽어 들일 때 사용
+ * 	
+ * OutputStream : 저장 => 파일 생성
  */
 
 /*
@@ -139,8 +150,8 @@ public class TotalRe0531A2 {
 }
 */
 /*
- * 
- */
+ * Wrapper 클래스
+ *
 public class TotalRe0531A2 {
 	public static void main(String[] args) {
 
@@ -148,5 +159,24 @@ public class TotalRe0531A2 {
 		int my = i.intValue(); // 기본타입으로 변경: 언박싱
 		Float f = new Float((double)3.14);
 		int num = Integer.parseInt("100");
+	}
+}
+*/
+/*
+ * 예외처리
+ */
+public class TotalRe0531A2 {
+	public static void main(String[] args) {
+		String[] str = {"35", "54", "234", "3.14"};
+		try {
+			for(int i=0; i<str.length; i++) {
+				int j = Integer.parseInt(str[i]);
+				//문자열을 꺼내서 int타입으로 바꿈
+				System.out.println(j);
+			}
+		}
+		catch(Exception e) {
+			System.out.println("예외발생");
+		}
 	}
 }
