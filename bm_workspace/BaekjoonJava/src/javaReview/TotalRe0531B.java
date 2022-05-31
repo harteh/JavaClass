@@ -8,8 +8,16 @@ import java.util.Scanner;
  * p.65, 68
  * 3.4.5
  * p.123 문제풀기 - 새파일(TotalRe0531C)로 저장
- * p. 157,158
- * 
+ * p.157, 158
+ * p.172, 173
+ * p.175-179 (?)
+ * p.182, 183
+ * p.207, 208, 209, 210, 218
+ * p.260
+ * P.279 Q5
+ ** p.298 ~ 304
+ * p. 322-325
+ * p. 354, 356
  * 
  */
 
@@ -95,19 +103,20 @@ public class TotalRe0531B {
 }
  */
 /*
- * 
+ * 키보드로 정수 5개 입력받아 가장 큰수 출력
+ *
 public class TotalRe0531B {
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in);
+		int max;
+		int[] arr = new int[5];
 	}
 }
- */
+*/
 /*
  * 
  */
 public class TotalRe0531B {
 	public static void main(String[] args) {
-
-
 	}
 }
