@@ -18,15 +18,25 @@ import java.util.Scanner;
  * -> =128 ~ 127까지의 범위를 가진다.
  * 
  * 답인 227은 범위를 넘어가게 된다. -> 오버플로우 발생
- * 
+ */
 public class PageEtc {
 	public static void main(String[] args) {
 		byte b = 127;
 		int i = 100;
-		System.out.println((byte)(b+i));
+		int sum = b+i;
+		System.out.println((byte)(sum));	//227이 아니라 -29가 나온다
+		
+		String binaryString = Integer.toBinaryString(sum);	// -29를 2진수로 바꾸면 11100011
+		System.out.println(binaryString);
+		
+		byte c = 29;
+		String bs1 = Integer.toBinaryString(c);		// -29의 2의 보수는 11101 이 된다. 
+		System.out.println(bs1);
+		int binaryToDecimal = Integer.parseInt(bs1, 2);	//이를 다시 10진수로 바꾸면 29.
+		System.out.println(binaryToDecimal);
 	}
 }
- */
+
 /*
  * 4. p.109참고
  * while문 이용해서 입력받은 값의 합을 출력.
@@ -77,7 +87,7 @@ public class PageEtc {
 */
 /*
  * 6. 키보드로 정수 5개 입력받아 가장 큰수 출력
- */
+ *
 public class PageEtc {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -95,3 +105,4 @@ public class PageEtc {
 		System.out.println("최대값: "+max);
 	}
 }
+*/
