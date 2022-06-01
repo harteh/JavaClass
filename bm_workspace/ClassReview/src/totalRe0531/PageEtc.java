@@ -5,9 +5,9 @@ import java.util.Scanner;
 /*
  * 3 범위 초과 
  * 4 while
- * 5 구구단
- * * 입력한 숫자의 개수를 출력
- * * 가장 큰 수 출력
+ * * 구구단
+ * 5 입력한 숫자의 개수를 출력
+ * 6 가장 큰 수 출력
  */
 /*
  * 3. 
@@ -46,7 +46,7 @@ public class PageEtc {
 }
 */
 /*
- * 5. 구구단
+ * *. 구구단
 public class PageEtc {
 	public static void main(String[] args) {
 		for(int i=2; i<=9; i++) {
@@ -59,8 +59,7 @@ public class PageEtc {
 }
 */
 /*
- * while, break문을 사용해 0이 입력될때까지 
- * 입력한 숫자의 개수를 출력
+ * 5. while, break문을 사용해 0이 입력될때까지 입력한 숫자의 개수를 출력
  *
 public class PageEtc {
 	public static void main(String[] args) {
@@ -77,12 +76,22 @@ public class PageEtc {
 }
 */
 /*
- * 키보드로 정수 5개 입력받아 가장 큰수 출력
+ * 6. 키보드로 정수 5개 입력받아 가장 큰수 출력
  */
 public class PageEtc {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int max;
+
 		int[] arr = new int[5];
+		int max = arr[0];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+			System.out.println(arr[i]);
+			if(max < arr[i]) {
+				max = arr[i];
+			}
+		}
+		System.out.println("최대값: "+max);
 	}
 }
