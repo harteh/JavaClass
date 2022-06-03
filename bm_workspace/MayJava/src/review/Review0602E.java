@@ -92,24 +92,24 @@ class Rectangle {
 
 public class Review0602E {
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("정수 입력");
-		
+		Rectangle rec = new Rectangle();
+
 		int width, height;
-		
 		while(true) {
 			try {
+				System.out.println("너비, 높이 입력:");
 				width = sc.nextInt();
 				height = sc.nextInt();
 				break;
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-				sc.next();
+				sc.next();	//지우기
 				continue;
 			}
 		}
 		
-		Rectangle rec = new Rectangle();
 		rec.setWidth(width);
 		rec.setHeight(height);
 		rec.area();
