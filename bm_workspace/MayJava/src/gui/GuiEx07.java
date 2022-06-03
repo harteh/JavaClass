@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -41,7 +42,7 @@ public class GuiEx07 extends JFrame {
 		});
 		//b2.setEnabled(false);	//버튼 비활성화
 		
-		
+		c.setBackground(Color.DARK_GRAY);
 		setSize(500, 300);
 		setVisible(true);
 	}
