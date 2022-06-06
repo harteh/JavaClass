@@ -1,0 +1,81 @@
+
+1.	10/4 한 결과값을 소수점까지 출력해라
+2.	while문을 이용해서 1부터 100까지 정수 중 5의배수의 총합을 출력
+3.	0~30까지 수 중에서 5의 배수를 제외하고 출력해라.
+	(무한 반복문과 break, continue를 다 사용하여 출력)
+4.	main함수를 보고 adder, exp 함수를 작성해라.
+	main(){
+		int result=adder(10,20); //두 수의 합 출력
+		System.out.println(result);
+		System.out.println(exp(3.5));  //3.5의 제곱한 값 출력 
+	}
+5.	equals(두 원의 면적이 같은지 비교), toString메소드를 사용하여 완성시켜라.
+	(반지름이 30임)
+	main(){
+		Circle a=new Circle(30);
+		Circle b=new Circle(30);
+		System.out.println("반지름"+a);
+		System.out.println("반지름"+b);
+		if(a.equals(b)) {
+		System.out.println("같은 원"); }
+		else {
+		System.out.println("다른 원");} 
+	}
+
+6.	Scanner로 입력 받은 이름(문자열), id(문자열)를 한 줄마다 파일(test02.txt)에 저장해라.
+	“그만” 입력하면 종료시켜라. 
+	“그만” 입력하기 전까지의 문자열을 파일에 저장해라.(break, FileWriter 사용)
+		실행 결과) 홍길동 hong
+		이길동 lee
+		그만	
+
+7.	Tv클래스와main()를 보고 Tv클래스를 상속받은 Tv1클래스를작성해라.
+	class Tv{
+		private int size;
+		Tv(int size){
+			this.size=size; 
+		}
+		protected intgetsize(){
+			return size; 
+		}
+	}
+	main(){
+		Tv1 t=new Tv1(20, “삼성”);
+		t.show();	 //삼성 20인치 Tv 출력
+	}
+8.	main()를 보고 클래스를 작성해라.
+	main(){
+		Point p = new Point(3,4);
+		System.out.println(p); //3.4출력
+	}
+9.	main()를 보고 인터페이스를 작성해라. 
+	(인터페이스명은 Re, 모든 메소들들을 인터페이스안에서 선언하고 
+	show함수는 default로 설정,area는 abstract로 설정)
+	main(){
+		Re r=new Rec(10,20);
+		r.show(); //"사각형!!" 출력
+		System.out.println(“면적” + r.area());
+	}
+	실행결과) 사각형!!
+	면적 200
+10.	다음 main함수를 보고 작성해라.
+	main(){
+		Book b1=new Book(“멋진 신세계”, “올더스헉슬리”);
+		Book b2=new Book(“더 해빙”);
+		Book b3=new Book(); 
+	}
+	실행 결과) 멋진 신세계 올더스헉슬리
+	더 해빙 작가 미상
+	생성자 호출!!
+	
+11.	Boolean 값 false를 “false”라는 문자열로 변환해라.
+12.  문자열 “36.5”를 double 타입 실수로 변환해라.
+13.  문자열 “35”를 정수 35로 변환해라.
+
+14. 다음 main()를 보고 추상 클래스와추상메소드 작성해라.
+	(total 함수는 배열 값(1,2,3,4,5) 총합 리턴받는 함수)
+	main(){
+		Ab c=new Cd();
+		System.out.println(c.total(new int []{1,2,3,4,5}));
+	}
+
