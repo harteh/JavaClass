@@ -9,13 +9,14 @@ public class GuiEx03 {
 	public static void main(String[] args) {
 
 		JFrame j = new JFrame();
-		j.setLayout(new BorderLayout());
+//		j.setLayout(new BorderLayout());
+		j.setLayout(new BorderLayout(100, 20));		//hgap, vgap
 		
-		j.add(new JButton("µ¿"), BorderLayout.EAST);
-		j.add(new JButton("¼­"), BorderLayout.WEST);
-		j.add(new JButton("³²"), BorderLayout.SOUTH);
-		j.add(new JButton("ºÏ"), BorderLayout.NORTH);
-		j.add(new JButton("Áß¾Ó"), BorderLayout.CENTER);
+		j.add(new JButton("east"), BorderLayout.EAST);
+		j.add(new JButton("west"), BorderLayout.WEST);
+		j.add(new JButton("south"), BorderLayout.SOUTH);
+		j.add(new JButton("north"), BorderLayout.NORTH);
+		j.add(new JButton("center"), BorderLayout.CENTER);
 		
 		j.setSize(300, 300);
 		j.setVisible(true);
