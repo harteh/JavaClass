@@ -1,4 +1,4 @@
-package pageReview;
+package pageReview0610;
 
 import java.util.Comparator;
 import java.util.Set;
@@ -29,7 +29,7 @@ class Member2 implements Comparator<Member2>{
 	
 	@Override
 	public String toString() {
-		return memberName+" È¸¿ø´ÔÀÇ ¾ÆÀÌµð´Â "+memberId+" ÀÔ´Ï´Ù.";
+		return memberName+" È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ "+memberId+" ï¿½Ô´Ï´ï¿½.";
 	}
 	
 	@Override
@@ -54,7 +54,7 @@ class Member2 implements Comparator<Member2>{
 //p.437
 class MyCompare implements Comparator<String>{
 	public int compare(String s1, String s2) {
-		return(s1.compareTo(s2)) * -1;	//³»¸²Â÷¼ø Á¤·Ä
+		return(s1.compareTo(s2)) * -1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 }
 public class Page436 {

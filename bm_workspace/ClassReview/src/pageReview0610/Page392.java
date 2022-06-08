@@ -1,25 +1,25 @@
-package pageReview;
+package pageReview0610;
 
 //392-394
 class Powder {
 	void doPrinting() {
-		System.out.println("ÆÄ¿ì´õ Àç·á·Î Ãâ·Â");
+		System.out.println("ï¿½Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
 	}
 	public String toString() {
-		return "Àç·á´Â ÆÄ¿ì´õ ÀÔ´Ï´Ù.";
+		return "ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.";
 	}
 }
 
 class Plastic {
 	void doPrinting() {
-		System.out.println("ÇÃ¶ó½ºÆ½ Àç·á·Î Ãâ·Â");
+		System.out.println("ï¿½Ã¶ï¿½Æ½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
 	}
 	public String toString() {
-		return "Àç·á´Â ÇÃ¶ó½ºÆ½ ÀÔ´Ï´Ù.";
+		return "ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½Æ½ ï¿½Ô´Ï´ï¿½.";
 	}
 }
 
-//GenericPrinter<T> Á¤ÀÇÇÏ±â
+//GenericPrinter<T> ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 class GenericPrinter<T> {
 	private T material;
 	

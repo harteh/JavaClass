@@ -1,4 +1,4 @@
-package pageReview;
+package pageReview0610;
 
 import java.util.HashSet;
 
@@ -28,13 +28,13 @@ class Member {
 	
 	@Override
 	public String toString() {
-		return memberName+" È¸¿ø´ÔÀÇ ¾ÆÀÌµð´Â "+memberId+"ÀÔ´Ï´Ù.";
+		return memberName+" È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ "+memberId+"ï¿½Ô´Ï´ï¿½.";
 	}
 	
 	//p.427
 	@Override
 	public int hashCode() {
-		return memberId;	//È¸¿øID¸¦ ¹ÝÈ¯ÇÏµµ·Ï ÀçÁ¤ÀÇ
+		return memberId;	//È¸ï¿½ï¿½IDï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	@Override
@@ -72,16 +72,16 @@ public class Page407 {
 		// p.426
 		MemberHashSet memberHashSet = new MemberHashSet();
 		
-		Member memberLee = new Member(1001, "ÀÌÁö¿ø");
-		Member memberSon = new Member(1002, "¼Õ¹Î±¹");
-		Member memberPark = new Member(1003, "¹Ú¼­¿ø");
+		Member memberLee = new Member(1001, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		Member memberSon = new Member(1002, "ï¿½Õ¹Î±ï¿½");
+		Member memberPark = new Member(1003, "ï¿½Ú¼ï¿½ï¿½ï¿½");
 		
 		memberHashSet.addMember(memberLee);
 		memberHashSet.addMember(memberSon);
 		memberHashSet.addMember(memberPark);
 //		memberHashSet.showAllMember();
 		
-		Member memberHong = new Member(1003, "È«±æµ¿");
+		Member memberHong = new Member(1003, "È«ï¿½æµ¿");
 		memberHashSet.addMember(memberHong);
 		memberHashSet.showAllMember();
 

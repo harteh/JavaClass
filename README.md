@@ -4,6 +4,7 @@ class
 ## [수업 내용](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src)
 + [입출력](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/streampart)
 + [컬랙션프레임워크](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/collection)
++ [awt Frame](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/awtFrame)
 + [GUI](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/gui)
 + [추상메서드](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/abstractex)
 + [배열](https://github.com/harteh/JavaClass/tree/main/bm_workspace/MayJava/src/arraypart)
