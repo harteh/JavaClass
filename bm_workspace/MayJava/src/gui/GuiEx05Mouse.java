@@ -31,8 +31,6 @@ public class GuiEx05Mouse  {
 		f.setSize(500, 250);
 		f.setVisible(true);
 		
-		
-		
 		new GuiEx05Mouse();
 	}
 }
