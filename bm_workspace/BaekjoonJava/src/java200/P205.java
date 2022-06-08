@@ -2,7 +2,7 @@ package java200;
 
 import java.util.Scanner;
 
-public class test01 {
+public class P205 {
 
 	public static void main(String[] args) {
 
@@ -47,6 +47,36 @@ public class test01 {
 				min = point[i];
 		}
 		System.out.printf("최고점 = %d점, 최저점 = %d점\n", max, min);
+		
+		System.out.println();
+		System.out.println("********** p.218 **********");
+		
+		//배열에서 특정 값 찾기
+		System.out.println("배열 크기: ");
+		int n1 = sc.nextInt();
+		int[] arr1 = new int[n1];
+		
+		for(int i=0; i<arr1.length; i++) {
+			arr1[i] = sc.nextInt();	//배열에 값 입력
+		}
+		
+		System.out.println("찾을 값: ");
+		int sch = sc.nextInt();
+		
+		int i=0;
+		for(i=0; i<arr1.length; i++ ) {
+			if( arr1[i] == sch) {
+				break;
+			}
+		}
+		
+		if(i < n1) {
+			System.out.println("그 값은 "+i+" 에 있음 ");
+		}
+		else {
+			System.out.println(" 없는 값임");
+		}
+		
 		
 		
 		
