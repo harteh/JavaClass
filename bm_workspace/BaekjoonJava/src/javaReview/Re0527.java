@@ -4,45 +4,44 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
- * Á¢±ÙÁ¦¾îÀÚ
+ * ì ‘ê·¼ì œì–´ì
  * 	private -> default -> protected -> public
- * 		private : ÇØ´ç Å¬·¡½º¿¡¼­¸¸ Á¢±Ù °¡´É
- * 		default : ÇØ´ç ÆĞÅ°Áö¿¡¼­¸¸ Á¢±Ù °¡´É
- * 		protected : µ¿ÀÏ ÆĞÅ°Áö & ÇØ´ç Å¬·¡½º¸¦ »ó¼Ó¹ŞÀº ´Ù¸¥ ÆĞÅ°Áö¿¡¼­ Á¢±Ù°¡´É
- * 		public : ¾î¶² Å¬·¡½º¿¡¼­µµ Á¢±Ù °¡´É
+ * 		private : í•´ë‹¹ í´ë˜ìŠ¤ì—ì„œë§Œ ì ‘ê·¼ ê°€ëŠ¥
+ * 		default : í•´ë‹¹ íŒ¨í‚¤ì§€ì—ì„œë§Œ ì ‘ê·¼ ê°€ëŠ¥
+ * 		protected : ë™ì¼ íŒ¨í‚¤ì§€ & í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì€ ë‹¤ë¥¸ íŒ¨í‚¤ì§€ì—ì„œ ì ‘ê·¼ê°€ëŠ¥
+ * 		public : ì–´ë–¤ í´ë˜ìŠ¤ì—ì„œë„ ì ‘ê·¼ ê°€ëŠ¥
  * 
- * this : ÀÎ½ºÅÏ½º ÀÚ½ÅÀ» °¡¸®Å°´Â ÂüÁ¶º¯¼ö
- * this() : »ı¼ºÀÚ
+ * this : ì¸ìŠ¤í„´ìŠ¤ ìì‹ ì„ ê°€ë¦¬í‚¤ëŠ” ì°¸ì¡°ë³€ìˆ˜
+ * this() : ìƒì„±ì
  * 	
- *  this ÂüÁ¶ º¯¼ö¸¦ »ç¿ëÇÏ¿© ÀÎ½ºÅÏ½º º¯¼ö¿¡ Á¢±Ù °¡´É.
- *  - ÀÎ½ºÅÏ½º ¸Ş¼Òµå¿¡¼­¸¸ »ç¿ë°¡´É
- *  - !!Å¬·¡½º ¸Ş¼Òµå¿¡¼­´Â »ç¿ë ºÒ°¡
+ *  this ì°¸ì¡° ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ì— ì ‘ê·¼ ê°€ëŠ¥.
+ *  - ì¸ìŠ¤í„´ìŠ¤ ë©”ì†Œë“œì—ì„œë§Œ ì‚¬ìš©ê°€ëŠ¥
+ *  - !!í´ë˜ìŠ¤ ë©”ì†Œë“œì—ì„œëŠ” ì‚¬ìš© ë¶ˆê°€
  *  
- *  this() : °°Àº Å¬·¡½ºÀÇ ´Ù¸¥ »ı¼ºÀÚ¸¦ È£ÃâÇÒ ¶§ »ç¿ë
- *   - »ı¼ºÀÚ ³»ºÎ¿¡¼­¸¸ »ç¿ë°¡´É
+ *  this() : ê°™ì€ í´ë˜ìŠ¤ì˜ ë‹¤ë¥¸ ìƒì„±ìë¥¼ í˜¸ì¶œí•  ë•Œ ì‚¬ìš©
+ *   - ìƒì„±ì ë‚´ë¶€ì—ì„œë§Œ ì‚¬ìš©ê°€ëŠ¥
  ********
  * super 
- * 	: ºÎ¸ğ Å¬·¡½ºÀÇ ¸â¹ö¿¡ Á¢±Ù °¡´É
- * 	 ÀÎ½ºÅÏ½º ¸Ş¼Òµå¿¡¸¸ »ç¿ë°¡´É, Å¬·¡½º ¸Ş¼Òµå¿¡ »ç¿ë ºÒ°¡.
- * super() ¸Ş¼Òµå
- * 	: ºÎ¸ğ Å¬·¡½ºÀÇ »ı¼ºÀÚ È£Ãâ
+ * 	: ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ë©¤ë²„ì— ì ‘ê·¼ ê°€ëŠ¥
+ * 	 ì¸ìŠ¤í„´ìŠ¤ ë©”ì†Œë“œì—ë§Œ ì‚¬ìš©ê°€ëŠ¥, í´ë˜ìŠ¤ ë©”ì†Œë“œì— ì‚¬ìš© ë¶ˆê°€.
+ * super() ë©”ì†Œë“œ
+ * 	: ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ìƒì„±ì í˜¸ì¶œ
  *
  */
 /*
  * 1.
-
 class Book {
-	private String title, author;	//ÀÎ½ºÅÏ½º º¯¼ö
+	private String title, author;	//ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
 	
 	Book(String title, String author) {
 		this.title=title;	this.author=author;
 		info();
 	}
 	Book(String t){
-		this(t, "ÀÛÀÚ ¹Ì»ó");
+		this(t, "ì‘ì ë¯¸ìƒ");
 	}
 	Book(){
-		this("»ı¼ºÀÚ È£Ãâ!", "");
+		this("ìƒì„±ì í˜¸ì¶œ!", "");
 	}
 	void info() {
 		System.out.println(title +" "+ author);
@@ -51,15 +50,14 @@ class Book {
 }
 public class Re0527 {
 	public static void main(String[] args) {
-		Book b1 = new Book("¸ÚÁø ½Å¼¼°è", "¿Ã´õ½º Çä½½¸®");
-		Book b2 = new Book("´õ ÇØºù");
+		Book b1 = new Book("ë©‹ì§„ ì‹ ì„¸ê³„", "ì˜¬ë”ìŠ¤ í—‰ìŠ¬ë¦¬");
+		Book b2 = new Book("ë” í•´ë¹™");
 		Book b3 = new Book();
 	}
 }
 */
 /*
  * 2 
-
 class Friend {
 	private String name;
 	private String phone;
@@ -71,7 +69,6 @@ class Friend {
 		return name+" "+phone;
 	}
 }
-
 class ITFriend extends Friend {
 	private String major;
 	
@@ -84,17 +81,15 @@ class ITFriend extends Friend {
 		System.out.println( major+" "+super.get() );
 	}
 }
-
 public class Re0527 {
 	public static void main(String[] args) {
-		ITFriend it = new ITFriend("È«±æµ¿", "010-111-1111", "ÄÄÇ»ÅÍ");
+		ITFriend it = new ITFriend("í™ê¸¸ë™", "010-111-1111", "ì»´í“¨í„°");
 		it.show();
 	}
 }
 */
 /*
  * 3 
-
 public class Re0527 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -105,23 +100,22 @@ public class Re0527 {
 		for(int i=0; i<5; i++) {
 			try {
 				num = sc.nextInt();
-				System.out.println((i+1)+"¹øÂ° Á¤¼ö: "+num);
+				System.out.println((i+1)+"ë²ˆì§¸ ì •ìˆ˜: "+num);
 				sum+=num;
 			}
 			catch(InputMismatchException  e) {
-				System.out.println("Á¤¼ö¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("ì •ìˆ˜ë§Œ ì…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 				sc.next();
 				i--;
 				continue;
 			}
 		}
-		System.out.println("ÃÑÇÕ: "+sum);
+		System.out.println("ì´í•©: "+sum);
 	}
 }
 */
 /*
  * 4 
-
 public class Re0527 {
 	public static void main(String[] args) {
 		Double num1 = new Double(9.5);
@@ -132,7 +126,6 @@ public class Re0527 {
 */
 /*
  * 5 
-
 class Circle {
 	private int r;
 	
@@ -158,14 +151,14 @@ public class Re0527 {
 		Circle a = new Circle(30);
 		Circle b = new Circle(30);
 		
-		System.out.println("¹İÁö¸§: " +a);
-		System.out.println("¹İÁö¸§: " +b);
+		System.out.println("ë°˜ì§€ë¦„: " +a);
+		System.out.println("ë°˜ì§€ë¦„: " +b);
 		
 		if(a.equals(b)) {
-			System.out.println("°°Àº ¿ø");
+			System.out.println("ê°™ì€ ì›");
 		}
 		else {
-			System.out.println("´Ù¸¥ ¿ø");
+			System.out.println("ë‹¤ë¥¸ ì›");
 		}
 	}
 }
@@ -180,7 +173,7 @@ interface Po {
 
 class Point implements Po {
 	public void pr(int a, String b) {
-		System.out.println(b +"Ã¥Àº "+a+"¿ø");
+		System.out.println(b +"ì±…ì€ "+a+"ì›");
 	}
 	public void pr(String b) {
 		System.out.println(b);

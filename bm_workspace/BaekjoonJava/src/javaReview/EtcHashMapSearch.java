@@ -6,32 +6,33 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * HashMap À» ¸¸µç´Ù.
- * HashMap¿¡ µ¥ÀÌÅÍ Ãß°¡ÇÑ´Ù.
+ /**
+ * HashMap ì„ ë§Œë“ ë‹¤.
+ * HashMapì— ë°ì´í„° ì¶”ê°€í•œë‹¤.
  * 
- ** Ãâ·Â 
- * ¸ğµç Å° °ªµéÀ» (ÁıÇÕÇüÅÂ·Î) ¹Ş¾Æ¿Â´Ù
- * Å°¸¦ ±âÁØÀ¸·Î ¼øÈ¸ÇÏ¸ç ÀüÃ¼¸¦ Ãâ·ÂÇÑ´Ù.
+ ** ì¶œë ¥ 
+ * ëª¨ë“  í‚¤ ê°’ë“¤ì„ (ì§‘í•©í˜•íƒœë¡œ) ë°›ì•„ì˜¨ë‹¤
+ * í‚¤ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ìˆœíšŒí•˜ë©° ì „ì²´ë¥¼ ì¶œë ¥í•œë‹¤.
  * 
- ** ´Ü¾î°Ë»ö
- * ¹İº¹¹®À» ÀÌ¿ëÇØ¼­ °Ë»ö ±¸Çö
- * °Ë»ö¾î ÀÔ·Â¹Ş±â
- * °Ë»ö¾î(Å°) ¿¡ ÇØ´çÇÏ´Â °ª(Value)¸¦ ¹Ş¾Æ¿Í ÀúÀåÇÑ´Ù
+ ** ë‹¨ì–´ê²€ìƒ‰
+ * ë°˜ë³µë¬¸ì„ ì´ìš©í•´ì„œ ê²€ìƒ‰ êµ¬í˜„
+ * ê²€ìƒ‰ì–´ ì…ë ¥ë°›ê¸°
+ * ê²€ìƒ‰ì–´(í‚¤) ì— í•´ë‹¹í•˜ëŠ” ê°’(Value)ë¥¼ ë°›ì•„ì™€ ì €ì¥í•œë‹¤
  * 
- * °ªÀÌ ¾øÀ¸¸é "¾ø´Â ´Ü¾î"¸¦ Ãâ·ÂÇÏ°í
- * ÀÖÀ¸¸é °ªÀ» Ãâ·ÂÇÑ´Ù.
+ * ê°’ì´ ì—†ìœ¼ë©´ "ì—†ëŠ” ë‹¨ì–´"ë¥¼ ì¶œë ¥í•˜ê³ 
+ * ìˆìœ¼ë©´ ê°’ì„ ì¶œë ¥í•œë‹¤.
  */
 public class EtcHashMapSearch {
 	public static void main(String[] args) {
 
 		HashMap<String, String> h =
 				new HashMap<String, String>();
-		h.put("Ä¿ÇÇ", "coffee");
-		h.put("È«Â÷", "(black)tea");
-		h.put("¸ÆÁÖ", "beer");
+		h.put("ì»¤í”¼", "coffee");
+		h.put("í™ì°¨", "(black)tea");
+		h.put("ë§¥ì£¼", "beer");
 		
-		//¸ñ·Ï Ãâ·Â
-		System.out.println("°Ë»ö°¡´ÉÇÑ ´Ü¾î ¸ñ·Ï:");
+		//ëª©ë¡ ì¶œë ¥
+		System.out.println("ê²€ìƒ‰ê°€ëŠ¥í•œ ë‹¨ì–´ ëª©ë¡:");
 		Set<String> keys = h.keySet();
 		Iterator<String> it = keys.iterator();
 		while(it.hasNext()) {
@@ -40,19 +41,19 @@ public class EtcHashMapSearch {
 		}
 		System.out.println();
 		
-		//´Ü¾î°Ë»ö
+		//ë‹¨ì–´ê²€ìƒ‰
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-			System.out.println("'Á¾·á'¸¦ ÀÔ·ÂÇÏ¸é ¸ØÃä´Ï´Ù.");
-			System.out.println("Ã£À» ´Ü¾î ÀÔ·Â:");
+			System.out.println("'ì¢…ë£Œ'ë¥¼ ì…ë ¥í•˜ë©´ ë©ˆì¶¥ë‹ˆë‹¤.");
+			System.out.println("ì°¾ì„ ë‹¨ì–´ ì…ë ¥:");
 			String sch = sc.next();
 			String result = h.get(sch);
 			
 			if(result == null) {
-				if(sch.equals("Á¾·á")) {
+				if(sch.equals("ì¢…ë£Œ")) {
 					break;
 				}
-				System.out.println("¾ø´Â ´Ü¾î ÀÔ´Ï´Ù.");
+				System.out.println("ì—†ëŠ” ë‹¨ì–´ ì…ë‹ˆë‹¤.");
 			}
 			else {
 				System.out.println(sch+" = "+result);
