@@ -5,52 +5,6 @@ import java.util.HashSet;
 
 //p.407, 427
 //407,408,410,411,412
-class Member {
-	private int memberId;
-	private String memberName;
-	
-	Member(int memberId, String memberName) {
-		this.memberId = memberId;
-		this.memberName = memberName;
-	}
-	
-	int getMemberId() {
-		return memberId;
-	}
-	void setMemberId(int memberId) {
-		this.memberId = memberId;
-	}
-	
-	String getMemberName() {
-		return memberName;
-	}
-	void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
-	
-	@Override
-	public String toString() {
-		return memberName+" ȸ������ ���̵�� "+memberId+"�Դϴ�.";
-	}
-	
-	//p.427
-	@Override
-	public int hashCode() {
-		return memberId;	//ȸ��ID�� ��ȯ�ϵ��� ������
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		Member member = (Member)obj;
-		if(this.memberId == member.memberId) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-}
-
 //p.410
 class MemberArrayList {
 	private ArrayList<Member> arrayList;
@@ -84,8 +38,6 @@ class MemberArrayList {
 	}
 }
 
-//p.411,412
-
 
 //p.424
 class MemberHashSet {
@@ -105,23 +57,41 @@ class MemberHashSet {
 	}
 }
 
-public class Page407 {
+public class Page410 {
 	public static void main(String[] args) {
-		// p.426
+		// p.411,412
+		MemberArrayList memberArrayList = new MemberArrayList();
+		Member memberLee = new Member(1001, "이지원");
+		Member memberSon = new Member(1002, "손민국");
+		Member memberPark = new Member(1003, "박서훤");
+		Member memberHong = new Member(1004, "홍길동");
+		
+		memberArrayList.addMember(memberLee);
+		memberArrayList.addMember(memberSon);
+		memberArrayList.addMember(memberPark);
+		memberArrayList.addMember(memberHong);
+		
+		memberArrayList.showAllMember();
+		
+		memberArrayList.removeMember(memberHong.getMemberId());
+		memberArrayList.showAllMember();
+		
+		/* p.426
+		 *
 		MemberHashSet memberHashSet = new MemberHashSet();
 		
-		Member memberLee = new Member(1001, "������");
-		Member memberSon = new Member(1002, "�չα�");
-		Member memberPark = new Member(1003, "�ڼ���");
+		Member memberLee = new Member(1001, "이지원");
+		Member memberSon = new Member(1002, "손민국");
+		Member memberPark = new Member(1003, "박서훤");
 		
 		memberHashSet.addMember(memberLee);
 		memberHashSet.addMember(memberSon);
 		memberHashSet.addMember(memberPark);
-//		memberHashSet.showAllMember();
+		memberHashSet.showAllMember();
 		
-		Member memberHong = new Member(1003, "ȫ�浿");
+		Member memberHong = new Member(1003, "홍길동");
 		memberHashSet.addMember(memberHong);
 		memberHashSet.showAllMember();
-
+		*/
 	}
 }

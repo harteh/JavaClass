@@ -3,6 +3,7 @@ package awtFrame;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
@@ -83,13 +84,13 @@ public class MenuOrder extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					//확인버튼 클릭 시 상품의 구매가격을 출력한다
 					sum = price * cnt; 
-					System.out.println(sum);
 					jtPriceSum.setText(
 							menuName+" "+cnt+"잔\n총 "+sum+"원 \n");
 				}
 			});
 			
 			//setting
+			
 			add(jbMenu);
 			add(aPrice);
 			add(jbPlus);
@@ -164,7 +165,6 @@ public class MenuOrder extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					//확인버튼 클릭 시 상품의 구매가격을 출력한다
 					sum = price * cnt; 
-					System.out.println(sum);
 					jtPriceSum.setText(
 							menuName+" "+cnt+"잔\n총 "+sum+"원 \n");
 				}
@@ -245,7 +245,6 @@ public class MenuOrder extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					//확인버튼 클릭 시 상품의 구매가격을 출력한다
 					sum = price * cnt; 
-					System.out.println(sum);
 					jtPriceSum.setText(
 							menuName+" "+cnt+"잔\n총 "+sum+"원 \n");
 				}
@@ -276,7 +275,10 @@ public class MenuOrder extends JFrame {
 		c.add(new Menu3("카푸치노", 6000));
 		
 		
+		
+		
 		//setting
+		setLocation(400, 200);
 		setSize(500, 500);       setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
