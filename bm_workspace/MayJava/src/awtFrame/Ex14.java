@@ -1,4 +1,4 @@
-package guiSearch0615;
+package awtFrame;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 public class Ex14 extends JFrame {
 	JButton j = new JButton("Cal");
-	JLabel j1 = new JLabel("ê³„ì‚°ê²°ê³¼");
+	JLabel j1 = new JLabel("°è»ê°á°ú");
 	
 	Ex14(){
 		Container c = getContentPane();
@@ -26,7 +26,7 @@ public class Ex14 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Aa a = new Aa();	//JDialog
-				a.setVisible(true);	//ë‹¤ì´ì–´ë¡œê·¸
+				a.setVisible(true);	//´ÙÀÌ¾î·Î±×
 				a.setSize(200, 200);
 			}
 		});
@@ -44,16 +44,16 @@ public class Ex14 extends JFrame {
 		
 		Aa() {
 			setLayout(new FlowLayout());
-			add(new JLabel("ë‘ ìˆ˜ë¥¼ ë”í•©ë‹ˆë‹¤"));
+			add(new JLabel("µÎ ¼ö¸¦ ´õÇÕ´Ï´Ù"));
 			add(f1);
 			add(f2);
 			add(j2);
 
-			//ADD ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸
+			//ADD ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
 			j2.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					setVisible(false);	//ë‹¤ì´ì–´ë¡œê·¸ì°½ì€ ì¢…ë£Œ
+					setVisible(false);	//´ÙÀÌ¾î·Î±×Ã¢Àº Á¾·á
 					
 					int num1 = Integer.parseInt(f1.getText());
 					int num2 = Integer.parseInt(f2.getText());

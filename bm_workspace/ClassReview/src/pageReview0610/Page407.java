@@ -1,5 +1,6 @@
 package pageReview0610;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 //p.407, 427
@@ -49,6 +50,42 @@ class Member {
 		}
 	}
 }
+
+//p.410
+class MemberArrayList {
+	private ArrayList<Member> arrayList;
+	
+	MemberArrayList() {
+		arrayList = new ArrayList<Member>();
+	}
+	
+	void addMember(Member member) {
+		arrayList.add(member);
+	}
+	
+	boolean removeMember(int memberId) {
+		for(int i=0; i<arrayList.size(); i++) {
+			Member member = arrayList.get(i);
+			int tempId = member.getMemberId();
+			if(tempId == memberId) {
+				arrayList.remove(i);
+				return true;
+			}
+		}
+		System.out.println(memberId +"가 존재하지 않습니다.");
+		return false;
+	}
+	
+	void showAllMember() {
+		for(Member member : arrayList) {
+			System.out.println(member);
+		}
+		System.out.println();
+	}
+}
+
+//p.411,412
+
 
 //p.424
 class MemberHashSet {
