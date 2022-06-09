@@ -5,22 +5,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
- * 	Q.  1 = µ¥ÀÌÅÍÀÔ·Â 	- in()
- * 		2 = °ÔÀÓ ½ÃÀÛ 	- out()
- * 		3 = Á¾·á		- end()
+ * 	Q.  1 = ë°ì´í„°ì…ë ¥ 	- in()
+ * 		2 = ê²Œì„ ì‹œì‘ 	- out()
+ * 		3 = ì¢…ë£Œ		- end()
  *  		
- * 1. ArrayList¿¡ ÀÌ¸§°ú id¸¦ ÀúÀåÇÑ´Ù.
- * 	- ArrayList ÀÇ ±æÀÌ°ªÀº 5·Î ÁöÁ¤ÇÑ´Ù.
- * 2. ÀÌ¸§°ú id¸¦ ÀÔ·Â¹Ş¾Æ,
- * 	- ±âº»¿¡ ÀÖ´Â °ªÀÌ¸é "ÀÌ¹Ì ÀÖ½À´Ï´Ù",
- *  - ¾ø´Â °ªÀÌ¸é ArrayList¿¡ Ãß°¡ÇÑ´Ù.
- *  - "stop" À» ÀÔ·ÂÇÏ¸é ÇÔ¼ö°¡ Á¾·áµÈ´Ù.
+ * 1. ArrayListì— ì´ë¦„ê³¼ idë¥¼ ì €ì¥í•œë‹¤.
+ * 	- ArrayList ì˜ ê¸¸ì´ê°’ì€ 5ë¡œ ì§€ì •í•œë‹¤.
+ * 2. ì´ë¦„ê³¼ idë¥¼ ì…ë ¥ë°›ì•„,
+ * 	- ê¸°ë³¸ì— ìˆëŠ” ê°’ì´ë©´ "ì´ë¯¸ ìˆìŠµë‹ˆë‹¤",
+ *  - ì—†ëŠ” ê°’ì´ë©´ ArrayListì— ì¶”ê°€í•œë‹¤.
+ *  - "stop" ì„ ì…ë ¥í•˜ë©´ í•¨ìˆ˜ê°€ ì¢…ë£Œëœë‹¤.
  * 
- * 3. ÇØ´ç ÀÌ¸§ÀÇ ID¸¦ ¸ÂÃß½Ã¿À 
- *  - ÀÓÀÇÀÇ ÀÎµ¦½º¹øÈ£¸¦ °¡Á®¿Í,
- *  - ÀÎµ¦½º¹øÈ£¿¡ ÇØ´çÇÏ´Â ÀÌ¸§À» °¡Á®¿Â´Ù.
- *  - ÀÌ¸§°ú id°¡ ÀÏÄ¡ÇÏ¸é "Á¤´ä", ¾Æ´Ï¸é "Æ²¸²"À» ¹İÈ¯ÇÑ´Ù.
- *  - Á¤¼ö '999'¸¦ ÀÔ·ÂÇÏ¸é ÇÔ¼ö°¡ Á¾·áµÈ´Ù.
+ * 3. í•´ë‹¹ ì´ë¦„ì˜ IDë¥¼ ë§ì¶”ì‹œì˜¤ 
+ *  - ì„ì˜ì˜ ì¸ë±ìŠ¤ë²ˆí˜¸ë¥¼ ê°€ì ¸ì™€,
+ *  - ì¸ë±ìŠ¤ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ì´ë¦„ì„ ê°€ì ¸ì˜¨ë‹¤.
+ *  - ì´ë¦„ê³¼ idê°€ ì¼ì¹˜í•˜ë©´ "ì •ë‹µ", ì•„ë‹ˆë©´ "í‹€ë¦¼"ì„ ë°˜í™˜í•œë‹¤.
+ *  - ì •ìˆ˜ '999'ë¥¼ ì…ë ¥í•˜ë©´ í•¨ìˆ˜ê°€ ì¢…ë£Œëœë‹¤.
  */
 
 class PersonRe {
@@ -56,15 +56,15 @@ class GameRe {
 	Scanner sc = new Scanner(System.in);
 	ArrayList<PersonRe> a = new ArrayList<PersonRe>(5);
 	
-	//ÀÔ·Â µ¥ÀÌÅÍ¿Í ºñ±³ÇÏ±â À§ÇØ ±âÃÊµ¥ÀÌÅÍ ÀÔ·Â
+	//ì…ë ¥ ë°ì´í„°ì™€ ë¹„êµí•˜ê¸° ìœ„í•´ ê¸°ì´ˆë°ì´í„° ì…ë ¥
 	GameRe(){
-		a.add(new PersonRe("¼¼Á¾", 123));
-		a.add(new PersonRe("Á¤Á¶", 456));
+		a.add(new PersonRe("ì„¸ì¢…", 123));
+		a.add(new PersonRe("ì •ì¡°", 456));
 	}
 	
 	void in() {
 		while(true) {
-			System.out.println("ÀÌ¸§°ú id ÀÔ·Â:");
+			System.out.println("ì´ë¦„ê³¼ id ì…ë ¥:");
 			String name = sc.next();
 			
 			if(name.equals("stop")) {
@@ -76,8 +76,8 @@ class GameRe {
 					new PersonRe(name, id);
 			
 			if(a.contains(pr)) {
-				//a ArrayList¿¡ pr °´Ã¼°¡ ÀÖÀ¸¸é
-				System.out.printf("%s ´Â ÀÌ¹Ì ÀÖ½À´Ï´Ù", pr.getName());
+				//a ArrayListì— pr ê°ì²´ê°€ ìˆìœ¼ë©´
+				System.out.printf("%s ëŠ” ì´ë¯¸ ìˆìŠµë‹ˆë‹¤", pr.getName());
 			}
 			else {
 				a.add(pr);
@@ -89,34 +89,34 @@ class GameRe {
 		while(true) {
 			Random r = new Random();
 			int n = r.nextInt(a.size());	
-			//ArrayList Å©±âÀÇ ¹üÀ§¿¡¼­ ³­¼ö ¹ß»ı½ÃÄÑ n¿¡ ÀúÀå
+			//ArrayList í¬ê¸°ì˜ ë²”ìœ„ì—ì„œ ë‚œìˆ˜ ë°œìƒì‹œì¼œ nì— ì €ì¥
 			
 			PersonRe pr = a.get(n);
-			//ArrayList ¿¡¼­ ÀÎµ¦½º nÀ» ²¨³»¿Í¼­
+			//ArrayList ì—ì„œ ì¸ë±ìŠ¤ nì„ êº¼ë‚´ì™€ì„œ
 			
 			String str = pr.getName();
-			//±× ÀÌ¸§À» str¿¡ ÀúÀåÇÑ´Ù
+			//ê·¸ ì´ë¦„ì„ strì— ì €ì¥í•œë‹¤
 			
-			System.out.printf("¹®Á¦: %sÀÇ id´Â?", str);
-			int id = pr.getId();	//´äÀÌ µÇ´Â id
-			int i = sc.nextInt();	//ÀÔ·Â ¹Ş´Â ´ä
+			System.out.printf("ë¬¸ì œ: %sì˜ idëŠ”?", str);
+			int id = pr.getId();	//ë‹µì´ ë˜ëŠ” id
+			int i = sc.nextInt();	//ì…ë ¥ ë°›ëŠ” ë‹µ
 			
 			if(i >= 999) {
 				break;
 			}
 			
 			if(i == id) {
-				System.out.println("Á¤´äÀÔ´Ï´Ù");
+				System.out.println("ì •ë‹µì…ë‹ˆë‹¤");
 			}
 			else {
-				System.out.println("Æ²·È½À´Ï´Ù");
+				System.out.println("í‹€ë ¸ìŠµë‹ˆë‹¤");
 			}
 			
 		}
 	}
 	
 	void end() {
-		System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù");
+		System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤");
 		System.exit(0);
 	}
 	
@@ -134,8 +134,8 @@ public class GameReview {
 		GameRe g = new GameRe();
 		
 		while(true) {
-			System.out.println("¼±ÅÃÇÏ½Ã¿À \n "
-					+ "1. µ¥ÀÌÅÍÀÔ·Â, 2. °ÔÀÓ½ÃÀÛ, 3. Á¾·á, 4. ¸ñ·Ï");
+			System.out.println("ì„ íƒí•˜ì‹œì˜¤ \n "
+					+ "1. ë°ì´í„°ì…ë ¥, 2. ê²Œì„ì‹œì‘, 3. ì¢…ë£Œ, 4. ëª©ë¡");
 			
 			int selectNum = sc.nextInt();
 			switch(selectNum) {

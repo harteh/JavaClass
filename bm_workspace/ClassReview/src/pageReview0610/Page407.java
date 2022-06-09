@@ -3,6 +3,7 @@ package pageReview0610;
 import java.util.HashSet;
 
 //p.407, 427
+//407,408,410,411,412
 class Member {
 	private int memberId;
 	private String memberName;
