@@ -7,7 +7,7 @@ public class P205 {
 	public static void main(String[] args) {
 
 		System.out.println("********** p.205 **********");
-		//¹è¿­ÀÇ °¢ ¿ä¼Ò¿¡ 5,4,3,2,1 À» ¼ø¼­´ë·Î ´ëÀÔÇØ¼­ Ç¥½Ã
+		//ë°°ì—´ì˜ ê° ìš”ì†Œì— 5,4,3,2,1 ì„ ìˆœì„œëŒ€ë¡œ ëŒ€ì…í•´ì„œ í‘œì‹œ
 		int arr[] = new int[5];
 		
 		for (int i=0; i<arr.length; i++) {
@@ -20,23 +20,23 @@ public class P205 {
 		
 		System.out.println();
 		System.out.println("********** p.215 **********");
-		//Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ ÇÕ°è, Æò±Õ, ÃÖ°íÁ¡, ÃÖÀúÁ¡À» Ç¥½Ã
+		//ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ í•©ê³„, í‰ê· , ìµœê³ ì , ìµœì €ì ì„ í‘œì‹œ
 		Scanner sc=new Scanner(System.in);
 		
 		int sum=0;
 		
-		System.out.println("»ç¶÷ ¼ö: ");
+		System.out.println("ì‚¬ëŒ ìˆ˜: ");
 		int n=sc.nextInt();
-		int[] point=new int[n];		//ÀÎ¿ø ¼ö ¸¸Å­ÀÇ ¹è¿­
+		int[] point=new int[n];		//ì¸ì› ìˆ˜ ë§Œí¼ì˜ ë°°ì—´
 		
 		for(int i=0; i<point.length; i++) {
-			System.out.printf("%d ¹øÀÇ Á¡¼ö: \n", i+1);
-			point[i] = sc.nextInt();	//»ç¶÷¸¶´Ù Á¡¼ö ÀÔ·Â ¹ŞÀ½
-			sum += point[i];	//Á¡¼ö ÇÕ°è
+			System.out.printf("%d ë²ˆì˜ ì ìˆ˜: \n", i+1);
+			point[i] = sc.nextInt();	//ì‚¬ëŒë§ˆë‹¤ ì ìˆ˜ ì…ë ¥ ë°›ìŒ
+			sum += point[i];	//ì ìˆ˜ í•©ê³„
 		}
-		System.out.printf("Á¡¼ö ÇÕ°è = %d, Æò±Õ = %.1f\n", sum, (double)(sum/n));
+		System.out.printf("ì ìˆ˜ í•©ê³„ = %d, í‰ê·  = %.1f\n", sum, (double)(sum/n));
 		
-		//ÃÖ°íÁ¡, ÃÖÀúÁ¡
+		//ìµœê³ ì , ìµœì €ì 
 		int max = point[0];
 		int min = point[0];
 		
@@ -46,21 +46,21 @@ public class P205 {
 			if (point[i] < min)
 				min = point[i];
 		}
-		System.out.printf("ÃÖ°íÁ¡ = %dÁ¡, ÃÖÀúÁ¡ = %dÁ¡\n", max, min);
+		System.out.printf("ìµœê³ ì  = %dì , ìµœì €ì  = %dì \n", max, min);
 		
 		System.out.println();
 		System.out.println("********** p.218 **********");
 		
-		//¹è¿­¿¡¼­ Æ¯Á¤ °ª Ã£±â
-		System.out.println("¹è¿­ Å©±â: ");
+		//ë°°ì—´ì—ì„œ íŠ¹ì • ê°’ ì°¾ê¸°
+		System.out.println("ë°°ì—´ í¬ê¸°: ");
 		int n1 = sc.nextInt();
 		int[] arr1 = new int[n1];
 		
 		for(int i=0; i<arr1.length; i++) {
-			arr1[i] = sc.nextInt();	//¹è¿­¿¡ °ª ÀÔ·Â
+			arr1[i] = sc.nextInt();	//ë°°ì—´ì— ê°’ ì…ë ¥
 		}
 		
-		System.out.println("Ã£À» °ª: ");
+		System.out.println("ì°¾ì„ ê°’: ");
 		int sch = sc.nextInt();
 		
 		int i=0;
@@ -71,25 +71,11 @@ public class P205 {
 		}
 		
 		if(i < n1) {
-			System.out.println("±× °ªÀº "+i+" ¿¡ ÀÖÀ½ ");
+			System.out.println("ê·¸ ê°’ì€ "+i+" ì— ìˆìŒ ");
 		}
 		else {
-			System.out.println(" ¾ø´Â °ªÀÓ");
+			System.out.println(" ì—†ëŠ” ê°’ì„");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 
