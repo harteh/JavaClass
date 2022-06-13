@@ -73,7 +73,7 @@ class Arr {
 	void add(PhoneBook p) {
 		arr[n++] = p;
 	}
-	void worker() {
+	void WorkerOld() {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("사번:");
@@ -100,7 +100,7 @@ class Arr {
 	}
 }
 
-public class Worker {
+public class WorkerOld {
 	public static void main(String[] args) {
 
 		Arr ad = new Arr(5);
@@ -114,7 +114,7 @@ public class Worker {
 			
 			switch(chk) {
 			case 1:
-				ad.worker();
+				ad.WorkerOld();
 				break;
 			case 2:
 				ad.show();
