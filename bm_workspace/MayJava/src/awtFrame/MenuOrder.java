@@ -15,37 +15,26 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-/*
- * ¸Ş´º(3°³)¹öÆ°À» Å¬¸¯ÇÏ¸é ¸Ş´º°¡ ¼±ÅÃµÇ°í * ¸Ş´º ¹Ø¿¡ °¡°İÀÌ ÀÖ´Ù.
- * ¼ö·® ¼±ÅÃÀÌ °¡´ÉÇÏ´Ù (+ -)
- * È®ÀÎÀ» Å¬¸¯ÇÏ¸é ±İ¾×ÀÌ Ãâ·ÂµÈ´Ù
- */
-
 class MenuPanel extends JPanel {
-	int cnt = 0;	int sum = 0;	String menuName =""; int price=0;
+	int cnt = 0;	int sum = 0;	
+    String menuName =""; int price=0;
 	String recSum="";
 	
 	MenuPanel(String menuName, int price){
 		this.menuName=menuName;	this.price=price;
 		
-		//ÆÇ¼³Á¤
 		JButton jbMenu = new JButton(menuName);
-		JLabel aPrice = new JLabel(price+"¿ø");
-		//¼ö·®¼±ÅÃ
+		JLabel aPrice = new JLabel(price+"ì›");
 		JButton jbPlus = new JButton("+");
 		JTextField jtA = new JTextField(5);
-		//ÅØ½ºÆ®¿µ¿ª ÆíÁı ºÒ°¡
 		jtA.setEditable(false);
 		JButton jbMinus = new JButton("-");
-		//È®ÀÎ¹öÆ°
-		JButton jbConfirm = new JButton("È®ÀÎ");
-		JButton jbCancel = new JButton("Ãë¼Ò");
-		//¸Ş´ºº° ÃÑ ±İ¾× Ãâ·Â
+		JButton jbConfirm = new JButton("í™•ì¸");
+		JButton jbCancel = new JButton("ì·¨ì†Œ");
 		JTextArea jtPriceSum = new JTextArea(2, 15);
 
 		Border emptyBorder = BorderFactory.createEmptyBorder(15,7,5,5);
 		jtPriceSum.setBorder(emptyBorder);
-		//setting
 		add(jbMenu);
 		add(aPrice);
 		add(jbPlus);
@@ -58,12 +47,10 @@ class MenuPanel extends JPanel {
 		setBackground(Color.WHITE);
 		jtPriceSum.setBackground(Color.getHSBColor(348, 18, 79));
 
-		//Event
 		jbPlus.setEnabled(false);
 		jbMinus.setEnabled(false);
 		jbConfirm.setEnabled(false);
 		jbCancel.setEnabled(false);
-		// ¸Ş´ºÅ¬¸¯ ½Ã ¼ö·®¼±ÅÃ, È®ÀÎ, Ãë¼Ò ¹öÆ° È°¼ºÈ­
 		jbMenu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -71,14 +58,11 @@ class MenuPanel extends JPanel {
 				jbMinus.setEnabled(true);
 				jbConfirm.setEnabled(true);
 				jbCancel.setEnabled(true);
-				// ¼ö·®À» 1·Î Áõ°¡½ÃÄÑ¼­ TextField¿¡ Ãâ·Â
 					cnt++;
 					jtA.setText( Integer.toString(cnt));
 			}
 		});
 		
-		//Event
-		// ¼ö·®¹öÆ° Å¬¸¯À¸·Î °ª º¯È­ -> jtA¿¡ °¡°İ Ãâ·Â
 		jbPlus.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -94,24 +78,21 @@ class MenuPanel extends JPanel {
 					cnt--;
 					jtA.setText( Integer.toString(cnt));
 				}
-				else {	//¼ö·® À½¼ö ±İÁö
+				else {
 					jbMinus.setEnabled(false);
 				}
 			}
 		});
 		
-		//Event
-		//È®ÀÎ¹öÆ° Å¬¸¯ ½Ã »óÇ°ÀÇ ±¸¸Å°¡°İÀ» Ãâ·ÂÇÑ´Ù
 		jbConfirm.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				sum = price * cnt;
-				recSum = "  "+menuName+" "+cnt+"ÀÜ  "+sum+"¿ø \n"; 
+				recSum = "  "+menuName+" "+cnt+"ì”  "+sum+"ì› \n"; 
 				jtPriceSum.setText(recSum);
 			}
 		});
 		//Event
-		//Ãë¼Ò¹öÆ° Å¬¸¯ ½Ã ±¸¸Å°¡°İ, ¼ö·® ÃÊ±âÈ­
 		jbCancel.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -129,55 +110,41 @@ class MenuPanel extends JPanel {
 }
 
 public class MenuOrder extends JFrame {
-
-	//ÀüÃ¼
 	MenuOrder() {		
 		Container c = getContentPane();
 		c.setLayout(null);
 		
-		//¸Ş´º »ı¼º
-		MenuPanel mp1 = new MenuPanel("¾Æ¸Ş¸®Ä«³ë", 5000);
-		MenuPanel mp2 = new MenuPanel("Ä«Æä¶ó¶¼", 5500);
-		MenuPanel mp3 = new MenuPanel("Ä«ÇªÄ¡³ë", 6000);
+		MenuPanel mp1 = new MenuPanel("ì•„ë©”ë¦¬ì¹´ë…¸", 5000);
+		MenuPanel mp2 = new MenuPanel("ì¹´í˜ë¼ë–¼", 5500);
+		MenuPanel mp3 = new MenuPanel("ì¹´í‘¸ì¹˜ë…¸", 6000);
 		
-		//ÆùÆ®¿Í ¿©¹é¼³Á¤
 		Border emptyBorder = BorderFactory.createEmptyBorder(30,50,10,10);
 		
-		//¿µ¼öÁõ ¹öÆ°
-		JButton jbRecSum = new JButton("¿µ¼öÁõ Ãâ·Â");
-		//ÁÖ¹®Ãë¼Ò ¹öÆ°
-		JButton jbOrderCancle = new JButton("Ãë¼Ò");
+		JButton jbRecSum = new JButton("ì˜ìˆ˜ì¦ ì¶œë ¥");
+		JButton jbOrderCancle = new JButton("ì·¨ì†Œ");
 		
-		//ÃÑ ±İ¾× ¿µ¼öÁõ Ãâ·Â
 		JTextArea jtReceipt = new JTextArea(10, 20);
 		jtReceipt.setEditable(false);
 		jtReceipt.setBackground(Color.PINK);
 		jtReceipt.setBorder(emptyBorder);
 		
-		
-		//¿µ¼öÁõÃâ·Â EVENT
 		jbRecSum.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Å¬¸¯ÇÏ¸é ÀüÃ¼ ÁÖ¹® ±İ¾×À» ¿µ¼öÁõ¿¡ Ãâ·ÂÇÑ´Ù
 				int totalSum = mp1.sum+mp2.sum+mp3.sum;
 				String receiptText = 
-						"ÀüÃ¼ ÁÖ¹® ³»¿ª\n"+
+						"ì „ì²´ ì£¼ë¬¸ ë‚´ì—­\n"+
 						mp1.recSum+
 						mp2.recSum+
 						mp3.recSum+
-						"\n°áÁ¦ÇÏ½Ç ±İ¾×Àº "+totalSum+"¿ø ÀÔ´Ï´Ù";
+						"\nê²°ì œí•˜ì‹¤ ê¸ˆì•¡ì€ "+totalSum+"ì› ì…ë‹ˆë‹¤";
 				jtReceipt.setText(receiptText);
 			}
 		});
-		//ÁÖ¹®Ãë¼Ò event
 		jbOrderCancle.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				jtReceipt.setText("");
 			}
 		});
-		
 		
 		//add Panel
 		c.add(mp1);
@@ -187,7 +154,6 @@ public class MenuOrder extends JFrame {
 		c.add(jbOrderCancle);
 		c.add(jtReceipt);
 		
-		//size setting
 		mp1.setBounds(20, 20, 150, 160);
 		mp2.setBounds(180, 20, 150, 160);
 		mp3.setBounds(340, 20, 150, 160);
@@ -195,10 +161,8 @@ public class MenuOrder extends JFrame {
 		jbOrderCancle.setBounds(360, 200, 60, 50);
 		jtReceipt.setBounds(100, 270, 320, 250);
 		
-		//setting
 		setLocation(400, 200);
 		setSize(520, 600);       setVisible(true);
-		//Ã¢ »çÀÌÁî º¯°æ ºÒ°¡
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
