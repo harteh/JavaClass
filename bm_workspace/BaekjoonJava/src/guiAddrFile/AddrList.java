@@ -2,6 +2,8 @@ package guiAddrFile;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,12 +39,52 @@ public class AddrList extends JFrame{
 		JButton jbOsFile = new JButton("파일만들기");
 		JButton jbIsFile = new JButton("파일불러오기");
 		
-		JLabel jlState = new JLabel("입력,출력 상태에 따른 공지를 알려준다 - 삭제될 안내글");
+		JLabel jlState = new JLabel();
+		JTextArea jtaList = new JTextArea();
+		jtaList.setEditable(false);
 		
-		JTextArea jtaList = new JTextArea(20,20);
+		
+		//data
+//		String name = jtName.getText();
+//		String age = jtAge.getText();
+//		String phone = jtPhone.getText();
+//		String addr = jtAddr.getText();
+		
+		//event
+		//이름 입력창 클릭 시 안내텍스트 초기화 - 안먹힘!! 클릭이 아닌가봄
+		jtName.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jlState.setText(" ");
+			}
+		});
+		
+		//추가 버튼 클릭 시 입력 받은 값들을 저장하고, 하단에 출력
+		jbAddList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jtaList.append(jtName.getText()+" "+
+						jtAge.getText()+" "+
+						jtPhone.getText()+" "+
+						jtAddr.getText()+"\n");
+				jlState.setText("명단에 추가했습니다");
+			}
+		});
+		
+		//파일 생성
+		jbOsFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jlState.setText("주소록 파일을 만들었습니다");
+			}
+		});
+		
+		//파일 불러오기
+		jbIsFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jlState.setText("파일을 불러왔습니다");
+			}
+		});
 		
 		
-		jtaList.setBackground(Color.red);
+		c.setBackground(Color.white);
 		//add container
 		c.add(jlName);		c.add(jtName);
 		c.add(jlAge);		c.add(jtAge);
@@ -73,7 +115,7 @@ public class AddrList extends JFrame{
 		jbOsFile.setBounds(200,200,110,40);
 		jbIsFile.setBounds(320,200,110,40);
 		
-		jlState.setBounds(120,250,300,30);
+		jlState.setBounds(180,250,300,30);
 		jtaList.setBounds(80,300,350,400);
 		
 		
