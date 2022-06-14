@@ -59,12 +59,17 @@ class Worker {
 		this.birth = birth;
 	}
 
+	public String toString() {
+		return "이름:" + getName()+ "\n사번:" + getId() + "\n부서:" + getPart() +
+				"\n주소:" + getAddr() + "\n생일:" + getBirth();
+	}
+	
 	void show() {
 		System.out.println(
 				"이름:" + getName() + "\n부서:" + getPart() +
 				"\n주소:" + getAddr() + "\n생일:" + getBirth());
 	}
-
+	
 }
 
 public class JavaTest07Worker {
@@ -76,7 +81,9 @@ public class JavaTest07Worker {
 		while (true) {
 
 			System.out.println("<사원정보관리프로그램>");
-			System.out.println("1. 사원정보입력\n" + "2. 사원정보 개별조회\n" + "3. 프로그램 종료");
+			System.out.println(
+					"1. 사원정보입력\n" + "2. 사원정보 개별조회\n" +
+					"3. 프로그램 종료\n" + "4. 전체명단조회");
 			int chk = sc.nextInt();
 
 			switch (chk) {
@@ -100,16 +107,19 @@ public class JavaTest07Worker {
 				int schId = sc.nextInt();
 
 				Iterator<Worker> it = h.iterator();
-				while (it.hasNext()) {
-					if(it.next().getId() == schId) {
-						it.next().show();
+				while(it.hasNext()) {
+					Worker num = it.next();
+					if(schId == num.getId()) {
+						num.show();
 					}
 				}
-
 				break;
 			case 3:
 				System.out.println("프로그램 종료");
 				return;
+			case 4:
+				System.out.println(h);
+				break;
 			}
 		}
 

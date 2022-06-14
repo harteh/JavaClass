@@ -41,7 +41,7 @@ class Num {
 	}
 	
 	int add(int n) {
-//		num3 = n;
+		this.num3 = n;
 		sum3+=n;
 		return sum3;
 	}
