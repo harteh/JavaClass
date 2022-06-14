@@ -1,4 +1,4 @@
-select * from student;     select * from subject;     select * from enrol;
+﻿select * from student;     select * from subject;     select * from enrol;
 
 select stu_name, stu_dept from student where stu_dept = '컴퓨터정보';
 select * from student where stu_weight BETWEEN 60 and 70;
@@ -96,7 +96,27 @@ SELECT STU_NO, STU_NAME, STU_DEPT, STU_WEIGHT-5 AS WEI FROM STUDENT
 ORDER BY STU_DEPT, WEI DESC;
 
 
+-- 숫자형 함수
+SELECT ROUND (345.678) FROM DUAL;
+SELECT ROUND (345.678, 2) FROM DUAL;
+SELECT ROUND (345.678, -1) FROM DUAL;
 
+SELECT TRUNC (123.456, 2) FROM DUAL;    -- 123.45
+SELECT TRUNC (123.456, -1) FROM DUAL;   -- 120
 
+SELECT MOD (10, 5) FROM DUAL;
 
+-- 문자
+SELECT UPPER ('korea') FROM DUAL;   -- 대문자 변환
+SELECT INITCAP ('korea') FROM DUAL;   -- 첫글자만 대문자 변환
+SELECT CONCAT('korea', 'japan') FROM DUAL;  -- koreajapan
+SELECT SUBSTR ('korea', 2, 3) FROM DUAL;    -- 2번째 글자부터 3개 글자 추출
 
+SELECT * FROM STUDENT;
+
+-- 2013학번인 학생의 학번과 이름, 학과를 검색
+SELECT STU_NO, STU_NAME FROM STUDENT WHERE STU_NO LIKE '2013%';
+-- 1,3 학년학생들의 모든 정보
+SELECT * FROM STUDENT WHERE STU_GRADE='1' OR STU_GRADE='3';
+SELECT * FROM STUDENT WHERE STU_GRADE IN (1,3);
+SELECT STU_NO, STU_NAME FROM STUDENT WHERE STU_NAME LIKE '김%';
