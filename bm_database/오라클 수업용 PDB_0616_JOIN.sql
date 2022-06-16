@@ -240,11 +240,76 @@ SELECT EMPNO, ENAME, DNAME
 
 -- 54. 사원번호, 사원이름, 부서이름을 검색하라.(join~using)
 SELECT EMPNO, ENAME, DNAME
-    FROM EMP1 JOIN DEPT1 USING(DEPTNO);
+  FROM EMP1 JOIN DEPT1 USING(DEPTNO);
 
 -- 55. 지역이 NEW YORK인 사원이름을 검색하라.(equi)
 SELECT E.ENAME, D.LOC
     FROM EMP1 E, DEPT1 D
   WHERE E.DEPTNO = D.DEPTNO
     AND D.LOC='NEW YORK';
+    
+
+-- 1. ADAMS사원이 근무 중인 부서이름과 지역을검색하라.(equi join)
+SELECT D.DNAME, D.LOC
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO
+    AND E.ENAME = 'ADAMS';
+
+-- 2. 급여가 2000이상인 사원들의 사원명과 지역을검색하라. (natural join)
+SELECT ENAME, LOC
+    FROM EMP1 NATURAL JOIN DEPT1
+  WHERE SAL >= 2000;
+
+-- 3. 2번을equi join으로 바꿔라.
+SELECT E.ENAME, D.LOC
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO
+    AND E.SAL >= 2000;
+
+-- 4. 급여가 1000 이상 2000 이하인 사원들의 사원번호, 사원이름, 부서이름을 사원번호순으로 검색하라. (join using)
+SELECT EMPNO, ENAME, DNAME, SAL
+    FROM EMP1 JOIN DEPT1 USING (DEPTNO)
+  WHERE SAL BETWEEN 1000 AND 2000
+ORDER BY EMPNO;
+
+-- 5. 사원직무가 SALESMAN이면서 CHICAGO 지역에 근무 중인 사원명을 검색하라.
+SELECT ENAME, JOB, LOC
+    FROM EMP1 NATURAL JOIN DEPT1
+  WHERE JOB = 'SALESMAN'
+    AND LOC = 'CHICAGO';
+
+-- 6. NEW YORK이나 DALLAS 지역에 근무하는 사원들의 사원번호와 사원이름을 사원번호 순으로 검색하라. (equi join)
+SELECT E.EMPNO, E.ENAME, D.LOC
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO
+    AND D.LOC IN ('NEW YORK', 'DALLAS')
+ORDER BY E.EMPNO;
+
+-- 7. 부서이름이 ACCOUNTING 이거나, 지역이 CHICAGO 인 사원의 사원번호와 사원이름을 검색하라. (equi join)
+SELECT  E.EMPNO, E.ENAME, 
+        D.DNAME AS 부서이름, D.LOC AS 지역
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO
+    AND (D.DNAME = 'ACCOUNTING' OR D.LOC = 'CHICAGO');
+
+-- 8. NEW YORK 이나 DALLAS 지역에 근무하는 사원들의 사원번호와 사원이름을 사원번호 순으로 검색하라. (natural join)
+SELECT EMPNO AS 사번, ENAME AS 이름, LOC AS 지역
+    FROM EMP1 NATURAL JOIN DEPT
+  WHERE LOC IN ('NEW YORK', 'DALLAS')
+ORDER BY EMPNO;
+
+
+-- SELF JOIN
+-- 상급자사원번호 = 사원번호 같은것
+SELECT A.EMPNO AS 사번, A.ENAME AS 사원이름,
+       B.EMPNO AS 상급자사번, B.ENAME AS 상급자사원이름
+    FROM EMP1 A, EMP1 B
+  WHERE A.MGR = B.EMPNO;
+
+-- ENROL 테이블의 모든 정보, 과목이름
+SELECT A.*, 
+       SUB_NAME AS 과목명
+    FROM ENROL A, SUBJECT B
+  WHERE A.SUB_NO = B.SUB_NO
+ORDER BY 1;
     
