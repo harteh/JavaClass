@@ -174,3 +174,77 @@ SELECT EMPNO, ENAME,
     (SAL*12)+NVL(COMM, 0) AS 수당포함연봉1,
     ( NVL(SAL+COMM, SAL) * 12 ) AS 수당포함연봉
     FROM EMP1;
+    
+-- p.239, 240
+-- Q1 급여가 2000 초과인 사원들의 부서 정보, 사원 정보
+SELECT D.DEPTNO, D.DNAME, E.EMPNO, E.ENAME, E.SAL
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO
+    AND SAL > 2000;
+-- 
+SELECT DEPTNO, DNAME, EMPNO, ENAME, SAL
+    FROM EMP NATURAL JOIN DEPT
+    WHERE SAL > 2000;
+
+-- Q2 각 부서별 평균 급여, 최대 급여, 최소 급여, 사원수 출력
+SELECT  D.DEPTNO, D.DNAME,
+        TRUNC(AVG(SAL)) AS AVG_SAL,
+        MAX(SAL), MIN(SAL), COUNT(*) AS CNT
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO
+    GROUP BY D.DEPTNO, D.DNAME;
+
+-- 101번 과목을 수강하는 학생들의 학번 이름
+SELECT S.STU_NO, STU_NAME
+    FROM STUDENT S, ENROL E
+  WHERE S.STU_NO = E.STU_NO
+    AND SUB_NO=101;
+
+-- 101번 또는 102번 과목 수강생
+SELECT S.STU_NO, STU_NAME
+    FROM STUDENT S, ENROL E
+  WHERE S.STU_NO = E.STU_NO
+    AND (SUB_NO=101 OR SUB_NO=102);
+-- 추가조건이 여러개인 경우 이큐조인은 잘 사용하지 않는다
+SELECT STU_NO, STU_NAME
+    FROM STUDENT NATURAL JOIN ENROL
+  WHERE SUB_NO=101 
+     OR SUB_NO=102;
+  
+SELECT STU_NO, STU_NAME
+    FROM STUDENT JOIN ENROL USING(STU_NO)
+  WHERE SUB_NO=101 
+     OR SUB_NO=102;
+
+
+-- NON-EQUI 조인
+SELECT STU_NAME, ENR_GRADE,
+       SUB_NO AS 과목번호
+    FROM STUDENT NATURAL JOIN ENROL
+  WHERE ENR_GRADE BETWEEN 80 AND 90;
+
+
+-- 51. 사원 테이블과 부서 테이블을 natural join해라.
+SELECT DEPTNO AS 부서번호, DNAME, 
+       EMPNO AS 사원번호, ENAME
+    FROM EMP1 NATURAL JOIN DEPT1;
+
+-- 52. 사원번호, 사원이름, 부서이름을 검색하라.(equi)
+SELECT E.EMPNO, E.ENAME, D.DNAME
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO;
+
+-- 53. 사원번호, 사원이름, 부서이름을 검색하라.(natural)
+SELECT EMPNO, ENAME, DNAME
+    FROM EMP1 NATURAL JOIN DEPT1;
+
+-- 54. 사원번호, 사원이름, 부서이름을 검색하라.(join~using)
+SELECT EMPNO, ENAME, DNAME
+    FROM EMP1 JOIN DEPT1 USING(DEPTNO);
+
+-- 55. 지역이 NEW YORK인 사원이름을 검색하라.(equi)
+SELECT E.ENAME, D.LOC
+    FROM EMP1 E, DEPT1 D
+  WHERE E.DEPTNO = D.DEPTNO
+    AND D.LOC='NEW YORK';
+    
