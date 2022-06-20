@@ -156,10 +156,13 @@ SELECT * FROM SALGRADE2;
 -- 5.	사원번호 7401, 사원이름 HOMER, 급여 1300, 부서번호 10인 사원이 오늘 입사하였다.
 INSERT INTO EMP2
   VALUES (7401, 'HOMER', NULL, NULL, SYSDATE, 1300, NULL, 10);
+INSERT INTO EMP2
+  VALUES (7401, 'HOMER', NULL, NULL, TRUNC(SYSDATE, 'DD'), 1300, NULL, 10);
 
 -- 6.	사원번호 7323, 사원이름 BRANDA, 부서번호 30,// 사원번호 7499와 동일한 급여를 받는 사원이 입사하였다. (부질의)
 INSERT INTO EMP2 (EMPNO, ENAME, HIREDATE, SAL, DEPTNO)
   VALUES (7323, 'BRANDA', SYSDATE, (SELECT SAL FROM EMP2  WHERE EMPNO = 7499), 30);
+
 
 -- 7.	사원(emp)테이블에서 부서번호가 10인 데이터를 EMP2(emp1)테이블에 삽입해라.
 INSERT INTO EMP2 
@@ -217,6 +220,7 @@ UPDATE EMP2
 
 -- 18.	EMP2(Emp1) 전체 테이블의 데이터를 삭제하라.
 DELETE FROM Emp2;
+TRUNCATE TABLE EMP2;
 
 
 

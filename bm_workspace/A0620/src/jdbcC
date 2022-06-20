@@ -1,0 +1,80 @@
+자바 프로그램에서 데이터베이스를 사용하는 방법
+	: JDBC (Java Database Connectivity)
+	: 자바 프로그램에서 데이터베이스에 일관된 방식으로 접근할 수 있도록 API를 제공하는 클래스의 집합
+
+1. JDBC 드라이버 로드 	(Driver Manager)
+2. 데이터베이스와 연결	(Connection)
+3. SQL문 실행			(Statement)
+4. 데이터베이스와 연결 해제	(ResultSet)
+
+프로젝트에 ojdbc 패스 연결
+1) 프로젝트 우클릭 -> Build Path -> Configure Build Path
+2) Configure Build Path : libraries -> Modulepath 선택 후-> [Add External JARs] -> ojdbc 파일 선택하여 패스 추가 후 확인
+***********************************************************************
+Class 1
+
+	public class Cc {
+		public static Connection con;
+		public static Connection get() {
+			Connection conn = null;
+			try {
+				String id = "BM";
+				String pw= "bm0301";
+				String url="jdbc:oracle:thin:@localhost:1521/xepdb1";
+				
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				
+				conn = DriverManager.getConnection(url, id, pw);
+				System.out.println("데이터베이스에 연결됐다");
+			} 
+			catch(Exception e) {
+				System.out.println("로딩 실패");
+			}
+			return conn;
+		}
+	}
+***********************************************************************
+Class 2
+
+	public class Dd {
+		public static void main(String[] args) throws SQLException {
+			
+			Connection conn = null;
+			PreparedStatement psmt = null;
+			ResultSet rs = null;
+			
+			try {
+				String que = "select * from emp1";
+				
+				conn = Cc.get();
+				
+				psmt = conn.prepareStatement(que);
+				rs = psmt.executeQuery();		
+				
+				while(rs.next()) {
+					String empno = rs.getString(1);
+					String ename = rs.getString(2);
+					String job = rs.getString(3);
+					int mgr = rs.getInt(4);
+					
+					java.sql.Date hiredate = rs.getDate(5);
+					int sal = rs.getInt(6);
+					int comm = rs.getInt(7);
+					int deptno = rs.getInt(8);
+					
+					System.out.println(empno+" "+ename+" "+job);
+				}
+				
+			} 
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			rs.close();
+			psmt.close();
+			conn.close();
+		}
+	}
+***********************************************************************
+Driver Manager : 클래스 -> 이 클래스로 db에 접속해야함
+thin : DB와 연결하는 방식 중 하나
+jdbc 드라이버 = ojdbc
