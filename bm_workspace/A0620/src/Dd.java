@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class Dd {
 	public static void main(String[] args) throws SQLException {
 		
+		/* 방법 2 */
 		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 		
 		String que = "insert into emp1(empno, ename, job) "
@@ -36,7 +37,7 @@ public class Dd {
 		
 		
 		
-		/*
+		/* 방법 1
 		Connection conn = null;			//DB와 연결하는 인터페이스
 		PreparedStatement psmt = null;	//sql문 객체
 		ResultSet rs = null;			//sql에 대한 반환(쿼리 실행의 결과값 저장)

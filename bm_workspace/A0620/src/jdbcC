@@ -34,7 +34,7 @@ Class 1
 		}
 	}
 ***********************************************************************
-Class 2
+Class 2. 방법1
 
 	public class Dd {
 		public static void main(String[] args) throws SQLException {
@@ -75,6 +75,40 @@ Class 2
 		}
 	}
 ***********************************************************************
+Class 2. 방법 2
+
+	public class Dd {
+		public static void main(String[] args) throws SQLException {
+			
+			String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
+			
+			String que = "insert into emp1(empno, ename, job) "
+					+"values(?,?,?)";
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				con = DriverManager.getConnection(url, "BM", "bm0301");
+				
+				pstmt = con.prepareStatement(que);
+				
+				pstmt.setInt(1, 1234);
+				pstmt.setString(2, "JACK");
+				pstmt.setString(3, "ANALYST");
+				
+				int n = pstmt.executeUpdate();
+				
+				System.out.println(n > 0 ? "성공":"실패");
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+***********************************************************************
+
 Driver Manager : 클래스 -> 이 클래스로 db에 접속해야함
 thin : DB와 연결하는 방식 중 하나
 jdbc 드라이버 = ojdbc
