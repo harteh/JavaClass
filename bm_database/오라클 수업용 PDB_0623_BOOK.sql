@@ -41,7 +41,7 @@ CREATE TABLE ORDERS(
 );
 
 INSERT INTO ORDERS VALUES (1, 1, 1, 7000, to_date('01-05-2022','dd-mm-yyyy'));
-INSERT INTO ORDERS VALUES (2, 1, 3, 23000, to_date('03-05-2022','dd-mm-yyyy'));
+INSERT INTO ORDERS VALUES (2, 1, 3, 22000, to_date('03-05-2022','dd-mm-yyyy'));
 INSERT INTO ORDERS VALUES (3, 2, 5, 8000, to_date('03-05-2022','dd-mm-yyyy'));
 INSERT INTO ORDERS VALUES (4, 3, 6, 6000, to_date('04-05-2022','dd-mm-yyyy'));
 INSERT INTO ORDERS VALUES (5, 4, 7, 20000, to_date('05-05-2022','dd-mm-yyyy'));
@@ -185,27 +185,59 @@ SELECT CUSTNAME
     AND B.PUBLISHER = '솔데스크';
 
 -- 32.	출판사별로 출판사의 평균 도서 가격보다 비싼 도서를 구해라.
+SELECT B1.BOOKNAME FROM BOOK B1
+  WHERE B1.PRICE > (SELECT AVG(B2.PRICE) FROM BOOK B2 WHERE B2.PUBLISHER=B1.PUBLISHER);
+
 -- 33.	Book테이블에 새로운 도서 ‘공학 도서’를 삽입해라.공학 도서는 더샘에서 출간했으며 가격을 40000원이다.
+INSERT INTO BOOK VALUES (11, '공학 도서', '더샘', 40000);
+
 -- 34.	Book테이블에 새로운 도서 ‘공학 도서’를 삽입해라.공학 도서는 더샘에서 출간했으며 가격은 미정이다.
+INSERT INTO BOOK VALUES (12, '공학 도서', '더샘', NULL);
+
 -- 35.	Customer테이블에서 고객번호가 5인 고객의 주소를 ‘서울시 서초구’로 변경해라.
+UPDATE CUSTOMER
+  SET ADDRESS = '서울시 서초구'
+  WHERE CUSTID = 5;
+
 -- 36.	Customer테이블에서 박승철 고객의 주소를 김선해 고객의 주소로 변경해라.
+UPDATE CUSTOMER
+  SET ADDRESS = (SELECT ADDRESS FROM CUSTOMER WHERE CUSTNAME = '김선해')
+  WHERE CUSTNAME = '박승철';
+
 -- 37.	아이티에서 출판한 도서의 제목과 제목의 글자수를 확인해라.
+SELECT BOOKNAME, LENGTH(BOOKNAME)
+  FROM BOOK WHERE PUBLISHER = '아이티';
+
 -- 38.	503서점의 고객 중에서 같은 성(이름성)을 가진 사람이 몇 명이나 되는지 성별 인원수를 구해라.
+SELECT SUBSTR(CUSTNAME, 1,1) AS 성, COUNT(*) AS 인원수
+  FROM CUSTOMER
+GROUP BY SUBSTR(CUSTNAME, 1,1);
+  
 -- 39.	503서점은 주문일로부터 10일 후 매출을 확정한다.각 주문의 확정일자를 구해라.
--- 40.	503서점이 2022년 5월 7일에 주문받은 도서의 주문번호,주문일,고객번호,도서번호를 모두 보여라.주문일은 ‘yyyy-mm-dd요일’형태로 표시한다.
+SELECT ORDERDATE+10 AS 주문확정일자 FROM ORDERS;
+
+-- 40.	503서점이 2022년 5월 7일에 주문받은 도서의 주문번호,주문일,고객번호,도서번호를 모두 보여라.
+-- 주문일은 ‘yyyy-mm-dd요일’형태로 표시한다.
+SELECT ORDERID, TO_CHAR(ORDERDATE, 'YYYY-MM-DD') AS 주문일, CUSTID, BOOKID
+  FROM ORDERS WHERE ORDERDATE = '2022-05-07';
+
 -- 41.	이름,전화번호가 포함된 고객목록을 보여라.단,전화번호가 없는 고객은 ‘연락처없음’으로 표시해라.
+SELECT CUSTNAME, NVL(PHONE, '연락처없음') AS PHONE FROM CUSTOMER ;
+
 -- 42.	평균 주문금액 이하의 주문에 대해 주문번호와 금액을 보여라.
+SELECT ORDERID, SALEPRICE
+  FROM ORDERS WHERE SALEPRICE <= (SELECT AVG(SALEPRICE) FROM ORDERS);
+
 -- 43.	각 고객의 평균 주문금액보다 큰 금액의 주문 내역에 대해 주문번호,고객번호,금액을 보여라.
+SELECT O1.ORDERID, O1.CUSTID, O1.SALEPRICE 
+  FROM ORDERS O1 WHERE O1.SALEPRICE > (SELECT AVG(O2.SALEPRICE) 
+                                          FROM ORDERS O2 WHERE O1.CUSTID = O2.CUSTID);
+
 -- 44.	서울시에 거주하는 고객에게 판매한 도서의 총판매액을 구해라.
+SELECT SUM(SALEPRICE) 
+    FROM ORDERS NATURAL JOIN CUSTOMER
+  WHERE ADDRESS LIKE '서울%';
+  
 -- 45.	Customer테이블에서 고객번호가 5인 고객을 삭제해라.
-
-
-
-
-
-
-
-
-
-
-
+SELECT * FROM CUSTOMER;
+DELETE FROM CUSTOMER WHERE CUSTID = 5;
