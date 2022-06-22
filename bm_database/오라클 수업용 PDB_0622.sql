@@ -286,12 +286,13 @@ END TEST22;
 
 EXECUTE TEST22(109);
 
-
-
-
-
-SELECT * FROM ENROL ORDER BY SUB_NO;
 DESC ENROL;
+SELECT COUNT(*) FROM ENROL
+    WHERE SUB_NO =101
+      AND STU_NO = 20131001;
+
+
+
 -- 1. 수강테이블에 데이터 추가하는 프로시저
 CREATE OR REPLACE PROCEDURE P_INSERT_ENROL
 (
@@ -300,39 +301,180 @@ CREATE OR REPLACE PROCEDURE P_INSERT_ENROL
   V_ENR_GRADE IN ENROL.ENR_GRADE%TYPE  
 )
 IS
+  SUB_CNT NUMBER;
+  IS_ERROR EXCEPTION;
 BEGIN
-  INSERT INTO ENROL
-    VALUES (V_SUB_NO, V_STU_NO,V_ENR_GRADE);
-END ;
+    SELECT COUNT(*) INTO SUB_CNT
+      FROM ENROL
+    WHERE SUB_NO = V_SUB_NO
+      AND STU_NO = V_STU_NO;
+          
+    IF SUB_CNT >= 1 THEN
+      RAISE IS_ERROR;
+    ELSE
+      INSERT INTO ENROL
+      VALUES (V_SUB_NO, V_STU_NO,V_ENR_GRADE);
+      
+      DBMS_OUTPUT.PUT_LINE('과목 점수 등록 성공');
+    END IF;
+      
+  EXCEPTION
+    WHEN IS_ERROR THEN
+      DBMS_OUTPUT.PUT_LINE('이미 등록한 과목입니다.');
+END P_INSERT_ENROL;
 /
+
+-- q1 추가 해설
+-- 수강테이블에 데이터 추가하는 프로시저
+create OR REPLACE procedure p1_insert_enrol
+(
+  v_sub_no in enrol.sub_no%type,
+  v_stu_no in enrol.stu_no%type,
+  v_enr_grade in enrol.enr_grade%type
+)
+
+is
+  v_cnt number;
+  c_error exception;
+
+begin
+   select count(*) into v_cnt from subject where sub_no=v_sub_no;
+    
+    if v_cnt=0 then raise c_error;
+    end if;
+    
+    select count(*) into v_cnt from student where stu_no=v_stu_no;
+    
+     if v_cnt=0 then raise c_error;
+     end if;
+     
+     insert into enrol(sub_no,stu_no,enr_grade)values(v_sub_no,v_stu_no,v_enr_grade );
+  DBMS_OUTPUT.PUT_LINE(v_stu_no || '학번의 '||v_sub_no || ' 과목 점수는 ' || v_enr_grade || '점 입니다.');
+  
+exception
+    when c_error then 
+    dbms_output.put_line('무결성에 위배됨');
+end p1_insert_enrol;
+/
+
 -- 실행
-EXECUTE P_INSERT_ENROL ('106', '20153077', 40);
+SELECT * FROM ENROL;
+
+EXECUTE P_INSERT_ENROL ('101', '20131001', 40);
+EXECUTE P_INSERT_ENROL ('101', '20151001', 99);
+-- 1번 끝
 
 
--- 2. 기존 과목번호를 새로운 과목번호로 교체하는 프로시저
-SELECT * FROM SUBJECT  ORDER BY SUB_NO;
+-- 2. 방법 1 :기존 과목번호를 새로운 과목번호로 교체하는 프로시저
+UPDATE SUBJECT SET SUB_NO = 101  WHERE SUB_NO = 101;
 
 CREATE OR REPLACE PROCEDURE P_P_SUB_NO_UPDATE
 (
-  OLD_SUB_NO OUT SUBJECT.SUB_NO%TYPE,
-  NEW_SUB_NO IN SUBJECT.SUB_NO%TYPE
+  V_SUB_NO IN SUBJECT.SUB_NO%TYPE,
+  V_NEW_SUB_NO IN SUBJECT.SUB_NO%TYPE
 )
 IS
 BEGIN
-  UPDATE SUBJECT
-    SET SUB_NO = V_SUB_NO;
+  UPDATE SUBJECT SET SUB_NO = V_NEW_SUB_NO
+    WHERE SUB_NO = V_SUB_NO;
+  
+EXCEPTION
+  WHEN DUP_VAL_ON_INDEX THEN
+    DBMS_OUTPUT.PUT_LINE('중복값이 있다.' || TO_CHAR(SQLCODE));
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('뭔가 오류가 발생했다.' || TO_CHAR(SQLCODE));
+  
 END P_P_SUB_NO_UPDATE;
 /
 
+EXECUTE P_P_SUB_NO_UPDATE(101, 101);
+
+-- 2. 방법 2 : 기존 과목번호를 새로운 과목번호로 교체하는 프로시저
+CREATE OR REPLACE PROCEDURE P_P_SUB_NO_UPDATE2
+(
+  V_SUB_NO IN SUBJECT.SUB_NO%TYPE,
+  V_NEW_SUB_NO IN SUBJECT.SUB_NO%TYPE
+)
+IS
+  SUB_CNT NUMBER;
+  MY_ERR EXCEPTION;
+BEGIN
+  SELECT COUNT(*) INTO SUB_CNT
+  FROM SUBJECT
+  WHERE SUB_NO = V_NEW_SUB_NO
+    AND SUB_NO <> V_SUB_NO;
+  
+  IF SUB_CNT >= 1 THEN
+    RAISE MY_ERR;
+  END IF;
+
+  UPDATE SUBJECT SET SUB_NO = V_NEW_SUB_NO
+    WHERE SUB_NO = V_SUB_NO;
+  
+EXCEPTION
+  WHEN MY_ERR THEN
+    DBMS_OUTPUT.PUT_LINE('내가 만든 오류. 중복값이 있다.' || TO_CHAR(SQLCODE));
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('뭔가 오류가 발생했다.' || TO_CHAR(SQLCODE));
+  
+END P_P_SUB_NO_UPDATE2;
+/
+
+SELECT * FROM SUBJECT  ORDER BY SUB_NO;
+EXECUTE P_P_SUB_NO_UPDATE2(101, 101);
+EXECUTE P_P_SUB_NO_UPDATE2(202, 101);
+EXECUTE P_P_SUB_NO_UPDATE(101, 102);
+
+
+-- q2 추가 해설
+-- 기존 과목번호를 새로운 과목번호로 교체하는 프로시저
+create procedure p1_sub_no_update
+(
+  old_sub_no in subject.sub_no%type,
+  new_sub_no in subject.sub_no%type
+)
+is
+  v_cnt number;
+  e1 exception;
+  e2 exception;
+  
+begin
+  select count(*) into v_cnt from subject where sub_no = old_sub_no;
+  
+  if v_cnt = 0 then raise e1;
+  end if;
+  
+  select count(*) into v_cnt from subject where sub_no = new_sub_no;
+  
+  if v_cnt > 0 then raise e2;
+  end if;
+  
+  UPDATE SUBJECT 
+    SET SUB_NO = new_sub_no
+    WHERE SUB_NO = old_sub_no;
+    
+  UPDATE enrol 
+    SET SUB_NO = new_sub_no
+    WHERE SUB_NO = old_sub_no;
+    
+  dbms_output.put_line('번호변경 성공');
+  
+  
+
+exception
+  when e1 then
+    dbms_output.put_line('교체할 과목번호가 없음');
+  when e2 then
+    dbms_output.put_line('이미 있는 과목번호 입니다');
+end p1_sub_no_update;
+/
 
 -- 실행 (기본과목번호, 새로운 번호)
-EXECUTE P_P_SUB_NO_UPDATE ('501', '201');
 -- 실행 결과 : 교체할 과목번호가 없다(교체 실패)
+EXECUTE p1_sub_no_update ('501', '201');
 
--- 실행 
-EXECUTE P_P_SUB_NO_UPDATE ('101', '102');
 -- 실행 결과 : 교체될 과목번호가 이미 있다(교체 실패)
+EXECUTE p1_sub_no_update ('101', '102');
 
--- 실행 
-EXECUTE P_P_SUB_NO_UPDATE ('101', '501');
 -- 실행 결과 : (교체 성공)
+EXECUTE p1_sub_no_update ('101', '501');
