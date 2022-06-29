@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0629</title>
+    <style>
+        .empty { height: 150px;}
+        .mt50 {margin-top: 50px;}
+    </style>
+</head>
+<body>
+    <div class="mt50">
+        <h1>성적</h1>
+        <hr>
+        <table border="1">
+            <caption>학생 성적 표</caption>
+            <tr>
+                <th>이름</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>100</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>이길동</td>
+                <td>100</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>박길동</td>
+                <td>100</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <th>평균</th>
+                <th>93.3</th>
+                <th>91.6</th>
+            </tr>
+        </table>
+    </div>
+    <div class="mt50">
+        <h1>버튼</h1>
+        <hr>
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3"><br>
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+    </div>
+    <div class="mt50">
+        <h1>로그인폼</h1>
+        <hr>
+        <fieldset>
+            <legend>Login</legend>
+            <form method="get">
+                Username <input type="text">
+                Password <input type="password">
+            </form>
+        </fieldset>
+    </div>
+    <div class="mt50">
+        <h1>회원 정보를 입력해라</h1>
+        <hr>
+        <fieldset>
+            <legend>회원정보</legend>
+            <form action="post">
+                이메일: <input type="text"><br>
+                홈페이지: <input type="url" placeholder="http://"><br>
+                전화번호: <input type="tel">
+            </form>
+        </fieldset>
+        연락처: &phone; 010-1234-5678
+    </div>
+    <div class="mt50">
+        <table border="1">
+            <caption><h1>교재비 동의서</h1></caption>
+            <tr>
+                <td>성명</td>
+                <td><input type="text"></td>
+                <td>생년월일</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>개강일자</td>
+                <td><input type="date"></td>
+                <td>담당자</td>
+                <td><input type="text" placeholder="필수작성"></td>
+            </tr>
+            <tr>
+                <td>연락처</td>
+                <td colspan="3"><input type="tel"></td>
+            </tr>
+            <tr>
+                <td>수강과목</td>
+                <td colspan="3"><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <textarea cols="80" rows="10"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="mt50">
+        <table>
+            <tr><td>파티
+                <input type="date" value="2022-06-29"></td></tr>
+    
+            <tr><td>파티시간 <input type="time"></td></tr>
+            <tr><td>파티장소 <input type="text"></td></tr>
+    
+            <tr><td>파티시간범위 <input type="number" min="7" max="10" step="1"></td></tr>
+            <tr><td>온도 설정 <input type="range" min="10" max="30" list="temp">
+                <datalist id="temp">
+                    <option value="12"></option>
+                    <option value="22"></option>
+                    <option value="28"></option>
+                </datalist>
+            </td></tr>
+        </table>
+    </div>
+    <div class="mt50">
+        <form>
+            이메일: <input type="email"><br>
+            홈페이지: <input type="url" placeholder="http://"><br>
+            검색어: <input type="search" placeholder="검색"><br>
+            <input type="submit" value="제출">
+        </form>
+    </div>
+    <div class="mt50">
+        <fieldset>
+            <legend>등록정보</legend>
+            <ul>
+                <li>참여인원(최대10명) <input type="number" max="10" step="1"></li>
+                <li>지원물품(1인당 5개) <input type="number" max="5" step="1"></li>
+                <li>희망 단계(하,중,상)  
+                    <input type="range" min="1" max="3" list="pd">
+                    <datalist id="pd">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                    </datalist>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+    <div class="empty"></div>
+</body>
+</html>
