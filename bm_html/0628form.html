@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0629form</title>
+    <style>
+        .empty { height: 150px;}
+        .mt50 {margin-top: 50px;}
+    </style>
+</head>
+<body>
+    <div class="mt50">
+        <h3>로그인 폼</h3>
+        <form name="f" method="get" action="">
+            아이디&nbsp;&nbsp;&nbsp; : <input type="text" size="20" value=""><br>
+            비밀번호 : <input type="password" size="20" value=""><br>
+            메모&nbsp;&nbsp;&nbsp;&nbsp; : <textarea cols="20" rows="5">자소서작성</textarea><br>        
+            <input type="submit" value="완료">
+        </form>
+    </div>
+    <hr>
+    <div class="mt50">
+        <form name="sch" method="post">
+            <input type="text" size="30">
+            <input type="reset" value="다시입력">
+            <input type="submit" value="검색">
+        </form>
+    </div>
+    <div class="mt50">
+        <label for="id">
+            아이디: <input type="text" name="id" id="id">
+        </label>
+        <label>
+            비번: <input type="password">
+        </label>
+        <label>비번확인: </label>
+        <input type="password">
+        <input type="submit" value="로그인">
+    </div>
+    <div class="mt50">
+        <input type="text" list="li" placeholder="과목선택"><br>
+        <datalist id="li">
+            <option value="java"></option>
+            <option value="python"></option>
+        </datalist>
+    </div>
+    <div class="mt50">
+        <form>
+            검색: <input type="text" >
+            <input type="button" value="확인">
+            <button type="button">취소</button><br>
+            <!-- type="button" 미지정시 submit이 기본값  -->
+            <input type="submit" value="전송">
+            <button type="submit">전송</button>
+            <hr>
+            이미지버튼: <input type="image" src="../images/chicken.jpg" alt="">
+            <button type="button"><img src="../images/chicken.jpg" alt=""></button><br>
+        </form>
+    </div>
+    <div class="mt50">
+        <form>
+            <label for="em">메일주소</label>
+            <input type="email" name="em" id="em">
+            <input type="submit" value="제출">
+            <input type="reset" value="다시입력">
+        </form>
+    </div>
+    <div class="mt50">
+        <form>
+            탕수육 <input type="checkbox" value="1">
+            떡볶이 <input type="checkbox" value="2" checked>
+            삼겹살 <input type="checkbox" value="3">
+            스테이크 <input type="checkbox" value="4" disabled>
+        </form>
+    </div>
+    <div class="mt50">
+        <form action="">
+            <input type="radio" name="food" value="1"><img src="../images/chicken.jpg" alt="">
+            <input type="radio" name="food" value="2"><img src="../images/burger.jpg" alt="">
+            <input type="radio" name="food" value="3"><img src="../images/pizza.jpg" alt=""><br>
+        </form>
+    </div>
+    <div class="mt50">
+        <form>
+            <fieldset>
+                <legend>회원 정보</legend>
+                메일주소 : <input type="email">
+                전화번호 : <input type="tel">
+            </fieldset>
+            <fieldset disabled="disabled">
+                <legend>회원 목록</legend>
+                메일주소 : <input type="email">
+                전화번호 : <input type="tel">
+            </fieldset>
+        </form>
+    </div>
+    <div class="mt50">
+        <form>
+            <select name="food1">
+                <option value="1">자장면</option>
+                <option value="2">스파게티</option>
+                <option value="3" selected>찜닭</option>
+            </select>
+        </form>
+        <hr>
+        <form>
+            <select name="food2" multiple>
+                <option value="1">자장면</option>
+                <option value="2">스파게티</option>
+                <option value="3" selected>찜닭</option>
+                <option value="4">스테이크</option>
+                <option value="5">떡볶이</option>
+            </select>
+        </form>
+    </div>
+    <hr>
+    <div class="mt50">
+        <h1>여름방학 특강 신청</h1>
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <ul>
+                <li>학번 <input type="text"></li>
+                <li>이름 <input type="text"></li>
+                <li>학과 
+                    <select name="subject">
+                        <option value="1" selected>건축공학과</option>
+                        <option value="2">영어영문학과</option>
+                        <option value="3">경제통상학과</option>
+                        <option value="4">컴퓨터공학과</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>수강 과목을 선택하세요</legend>
+            <ul>
+                <li>관심분야
+                    <input type="text" list="sub_li" placeholder="관심분야고르기"><br>
+                    <datalist id="sub_li">
+                        <option value="java"></option>
+                        <option value="python"></option>
+                    </datalist>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+    <hr>
+    <div class="mt50" style="margin-top: 100px;">
+        <h1>프런트엔드 개발자 지원서</h1>
+        <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        <hr>
+        <dl>
+            <dt>개인정보</dt>
+            <dd>
+                <ul>
+                    <li>이름   <input type="text" placeholder="공백없이 입력하세요"></li>
+                    <li>연락처 <input type="phone"></li>
+                </ul>
+            </dd>
+        </dl>
+        <h4>지원분야</h4>
+            <ul>
+                <li><input type="radio" name="part" value="1">웹 퍼블리싱</li>
+                <li><input type="radio" name="part" value="2">웹 애플리케이션 개발</li>
+                <li><input type="radio" name="part" value="3">개발환경개선</li>
+            </ul>
+        <form>
+            <legend>지원 동기</legend><br>
+            <textarea cols="70" rows="10" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea><br>
+            <input type="submit" value="접수하기">
+            <input type="reset" value="다시쓰기">
+        </form>
+    </div>
+    <div class="mt50">
+        <fieldset>
+            <legend>신청 과목</legend>
+            <p>이 달에 신청할 과목을 선택하세요. (1과목만 가능)</p>
+            <input type="radio" name="sub1">회화
+            <input type="radio" name="sub1">문법
+            <input type="radio" name="sub1">작문
+        </fieldset>
+        <fieldset>
+            <legend>메일링</legend>
+            <p>메일로 받고 싶은 뉴스 주제를 선택해 주세요.(복수선택가능)</p>
+            <input type="checkbox" name="sub2">해외 단신
+            <input type="checkbox" name="sub2">5분 회화
+            <input type="checkbox" name="sub2">모닝팝스
+        </fieldset>
+    </div>
+    <div class="mt50">
+        <form name="fo" method="get">
+            <label>아이디 : <input type="text"></label><br>
+            
+            <label for="pass">비밀번호 : </label>
+            <input type="password" id="pass"><br>
+
+            주소 : <input type="text">
+            <input type="submit" value="완료">
+        </form>
+    </div>
+    <div class="mt50">
+        <input type="color">
+    </div>
+    <div class="mt50">
+        <h1>회원 가입을 환영합니다</h1>
+        <form>
+            <ul>
+                <li>
+                    <label for="id1">아이디:</label><input type="text" id="id1">
+                </li>
+                <li>
+                    <label for="pw1">비밀번호:</label><input type="password" id="pw1">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="empty"></div>
+</body>
+</html>
