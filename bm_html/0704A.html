@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mt50 {
+            position: relative;
+            width: 100%; height: 1000px;
+        }
+        header {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            background-color: beige;
+        }
+        nav{ 
+            float: left;
+            width: 30%; height: 300px;
+            background-color: rgb(228, 245, 220);
+        }
+        nav ul li {
+            float: left;
+            height: 20px;
+            width: 32%;
+        }
+        section {
+            float: left;
+            width: 50%;
+            height: 300px;
+        }
+        section article {
+            width: 100%;
+            height: 200px;
+            background-color: rgb(220, 230, 245);
+        }
+        aside{
+            /* float: left; */
+            width: 10%;
+            height: 50px;
+            background-color: teal;
+            bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mt50">
+        <header>
+            <h1>C 언어</h1>
+        </header>
+        <nav>
+            <h2>목차</h2>
+            <ul>
+                <li><a href="#a">개요</a></li>
+                <li><a href="#b">역사</a></li>
+                <li><a href="#c">설명</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article id="a">개요</article>
+            <article id="b">역사</article>
+            <article id="c">설명</article>
+        </section>
+        <aside>
+            <a href="http://www.naver.com">사이드</a>
+        </aside>
+    </div>
+</body>
+</html>
