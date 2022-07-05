@@ -6,6 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0705Obj</title>
     <script>
+
+        var music = new Object();
+
+        /* 1. 
+        music.title = "애국가";
+        music.singer = "국가";
+        music.price = 150000;
+        */
+
+        /* 2. 
+        var music = {
+            title : "애국가";
+            singer : "국가";
+            price : 150000; 
+        };
+        */
+
+        /* 3.*/
+        function Music (){
+            this.title = "애국가";
+            this.singer = "국가";
+            this.price = 150000;
+        }
+
+
+        /* 3.
+        function mon(name,id,n){
+            this.name=name;
+            this.id=id;
+            this.n=n;
+
+            this.a=function(){
+                    return this.n;
+            }
+            this.plus=function(money){
+                    this.n+=money;
+            }
+            this.minus=function(money){
+                    this.n-=money;
+            }  
+        }
+        */
+
+        /* 2. 리터럴 표기법
+        var n = {
+            name : "세종",
+            id : "123",
+            money : 5000,
+
+            a:function(){
+                return this.money;
+            },
+
+            plus:function(num){
+                this.money+=num;
+            },
+            
+            minus:function(num){
+                this.money+=num;
+            }
+        }
+        */
+
+        /* 1.
         function a(){
             return this.num;
         }
@@ -18,7 +82,6 @@
             return money;
         }
 
-
         var mon = new Object();     // 사용자 객체
         mon.name = "김길동";
         mon.id = "123";
@@ -27,12 +90,36 @@
         mon.a = a;
         mon.plus=plus;
         mon.minus = minus;  //메소드 작성
-
+        */
     </script>
 </head>
 <body>
     <script>
 
+        /* 3. 방법일때는 객체생성 필요함. 다른 방법일땐 중복되어서 안된다*/
+        var music = new Music();
+
+        document.write(music.title+"<br>");
+        document.write(music.singer+"<br>");
+        document.write(music.price+"<br>");
+
+        /* 3.
+        var aa=new mon("광택","123",30000); //생성자
+        document.write(aa.name);
+        aa.plus(10000);
+        document.write(aa.a()+"<br>");
+        aa.minus(10000);
+        document.write(aa.a()+"<br>");
+        */
+        
+        /* 2.
+        n.plus(5000);
+        document.write(n.a() +"<br>");
+        n.minus(5000);
+        document.write(n.a() +"<br>");
+        */
+
+        /* 1.
         document.write(mon.name);
         document.write(mon.num);
         document.write("<hr>");
@@ -41,7 +128,7 @@
         document.write("<hr>");
         mon.minus(5000);
         document.write(mon.num);
-
+        */
         document.write("<hr>");
 
     </script>
