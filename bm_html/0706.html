@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // 프로토타입으로 -> 90점 이상이면 A, 80점 이상이면 B 그 이외 F
+        /*
+        function student(name, score){
+            this.name = name;
+            this.score = score;
+
+            this.getgrade = function(){
+                if(this.score >= 90){
+                    return "A";
+                }
+                else if (this.score >= 80){
+                    return "A";
+                }
+                else {
+                    return "F";
+                }
+            }
+        }
+        */
+
+        function di(){
+            var n = document.getElementById("parent");
+            var m = document.createElement("div");
+            m.innerHTML = "new div";
+            m.setAttribute("id", "new");
+            m.style.backgroundColor = "gold";
+            m.style.width = "300px"; m.style.height = "50px";
+            m.style.border = "1px solid #000";
+
+            m.onclick = function(){
+                var p = this.parentElement;     //부모 태그 요소
+                p.removeChild(this);
+                console.log("바디클릭");
+            }
+
+            n.appendChild(m);
+        }
+    </script>
+</head>
+<body id = "parent">
+    <p>
+        Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Sit blanditiis, ipsa repudiandae dolor magnam placeat distinctio doloremque architecto, 
+        error adipisci ad accusantium doloribus amet vitae et modi. Voluptates, optio accusantium?
+        <a href="javascript:di()">생성노드</a>
+    </p>
+
+    
+    <script>
+        // 프로토타입으로 -> 90점 이상이면 A, 80점 이상이면 B 그 이외 F
+        /*
+        var a = new student("juli", 60);
+        var b = new student("tom", 100);
+
+        document.write(a.name + a.getgrade() +"<br>");
+        document.write(b.name + b.getgrade());
+        */
+
+        // 가장 긴 단어 출력
+        var names = new Array("aaa", "b", "cc");
+        var longest = names[0]; //초기값 설정
+
+        for (var i=0; i<names.length; i++){
+            if(longest.length< names[i].length){
+                longest.names[i];
+            }
+        }
+        document.write(longest);
+
+        //student 객체생성
+        // id name grade
+        var student = {
+            id : "학생",
+            name : "세종대왕",
+            grade : "A"
+        }
+        // document.write(student.id +"<br>"+ student.name +"<br>"+ student.grade);
+
+    </script>
+</body>
+</html>

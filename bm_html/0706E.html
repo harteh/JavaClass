@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706E</title>
+</head>
+<body id="Body">
+    <h1>배경색 랜덤 변경</h1>
+    <button onclick="chBG()">배경색 바꾸기</button>
+    <hr>
+    <h3>문장 색 변경</h3>
+    <p>"변경"이라는 버튼을 하나 만들어
+        버튼을 클릭하면 "자바 스크립트"라는 문장의 색이 변하도록 코드작성해라.
+        함수형태로 설정
+    </p>
+
+    <button onclick="chTextColor()">변경</button>
+    <p id="text">자바 스크립트</p>
+    <hr>
+
+
+    <div class="empty" style="height: 500px;"></div>
+    <script>
+        function chBG(){
+            var a = document.getElementById("Body");
+            var str = ["red", "orange", "gold", "green", "blue"];
+            
+            for(var i=0; i<str.length; i++){
+                var n = parseInt(Math.random()*5);  //0~4
+                a.style.backgroundColor = str[n];
+            }
+        }
+        
+        function chTextColor(){
+            var pid = document.getElementById("text");
+            pid.style.color="red";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706Rivew1</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="mt50">
+        <h3>라면을 끓이는 순서</h3>
+        <hr>
+        <ol type="A" id="ramen" onclick="chBG()">
+            <li>물을 끓인다</li>
+            <li>라면과 스프를 넣는다</li>
+            <li>계란을 넣는다</li>
+            <li>얌얌 맛있게 먹는다</li>
+        </ol>
+    </div>
+    <hr>
+    <div class="mt50">
+        <h3>계산해봅시다</h3>
+        <hr>
+        <p>3 + 4 = <span class="ans" onclick="answer(this, 3+4)">답</span></p>
+        <p>5 * 20 + 60 = <span class="ans" onclick="answer(this, 5*20+60)">답</span></p>
+        <p>20/5 - 4*5 = <span class="ans" onclick="answer(this, 20/5-4*5)">답</span></p>
+        <hr>
+        <h3>계산 2 : split</h3>
+        <p>3 + 4 = <span onclick="res(this)" id="k1">답</span></p>
+        <p>5 * 20 + 60 = <span onclick="res(this)" id="k2">답</span></p>
+        <p>20/5-4*5 = <span onclick="res(this)" id="k3">답</span></p>
+        <hr>
+        <h3>계산 3 : slice</h3>
+        <p>3 + 4 = <span onclick="res1(this)" id="k1">답</span></p>
+        <p>5 * 20 + 60 = <span onclick="res1(this)" id="k2">답</span></p>
+        <p>20/5-4*5 = <span onclick="res1(this)" id="k3">답</span></p>
+    </div>
+    <hr>
+    <div class="mt50">
+        <h3>이미지 크기 변경</h3>
+        <hr>
+        <img id="pizza" src="../images/pizza.jpg" width="90" height="90" onclick="chSize()">
+    </div>
+    <div class="empty" style="height: 500px;"></div>
+    
+    <script>
+        var chkli = document.getElementsByTagName("li");
+        for(var i=0; i<chkli.length; i++){
+            chkli[i].style.color="green";
+        }
+
+        function chBG(){
+            var list = document.getElementById("ramen");
+            list.style.backgroundColor="yellow";
+        }
+        
+        function answer(obj, answer){
+            obj.innerHTML = answer;
+        }
+
+        function res(obj){
+            var que2 = obj.parentNode.innerHTML;
+            var an = que2.split("=");
+            var an2 = eval(an[0]);
+
+            obj.innerHTML = an2;
+        }
+
+        function res1(obj){
+            var an = obj.parentElement.innerText;
+            var num = an.indexOf("=");
+            var ans = eval( an.slice(0, num-1) );
+
+            obj.innerText = ans;
+        }
+
+
+        function chSize(){
+            var im = document.getElementById("pizza");
+            im.style.transform = 'scale(2)';
+        }
+    </script>
+</body>
+</html>

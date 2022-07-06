@@ -1,4 +1,4 @@
--- 환자테이블 생성
+﻿-- 환자테이블 생성
 create table PATIENT(
   P_NO NUMBER NOT NULL PRIMARY KEY,
   P_NAME VARCHAR2(50),
@@ -242,7 +242,46 @@ begin
 end;
 /
 
+----------------------------------
+29.   과번호와 환자번호를 입력받아 환자의 금액을 할인해주고 결과를 출력하는 프로시저 만들어라. (프로시저명:discount)
+set serveroutput on
 
+create or replace procedure discount(
+  v_h_no in en.h_no%type,
+  v_p_no in en.p_no%type)
+is
+  v_e_price en.e_price%type;
+begin
+  select e_price*0.9 into v_e_price from en
+  where h_no=v_h_no and p_no=v_p_no;
+  dbms_output.put_line('할인된 금액: '||v_e_price);
+end discount;
+/
+
+execute discount(1, 1001);
+select * from en;
+--30.   과번호가 1일 때 환자번호와 금액을 구해라. (커서 사용)
+set serveroutput on
+
+create or replace procedure test_curs
+is
+    v_p_no en.p_no%type;
+    v_e_price en.e_price%type;
+    cursor t_cursor is
+        select p_no, e_price from en
+        where h_no=1;
+    begin
+        open t_cursor;
+    loop
+        fetch t_cursor into v_p_no, v_e_price;
+        exit when t_cursor%NOTFOUND;
+        dbms_output.put_line(v_p_no||' '||v_e_price);
+    end loop;
+    close t_cursor;
+end test_curs;
+/
+
+execute test_curs;
 
 
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706c</title>
+    <script></script>
+</head>
+<body>
+    <script>
+        
+        function ch(){
+            var pid = document.getElementById("firstP");
+            var n = document.getElementById("java");
+            n.style.color="red";
+            n.innerHTML = "SCRIPT!!!!";
+
+            pid.style.padding="15px";
+            pid.style.border="3px solid gold";
+        }
+    
+        function chIMG(){
+            var pRamen = document.getElementById("ramen");
+            pRamen.innerHTML = "라면<img src='../images/burger.jpg'>이 아닙니다 "
+        }
+
+        function chBtn(obj, size, color){
+            obj.style.fontSize = size;
+            obj.style.color = color;
+        }
+
+        function chSpan(){
+            var sn = document.getElementsByTagName("span");
+            for(var i=0; i<sn.length; i++){
+                var num = sn[i];
+                num.style.color = "red";
+                num.style.fontWeight = "bold";
+            }
+        }
+    </script>
+
+    <h3>버튼 클릭 시 요소 변경</h3>
+    <p id="firstP" style="color: coral;">자바
+        <span id="java" style="color: green;"> 스크립트</span>
+    </p>
+    <input type="button" value="버튼" onclick="ch()">
+    <hr>
+
+    <h3>클릭 시 이미지 뜨게 하기</h3>
+    <p id="ramen" style="color: blue;" onclick="chIMG()">
+        클릭 <span style="color: red;">해보세요</span>
+    </p>
+    <hr>
+
+    <h3>클릭 시 버튼의 지정된 색으로 변경</h3>
+    <button onclick="chBtn(this, '30px', 'pink')">버튼1</button>
+    <button onclick="chBtn(this, '30px', 'teal')">버튼2</button>
+    <div onclick="chBtn(this, '50px', 'orange')">클릭하세요</div>
+    <hr>
+
+    <h3>span 여러개 속성 변경</h3>
+    <button onclick="chSpan()">눌러!!</button>
+        이 노래는 <span>유명</span>해지지 않았으면 해
+        이 노래는 유명해지지 않았으면 해
+        사람들이 <span>가사를 못 외웠으면 해</span>
+        에라라라라 에베베베 에베베베
+        이 <span>노래는</span> 유명해지지 않았으면 해
+        이 노래는 유명해지지 않았으면 해
+    <hr>
+
+    <div class="empty" style="height: 500px;"></div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706Rivew2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function chPink(){
+            var n = document.getElementById("chkP");
+            n.style.border = "3px dotted pink";
+        }
+
+        function addr(){
+            result = document.getElementById("addr");
+
+            add = document.getElementsByName("aa")[0].value +', '+
+                    document.getElementsByName("tel")[0].value;
+
+            item = document.createElement("li");
+            node = document.createTextNode(add);
+
+            result.appendChild(item);
+            item.appendChild(node);
+        }
+
+        function re(){
+            document.getElementById("addr").innerHTML = " ";
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+    <div class="mt50">
+        <h3>자바스크립트란?</h3>
+        <button id="pink" onclick="chPink()">pink</button>
+        <hr>
+        <div>
+            자바스크립트는 웹 페이지를 동적 변경시킬 수 있다. <br>
+            <span id="chkP">자바를</span> 아는 사용자는 빠르게 학습할 수 있다.<br>
+            GUI프로그래밍에 필요한 요소들이 있어 약간의 어려움이있다.<br>
+        </div>
+    </div>
+    <hr>
+    <div class="mt50">
+        이름:<input type="text" name="aa"><br>
+        전화번호:<input type="tel" name="tel"><br>
+        <input type="submit" value="저장" onclick="addr()">
+        <input type="submit" value="리셋" onclick="re()">
+        <ul id="addr"> </ul>
+    </div>
+    <hr>
+    <div class="mt50">
+        <h2> 문제 1 </h2>
+        <p>구구단을 출력하는 gugu()함수를 만들어 <br>1~9 사이의 수를 입력받아 구구단을 출력하는 웹 페이지를 작성해라.</p>
+        <hr>
+        <div id="guguResult">구구단을 출력</div>
+    </div>
+    <div class="mt50">
+        <h2>문제 2</h2>
+        <p>다음 배열에 들어있는 각 문자열을 리스트의 아이템으로 출력해라. (불렛포함시킨 ul형태로)
+        <br> var food=[“라면”, “초밥”, “가츠동”, “사케동”];</p>
+        <hr>
+    </div>
+
+
+    <script>
+        function gugu(){
+            var res = document.getElementById("guguResult");
+            var dan = prompt("구구단 단수: ");
+            var result = new Array();
+            for (var i=1; i<=9; i++){
+                document.write(i +" * "+ dan +" = "+ i * dan+",  ");
+            }
+        }
+        gugu();
+    
+        function gugu1(){
+            var n=prompt("입력");
+            document.write(Number.isInteger(n)+"<br>");
+
+            while(!Number.isInteger(n)){
+                if(n<=9 && n>=1){
+                    for(var i=1;i<=9;i++){
+                    document.write(i*n +"<br>");
+                    }
+                    break;
+                }
+                else{
+                    document.write("입력");
+                    break;
+                }
+            }
+        }
+        gugu1();
+
+        var food = ["라면", "초밥"];
+        document.write("<ul>");
+            for(var i =0; i<food.length; i++){
+                document.write("<li>" +food[i]+ "</li>");
+            }
+        document.write("</ul>");
+    </script>
+</body>
+</html>
