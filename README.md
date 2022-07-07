@@ -22,6 +22,7 @@ class
 html, css, javascript
 + [html 파일](https://github.com/harteh/JavaClass/tree/main/bm_html)
 + [JS](https://github.com/harteh/JavaClass/blob/main/bm_html/0704JS.html)
++ [JS - 객체생성](https://github.com/harteh/JavaClass/blob/main/bm_html/0705Obj.html)
 
 ## 토이 프로젝트
 + [swing으로 간단한 포스기 구현](https://github.com/harteh/JavaClass/blob/main/bm_workspace/MayJava/src/awtFrame/MenuOrder.java)
