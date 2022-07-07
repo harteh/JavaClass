@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0705</title>
+</head>
+<body>
+    <script>
+        // 1~ 10까지 짝수 출력 -> continue;
+        var i;
+        for( i=1; i<=10; i++){
+            if(i%2==1) {
+                continue;
+            }
+            document.write( i );
+        }
+
+        document.write( "<hr>" );
+        var res = eval(" 2*3+4*6 ");
+        document.write( res );
+
+        document.write( "<hr>" );
+        var a = parseInt("100");
+        document.write( a );
+        console.log(a);
+
+        document.write( "<hr>" );
+        var b = parseInt("100");
+        if(isNaN(b)){   // 정수 100이 정수가 맞나? -> 정수이다
+                        //isNaN : 정수가 아니여야 true
+            document.write( "안녕" );
+        }
+
+
+    </script>
+</body>
+</html>

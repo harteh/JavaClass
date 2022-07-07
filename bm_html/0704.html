@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0704</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .fontSize{
+            transition: font-size 3s;
+            font-size: 30px;
+        }
+        .fontSize:hover{ font-size: 500%; }
+        .inblock > div { display: inline-block; padding: 20px; background-color: pink;}
+        #rotate { transform: rotate(30deg);}
+        #skew { transform: skew(30deg);}
+        #scale {transform: scale(1,2);}
+        #translate { transform: translateY(50px);}
+        #translate:hover { transition: 3s; transform: translate(150px, 50px);}
+
+        .num{ border: 1px solid #333;}
+        .title{text-decoration: underline; width: 100px; padding-left: 30px; display: inline-block;}
+        input:hover{ color: magenta;}
+        
+    </style>
+
+</head>
+<body>
+    <div class="mt50">
+        <p><span class="fontSize">CSS!</span>마우스 올리면 변함</p>
+    </div>
+    <div class="mt50 inblock">
+        <div id="rotate">회전</div>
+        <div id="skew">기울기</div>
+        <div id="scale">확대/축소</div>
+        <div id="translate">이동</div>
+    </div>
+    <div class="empty"></div>
+    <div class="mt50">
+        <h2>음악재생</h2>
+        <hr>
+        <div class="line1">
+            <span class="num">1</span>
+            <span class="title">LOVE DIVE</span>
+            <input type="button" value="재생">
+            <input type="button" value="중지">
+        </div>
+        <div class="line2">
+            <span class="num">2</span>
+            <span class="title">That That</span>
+            <input type="button" value="재생">
+            <input type="button" value="중지">
+        </div>
+        <div class="line3">   
+            <span class="num">3</span>
+            <span class="title">TOMBOY</span>
+            <input type="button" value="재생">
+            <input type="button" value="중지">            
+        </div>
+    </div>
+    <div class="empty"></div>
+</body>
+</html>

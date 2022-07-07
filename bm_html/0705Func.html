@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(a, b){
+            return a+b;
+        }
+
+        // 정수 입력받는다 
+        // 내가 쓴 정수가 숫자가 아니면 "오류"라고 출력
+        // 숫자만 내가 쓴 숫자까지 * 출력
+        // ex) 5 ****
+        function star(){
+            var s = prompt("정수입력");
+            if(isNaN(s)){
+                document.write("정수가 아니다");
+            }
+            else {
+                for(var i=0; i<=s; i++){
+                    document.write("*");
+                }
+            }
+        }
+
+        // 9단 출력
+        function dan(m) {
+            for (var i=1; i<=m; i++){
+                document.write(m +"*"+ i +"="+ m*i +"<br>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+        var n = add(3,4);
+        document.write(n);
+        document.write( "<hr>" );
+
+        // star();
+        document.write( "<hr>" );
+
+        var m = prompt("몇 단?");   //9
+        dan(m);
+    </script>
+</body>
+</html>

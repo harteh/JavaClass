@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(n){
+            document.write(n+ "<br>");
+            document.write("<hr>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // var today = new Array();    // 배열 객체
+
+        // 숫자와 개수만큼 별 그리기
+        var ary = [1,2,3,4,5];  // 배열 생성
+        for(var i=0; i<ary.length; i++){
+            var n = ary[i]; //1 2 3 4 5
+            while(n > 0) {
+                document.write("*");
+                n--;
+            }
+            document.write(ary[i] +"<br>");
+        }
+        document.write("<hr>");
+
+        // 합계 구하기
+        var ary1 = new Array();     // 빈 배열 생성
+        ary1[0] = 1;
+        ary1[1] = 2;
+        ary1[2] = 3;
+
+        var sum1 = 0;
+        for(var i= 0; i<ary1.length; i++){
+            sum1 += ary[i];
+        }
+        document.write(sum1/ary1.length +"<br>");
+        document.write("<hr>");
+
+        // 여러타입 배열
+        var ary2 = new Array("세종", "태조", "단종");
+        var ary3 = new Array("연산군");
+        var n;
+
+        n = ary.concat(ary2);
+        show(n);  // 출력함수
+
+        m = ary.length;
+        document.write(m);
+        document.write("<hr>");
+
+        n = ary2.join("@@");    // 세종@@태조@@단종
+        show(n);
+
+        n = ary2.slice(1, 2);
+        show(n);
+
+        n = ary2.sort();
+        show(n);
+
+        n = ary2.reverse();
+        show(n);
+        
+        n = ary2.toString();
+        show(n);
+
+        // 날짜
+        var now = new Date();
+        var date = now.getDate();
+        document.write(now +"<br>");
+        document.write(date +"<br>");
+
+        document.write( now.toUTCString() +"<br>" );
+        document.write( now.getMonth() +"<br>" );
+        document.write("<hr>");
+        
+        // 날짜
+        var date1 = new Date(2022,6,5, 15,13,2);
+        document.write( date1.toLocaleDateString() +"<br>" );
+        document.write("<hr>");
+        // 현재 달 출력
+        document.write( now.getMonth() +1 +"<br>" );
+        document.write("<hr>");
+
+    </script>
+</body>
+</html>

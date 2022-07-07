@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706DOM</title>
+</head>
+<body>
+    <h1>객체 구조</h1>
+    <p id="firstP"
+        style="color:blue"
+        onclick="this.style.color='teal'">
+    이것은 
+        <span style="color:red">
+        문장입니다.
+        </span>
+    </p>
+
+    <script>
+        var n = document.getElementById("firstP");      //id가 firstP인 태그의 DOM을 찾는다.
+        
+        var m = n.tagName;
+        document.write(m);      // P
+        document.write("<hr>");
+        m += n.id;
+        document.write(m);      // PfirstP
+        document.write("<hr>");
+        
+        m += n.innerHTML;
+        document.write(m);      // PfirstP 이것은 문장입니다.
+        document.write("<hr>");
+
+        m += n.childElementCount;
+        document.write(m);      // P의 자식의 개수
+        document.write("<hr>");
+
+        m += n.style.color;
+        document.write(m);      // PfirstP 이것은 문장입니다. 1blue
+        document.write("<hr>");
+
+
+
+    </script>
+</body>
+</html>
