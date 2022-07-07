@@ -80,7 +80,7 @@ nav {
     font-size: 25px;
 }
 #board_set .board_wrap .board table tr th:last-child {
-    font-size: 48px;
+    font-size: 30px;
     color: rgb(3, 43, 161);
     text-align: right;
     cursor: pointer;
