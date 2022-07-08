@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0707calc2</title>
+    <style>
+        input[type=button]  { width: 50px; }
+    </style>
+    <script>
+        function c(){
+            var n = document.getElementById("aa");
+            n.value = "";
+        }
+        function r(){
+            var n = document.getElementById("aa");
+            n.value = eval(n.value);
+        }
+        function ch(obj){
+            var n = document.getElementById("aa");
+            n.value += obj.value;
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <h1>계산기</h1>
+        <hr>
+        <input id="aa" type="text" value=""><br>
+        <input onclick="c()" type="button" value="C">
+        <input onclick="r()" type="button" value="="><br>
+        <input onclick="ch(this)" type="button" value="7">
+        <input onclick="ch(this)" type="button" value="8">
+        <input onclick="ch(this)" type="button" value="9">
+        <input onclick="ch(this)" type="button" value="/"><br>
+        <input onclick="ch(this)" type="button" value="4">
+        <input onclick="ch(this)" type="button" value="5">
+        <input onclick="ch(this)" type="button" value="6">
+        <input onclick="ch(this)" type="button" value="*"><br>
+        <input onclick="ch(this)" type="button" value="1">
+        <input onclick="ch(this)" type="button" value="2">
+        <input onclick="ch(this)" type="button" value="3">
+        <input onclick="ch(this)" type="button" value="-">
+        <br>
+        <input onclick="ch(this)" type="button" value="0">
+        <input onclick="ch(this)" type="button" value="+">
+    </body>
+    
+</body>
+</html>

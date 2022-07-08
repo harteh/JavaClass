@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0707calc</title>
+    <style></style>
+    <script>
+        
+        function add(obj){
+            var result = document.getElementById("dd").value;     // 결과 출력창
+            var num;    //입력받은 숫자
+            var chk;    //입력받은 연산자
+
+            if(isNaN(obj)){
+                console.log("이건 연산자");
+            }
+            else {
+                console.log("숫자다");
+                document.getElementById("dd").innerText = obj;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>계산기</h3>
+    <hr>
+    <input type="text" placeholder="0" id="dd">
+    <table>
+        <tr>
+            <td><button type="button" onclick="ce()">C</button></td>
+            <td><button type="button" onclick="result()"> = </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(7)">7</button></td>
+            <td><button type="button" onclick="add(8)">8</button></td>
+            <td><button type="button" onclick="add(9)">9</button></td>
+            <td><button type="button" onclick="add('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(4)">4</button></td>
+            <td><button type="button" onclick="add(5)">5</button></td>
+            <td><button type="button" onclick="add(6)">6</button></td>
+            <td><button type="button" onclick="add('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(1)">1</button></td>
+            <td><button type="button" onclick="add(2)">2</button></td>
+            <td><button type="button" onclick="add(3)">3</button></td>
+            <td><button type="button" onclick="add('-')"> - </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="add(0)">0</button></td>
+            <td><button type="button" onclick="add('+')">+</button></td>
+        </tr>
+    </table>
+</body>
+</html>
