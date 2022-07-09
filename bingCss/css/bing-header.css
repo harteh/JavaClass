@@ -1,0 +1,61 @@
+/* 헤더영역 */
+header {
+    /* width: 100%; */
+    height: 60px;
+    background-color: aliceblue;
+    padding: 40px 80px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+header .logo {
+    width: 142px;
+    height: 35px;
+}
+nav {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+/* 주요 메뉴 */
+nav ul {
+    display: flex;
+    height: 120px;
+    width: 100%;     height: 100%;
+}
+nav ul li {
+    padding: 20px 60px 0 0;
+    line-height: 10px;
+    font-size: 18px;
+}
+header:hover {
+    background-color: #fff;
+    border-bottom: 1px solid #ed1c24;
+}
+/* 링크2 + 햄버거메뉴 */
+.h-link {
+    display: flex;
+    margin-right: 25px;
+    justify-content: space-between;
+}
+
+.h-link .h-left ul {
+    display: flex;
+}
+.h-link .h-left ul li {
+    width: 135px;
+    height: 40px;
+    padding-top: 17px;
+    font-size: 16px;
+}
+.h-link .h-left ul li i{
+    margin-left: 5px;
+}
+
+.h-link .h-right {
+    width: 26px;
+    height: 18px;
+    line-height: 50px;
+    cursor: pointer;
+}
+/* 헤더 끝 */
