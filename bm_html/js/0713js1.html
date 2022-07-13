@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableAddMem</title>
+    <script>
+
+        function onl(){
+            var menu = document.getElementById("menu");
+            var fImg = document.getElementById("fImg");
+            var choice = menu.selectedIndex;
+            
+            fImg.src = menu.options[choice].value;
+        }
+
+        function on (){
+            var a = document.getElementById("aa");
+            var b = document.getElementById("bb");
+            b.value = eval(a.value);
+        }
+
+        function price(){
+            var n = document.getElementsByName("drink");
+            var sum = 0;
+            for(var i=0; i<n.length; i++){
+                if(n[i].checked == true){
+                    sum += parseInt(n[i].value);
+                }
+            }
+            alert("계산하실 금액은 "+sum+"원 입니다");
+        }
+
+    </script>
+</head>
+<body onload="onl()">
+    
+    <h3>브라우저 로딩 시 이벤트</h3>
+    <select  id="menu" onchange="onl()">
+        <option value="E:/26.newJava/JavaClass/images/burger.jpg">버거</option>
+        <option value="E:/26.newJava/JavaClass/images/chicken.jpg">치킨</option>
+        <option value="E:/26.newJava/JavaClass/images/pizza.jpg">피자</option>
+    </select>
+    <span>메뉴 선택</span>
+    <p><img id="fImg" src="E:/26.newJava/JavaClass/images/burger.jpg" alt="버거사진"></p>
+    <hr>
+
+    <h3>eval()</h3>
+    <form>
+        수식 <input type="text"  id="aa">
+        <input type="button" value="계산" onclick="on()"> <br>
+        결과 <input type="text"  id="bb">
+        <input type="reset" value="다시입력"><br>
+    </form>
+    <hr>
+
+    <h3>JS 연습 </h3>
+    <p>가격을 다 더해 총합을 출력하시오</p>
+    <form>
+        <input type="checkbox"  name="drink" value="4000"> 아메리카노(4000)
+        <input type="checkbox"  name="drink" value="4500"> 카페라떼(4500)
+        <input type="checkbox"  name="drink" value="5000"> 카푸치노(5000)
+        <input type="checkbox"  name="drink" value="7500"> 프라푸치노(7500)
+        <input type="button" value="계산" onclick="price()"> <br>
+    </form>
+    <hr>
+
+</body>
+</html>
