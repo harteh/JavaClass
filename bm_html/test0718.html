@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0627 B</title>
+    <style>
+        .test{ margin-bottom: 50px;}
+        .test-wrap{ display: flex;}
+        .test-wrap .text{
+            margin-right: 30px; 
+            padding-left: 5px;
+            border-left: 3px solid orangered;
+        }
+        .bgPink { background-color: lightpink;}
+        .bgPink h1 { text-align: center; }
+        .list ul { border: 1px dotted #333; }
+        a{ text-decoration: none; }
+        .list-title {
+            color: blue;
+            text-shadow: 2px 1px 0 #333;
+        }
+        .cont {
+            font-size: 1em;
+            text-indent: 1em;
+        }
+        /* 설문조사 */
+        #survey{
+            width: 600px; height: 100%; padding: 20px;
+            background-color: orange;
+            border-radius: 40px;
+        }
+        #sur_con { display: none; }
+    </style>
+</head>
+<body>
+    <script>
+        function addShow(){
+            var sur_con = document.getElementById("sur_con");
+
+            if( sur_con.style.display != "none"){
+                sur_con.style.display = "none";
+            }
+            else {
+                sur_con.style.display = "block";
+            }
+        }
+
+        // 클릭 시 배경 색 변경
+        function chBGcolor(){
+            var bgY = document.getElementById("bgY");
+            var bgB = document.getElementById("bgB");
+            bgY.style.background = "yellow";
+            bgB.style.background = "lightblue";
+        }
+    </script>
+
+
+<div class="test">
+    <div class="test-wrap">
+        <div class="text">자바</div>
+        <div class="text">데이터베이스</div>
+        <div class="text">HTML</div>
+        <div class="text">CSS</div>
+    </div>
+</div>
+<hr>
+<div class="test bgPink">
+    <h1>스마트폰</h1>
+    <p>스마트폰은컴퓨터를결합한무선휴대전화기이다. <br>
+        PC에서실행되는운영체제보다작게만든모바일운영체제를탑재하여인터넷검색, 전자우편, 간단한문서편집, 카메라, 오디오및비디오재생등 PC의기능을거의모두갖추고있다</p>
+    <div class="list">
+        <p class="list-title">목차</p>
+        <ul>
+            <li><a href="#history">역사</a></li>
+            <li><a href="#android">안드로이드폰</a></li>
+            <li><a href="#iphone">아이폰</a></li>
+            <li><a href="#sample">샘플</a></li>
+        </ul>
+    </div>
+    <div id="history">
+        <p class="list-title"역사></p>
+        <p class="cont"> 스마트폰은 PC와같은기능과더불어고급기능을제공하는휴대전화이다. <br>
+            응용프로그램개발자에게는표준화된인터페이스와플랫폼을제공하여완전한운영체제소프트웨어를실행하는전화일것이고, 다수의일반인에게는전자우편• 인터넷•전자책읽기기능•내장형키보드•외장 USB 키보드•mini-HDMI 단자등을갖춘고급기능이있는전화로비칠수있다. <br>
+            다시말해스마트폰은전화기능이있는소형컴퓨터라볼수있다</p>
+    </div>
+    <div id="android">
+        <p class="list-title">안드로이드폰</p>
+        <p class="cont"> 안드로이드(Android)는리눅스커널을기반으로구글에서제작한스마트폰과같은플랫폼의모바일운영체제와미들웨어및중요애플리케이션이포함된소프트웨어집합이다.<br>
+            구글은새로운운영체제의버전공개와동시에소스를공개하고있다. 이렇게공개된소스를 AOSP라고한다.</p>
+    </div>
+    <div id="iphone">
+        <p class="list-title">아이폰</p>
+        <p class="cont"> 미국애플사의휴대전화시리즈. OS는 iOS라는독자적인플랫폼을사용한다. 1.0 때는 OS X for iPhone, 2.0에서 3.0까지는 iPhone OS라는이름이었다.<br>
+            4.0부터아이폰뿐만아니라, 아이팟터치나아이패드까지 OS의범위가넓어진것을감안해현재의 iOS라는이름이되었다.</p>
+    </div>
+    <div id="sample">
+        <p class="list-title">샘플</p>
+        <p class="cont"></p>
+    </div>
+<!-- 설문조사 -->
+    <div id="survey">
+        <p class="title"><a href="javascript:addShow()">설문조사</a></p>
+        <div id="sur_con">
+            <div id="bgY">
+                <p>사고 싶은 핸드폰 종류</p>
+            </div>
+        <hr>
+            <div id="bgB">
+                <p> 갖고 싶은 폰 종료
+                    <input type="radio" name="phone" value="iphone">아이폰
+                    <input type="radio" name="phone" value="sam" >삼성
+                    <input type="radio" name="phone" value="lg">LG
+                    <input type="radio" name="phone" value="etc">그 외
+                </p>
+                <p>성별
+                    <input type="radio" name="gender" value="m">남
+                    <input type="radio" name="gender" value="f">여
+                </p>
+                <p>구매 시기
+                    <select name="year">
+                        <option value="1">2017~2020</option>
+                        <option value="2">~2013~2016</option>
+                    </select>
+                </p>
+                <p>통신사
+                    <input type="checkbox" name="agency" value="skt">SKT
+                    <input type="checkbox" name="agency" value="kt">KT
+                    <input type="checkbox" name="agency" value="lg">LG
+                    <input type="checkbox" name="agency" value="etc">그 외
+                </p>
+                <p>남기고 싶은 말
+                    <textarea name="note"  cols="30" rows="3"></textarea>
+                </p>
+            </div>
+        </div>
+        <button id="chBG" onclick="chBGcolor()">색변경</button>
+        <p>Copyright 2020</p>
+    </div>
+</div>
+
+</body>
+</html>

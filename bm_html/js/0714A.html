@@ -6,14 +6,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>시계만들기</title>
 </head>
-<body>
-    <p id="cl"></p>
+<body bgcolor="aliceblue">
     <script>
-        var pan = document.getElementById("cl");
-        var date = new Date();
-        document.write(date.getDate());
+        function timer(){
+            var pan = document.getElementById("cl");
+            var date = new Date();
+    
+            pan.innerText ="현재 시각은 "+ date.getHours() +"시 " + date.getMinutes() +"분 " + date.getSeconds() +"초";
+        }
 
+        var timerID = setInterval("timer()", 1000);
+
+        // 브라우저 포커스:흰색.  포커스벗어나면 빨간색
+        window.onfocus=function(){
+            document.body.style.backgroundColor="white";
+        }
+        window.onblur=function(){
+            document.body.style.backgroundColor="beige";
+        }
     </script>
     
+    <p> 현재시간을 Date객체로 받아 1초동안 setInterval 을 사용해 띄우기 </p>
+    <p id="cl"></p>
+    <hr>
+
+    <h3>문제 자동 생성과 채점</h3>
+    <p>남은 시간 <span id="endTime">10</span></p>
+    <table>
+        <tr>
+            <td name="q1" width="100"></td>
+            <td>
+                <input name="a1" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td name="q1"></td>
+            <td >
+                <input name="a1" type="text" >
+            </td>
+        </tr>
+        <tr>
+            <td name="q1" width="100"></td>
+            <td>
+                <input name="a1" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td name="q1"></td>
+            <td >
+                <input name="a1" type="text" >
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="reset" value="다시" onclick="reset()"></td>
+            <td id="cnt"></td>
+        </tr>
+    </table>
+
+    <script>
+        var operator = ["+","-","*","/"];
+        var question = document.getElementsByName("q1");
+        var ans = document.getElementsByName("a1");
+        var chk = document.getElementById("cnt");
+
+        window.onload = function(){
+            set();
+            count();
+        }
+        
+        function set(){
+            // 문제 자동 생성
+            for(var i=0; i<question.length; i++){
+                var g = parseInt((Math.random()*4));
+    
+                question[i].innerHTML = 
+                    parseInt((Math.random()*100)+1) +" "+operator[g] +" "+ parseInt((Math.random()*99));
+    
+                question[i].style.textDecoration = "none" ;
+            }
+        }
+
+        function che(){
+            var r = 0;
+            for(var i=0; i<question.length; i++){
+
+
+                if(eval(question[i].innerHTML) == ans[i].innerHTML){
+                    r++;
+                }
+                else {
+                    question[i].style.textDecoration="line-through";
+                }
+                
+            } 
+
+            chk.innerHTML = r;
+        }
+
+        function count(){
+            var n = 10;
+            var cnt = document.getElementById("endTime");
+            cnt.innerHTML = n;
+
+            var c = setInterval( function(){
+                if(n ==0){
+                    che();
+                }else {
+                    n--;
+                    cnt.innerHTML = n;
+                }
+            }, 1000);
+        }
+    
+
+
+
+
+    
+
+
+    </script>
+
 </body>
 </html>
