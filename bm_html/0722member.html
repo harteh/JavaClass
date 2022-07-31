@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>member</title>
+	<style type="text/css" src="css/style.css"></style>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<h1>프로젝트 첫 페이지</h1>
+<p>id를 입력하고 [중복확인]버튼을 클릭하면 새로운 창이뜨면서 처리된다.</p>
+
+<!-- 우편번호 찾기 
+	검색 버튼 클릭 시 open_zip()함수를 호출해서 zip.jsp 파일을 띄운다
+-->
+<form name="zipFrm" method="post">
+<table>
+	<tr>
+		<td>우편번호</td>
+		<td>
+			<input name="zipcode" size="5" readonly>
+			<input type="button" value="우편번호검색" onclick="open_zip()">
+		</td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td>
+			<input name="address" size="50" readonly>
+		</td>
+	</tr>
+</table>
+</form>
+<!-- 우편번호 찾기 끝 -->
+
+</body>
+</html>

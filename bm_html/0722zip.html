@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>zip</title>
+    <link rel="stylesheet" href="css/0722style.css">
+	<script type="text/javascript" src="js/0722main.js"></script>
+
+</head>
+<body>
+
+<h3 class="p1">우편번호 검색 페이지</h3>
+<form name="zipFrm" method="post" >
+<table id="zipTbl">
+	<tr>
+		<td>도로명 입력 : 
+			<input name="area3">
+			<input type="button" value="검색" onclick="zipSearch()">
+		</td>
+	</tr>
+
+    <!-- 검색결과 시작 -->
+    <!-- 검색을 했는데 결과가 없을때 -->
+    <tr>
+        <td align="center"><br />검색된 결과가 없습니다.</td>
+    </tr>
+    <!-- 검색을 했고 결과가 있을때-->
+    <tr>
+        <td><br />⨳ 주소를 클릭하면 자동으로 입력됩니다.</td>
+    </tr>
+    <!-- 검색결과 출력 부분-->
+    <tr>
+        <td><a href='#' onclick="javascript:sendAdd('<%=rZipcode%>', '<%=adds%>')">
+            우편번호와 주소</a></td>
+    </tr>
+    <!-- 검색결과 끝 -->
+	
+	<tr>
+		<td> <a href="#" onclick="self.close()">닫기</a></td>
+	</tr>
+</table>
+<input type="hidden" name="search" value="y">
+</form>
+
+</body>
+</html>
